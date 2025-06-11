@@ -9,7 +9,7 @@
     <meta name="description" content="Especialista em automação de processos e soluções digitais que otimizam operações, reduzem custos e maximizam resultados.">
     <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
     <meta property="og:description" content="Transformo processos manuais em sistemas inteligentes que economizam tempo e recursos.">
-    <meta property="og:image" content="https://i.ibb.co/FbyNw76/foto-3x4-curriculo.png">
+    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png">
     <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
@@ -36,7 +36,7 @@
       "name": "Gabriel Alves",
       "jobTitle": "Especialista em Automação e Soluções Digitais",
       "url": "URL_DO_SEU_SITE_AQUI",
-      "image": "https://i.ibb.co/FbyNw76/foto-3x4-curriculo.png",
+      "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
       "sameAs": []
     }
     </script>
@@ -44,222 +44,49 @@
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a;
+            background-color: #000000;
             color: #F5F5F5;
             overflow-x: hidden;
         }
 
         :root {
             --cor-amarelo: #FFD700;
-            --cor-preto: #0a0a0a;
+            --cor-preto: #000000;
             --cor-branco: #F5F5F5;
             --cor-cinza-claro: #1a1a1a;
         }
         
-        #bg-canvas {
+        #lightning-canvas {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
             z-index: -1;
         }
         
-        #main-header.scrolled {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-        }
-
         .glass-effect {
-            background: rgba(16, 16, 16, 0.6);
+            background: rgba(10, 10, 10, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.5s ease, box-shadow 0.5s ease;
-        }
-        
-        .hero-cta {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
         }
 
-        .project-card {
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s ease, box-shadow 0.4s ease;
-        }
-        .project-card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0;
-            width: 200%; height: 100%;
-            background: conic-gradient(from 180deg at 50% 50%, var(--cor-amarelo), #DA70D6, #00FFFF, var(--cor-amarelo));
-            transition: transform 1s ease;
-            transform: translateX(-100%) rotate(0deg);
-            z-index: 1;
-        }
-        .project-card.animate-border::before,
-        .project-card:hover::before {
-            transform: translateX(0%) rotate(360deg);
-        }
-        .project-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0,0,0,0.4);
-        }
-        .project-card-content {
-            position: relative;
-            z-index: 2;
-            background-color: var(--cor-cinza-claro);
-            margin: 1px;
-            border-radius: 1.45rem;
-            height: calc(100% - 2px);
-            width: calc(100% - 2px);
-        }
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.4); }
+        .about-image-container:hover img { transform: scale(1.03); }
 
+        @media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--cor-preto); }
-        ::-webkit-scrollbar-thumb {
-            background-color: var(--cor-amarelo);
-            border-radius: 10px;
-        }
-
+        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
         .custom-cursor { display: none; }
-        @media (hover: hover) and (pointer: fine) {
-            body { cursor: none; }
-            .custom-cursor {
-                display: block;
-                position: fixed;
-                top: 0; left: 0;
-                width: 24px; height: 24px;
-                border: 2px solid var(--cor-amarelo);
-                border-radius: 50%;
-                pointer-events: none;
-                transform: translate(-50%, -50%);
-                transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out;
-                z-index: 9999;
-            }
-            .custom-cursor.grow {
-                width: 50px;
-                height: 50px;
-                background-color: rgba(255, 215, 0, 0.2);
-            }
-        }
-
-        @media (max-width: 1023px) {
-            .horizontal-scroll-wrapper {
-                overflow-x: auto;
-                scroll-snap-type: x mandatory;
-                scrollbar-width: none; /* Firefox */
-            }
-            .horizontal-scroll-wrapper::-webkit-scrollbar {
-                display: none; /* Safari e Chrome */
-            }
-            .panel {
-                scroll-snap-align: center;
-                min-width: 85vw;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            #portfolio-section-container {
-                overflow: hidden;
-                height: 100vh;
-                position: relative;
-            }
-            .horizontal-scroll-wrapper {
-                width: 500vw;
-                height: 100vh;
-                display: flex;
-                flex-wrap: nowrap;
-            }
-            .panel {
-                width: 100vw;
-                height: 100vh;
-                padding: 0 5%;
-            }
-            .scroll-indicators {
-                position: absolute;
-                bottom: 30px;
-                left: 50%;
-                transform: translateX(-50%);
-                display: flex;
-                gap: 12px;
-                z-index: 10;
-            }
-            .scroll-indicators span {
-                width: 10px;
-                height: 10px;
-                background-color: rgba(255, 255, 255, 0.3);
-                border-radius: 50%;
-                transition: background-color 0.3s ease, transform 0.3s ease;
-                cursor: pointer;
-            }
-            .scroll-indicators span.active {
-                background-color: var(--cor-amarelo);
-                transform: scale(1.3);
-            }
-        }
-
-        .about-image-container img {
-            transition: transform 0.5s ease;
-        }
-        .about-image-container:hover img {
-            transform: scale(1.03);
-        }
-
-        /* Melhorias de Acessibilidade */
-        .skip-link {
-            position: absolute;
-            left: -9999px;
-            top: auto;
-            width: 1px;
-            height: 1px;
-            overflow: hidden;
-            z-index: -999;
-        }
-        .skip-link:focus, .skip-link:active {
-            position: static;
-            width: auto;
-            height: auto;
-            overflow: visible;
-            z-index: 9999;
-            background: var(--cor-amarelo);
-            color: var(--cor-preto);
-            padding: 10px;
-            border-radius: 8px;
-            margin: 10px;
-        }
-
-        .keyboard-nav :focus-visible {
-            outline: 2px solid var(--cor-amarelo);
-            outline-offset: 3px;
-            border-radius: 4px;
-        }
-
-        nav a.active {
-            color: var(--cor-amarelo);
-            position: relative;
-        }
-        nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--cor-amarelo);
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            *, *::before, *::after {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-                scroll-behavior: auto !important;
-            }
-            #bg-canvas { display: none; }
-        }
+        @media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
+        .about-image-container img { transition: transform 0.5s ease; }
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
+        .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
+        nav a.active { color: var(--cor-amarelo); position: relative; }
+        nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #lightning-canvas { display: none; } }
     </style>
 </head>
 <body class="antialiased">
@@ -272,7 +99,7 @@
 
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
 
-    <canvas id="bg-canvas" class="js-dependent"></canvas>
+    <canvas id="lightning-canvas" class="js-dependent"></canvas>
     <div class="custom-cursor js-dependent"></div>
 
     <!-- Header -->
@@ -326,112 +153,66 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Foco em <span class="text-yellow-400">Automação de Processos</span></h2>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <article class="service-card glass-effect rounded-3xl p-8 lg:col-span-2 transition-transform duration-300 hover:-translate-y-2">
+                    <article class="service-card glass-effect rounded-3xl p-8 lg:col-span-2 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
                         <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-3">Automação com Google Apps Script</h3>
-                        <p class="text-gray-400">Automações personalizadas para Google Workspace que eliminam tarefas repetitivas.</p>
+                        <h3 class="text-2xl font-bold mb-3">Automação e APIs</h3>
+                        <p class="text-gray-400">Sistemas que eliminam tarefas manuais. Menos repetição, mais estratégia.</p>
                     </article>
-                    <article class="service-card glass-effect rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2">
+                    <article class="service-card glass-effect rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
                          <div class="mb-4"><i data-lucide="shopping-cart" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Otimização de E-commerce</h3>
-                        <p class="text-gray-400">Soluções completas para aumentar conversões e fidelizar clientes.</p>
+                        <p class="text-gray-400">Otimização da experiência do cliente para converter visitas em vendas.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Portfólio -->
-        <section id="portfolio" class="bg-transparent">
-            <div class="container mx-auto px-6 pt-20 pb-10 text-center">
-                 <h2 class="text-4xl md:text-5xl font-bold">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
-            </div>
-            
-            <div id="portfolio-section-container" class="relative">
-                <div class="horizontal-scroll-wrapper flex">
+        <!-- Seção Portfólio (Layout Vertical) -->
+        <section id="portfolio" class="bg-transparent py-20">
+            <div class="container mx-auto px-6">
+                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
+                <div class="space-y-16">
                     <!-- Painel 1 -->
-                    <article class="panel">
-                        <div class="w-full max-w-5xl rounded-3xl project-card">
-                            <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 project-card-content">
-                                <div class="project-text-content text-center md:text-left md:w-2/3">
-                                    <span class="font-semibold text-yellow-400">Posto Ipiranga/PR</span>
-                                    <h3 class="text-3xl md:text-4xl font-bold my-2">Automação de Notificações</h3>
-                                    <p class="text-gray-300">Sistema desenvolvido com Google Apps Script que automatizou a comunicação de notificações, reduzindo o tempo de processamento de horas para segundos e cortando custos operacionais.</p>
-                                </div>
-                                <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                    <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="-90">-90%</p>
-                                    <p class="text-lg font-semibold">em Custos Operacionais</p>
-                                </div>
+                    <article class="project-card rounded-3xl glass-effect">
+                        <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Posto Ipiranga/PR</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Automação de Notificações</h3>
+                                <p class="text-gray-300">Criei um sistema automatizado para a comunicação de notificações, transformando horas de trabalho manual em segundos.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="-90">-90%</p>
+                                <p class="text-lg font-semibold">em Custos Operacionais</p>
                             </div>
                         </div>
                     </article>
                     <!-- Painel 2 -->
-                    <article class="panel">
-                        <div class="w-full max-w-5xl rounded-3xl project-card">
-                           <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 project-card-content">
-                                <div class="project-text-content text-center md:text-left md:w-2/3">
-                                    <span class="font-semibold text-yellow-400">Plataformas Web</span>
-                                    <h3 class="text-3xl md:text-4xl font-bold my-2">Presença Digital Otimizada</h3>
-                                    <p class="text-gray-300">Desenvolvimento de sites responsivos e focados em SEO para <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a> e outros, aumentando a visibilidade e o tráfego.</p>
-                                </div>
-                                <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                    <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="20">+20%</p>
-                                    <p class="text-lg font-semibold">em Tráfego Orgânico</p>
-                                </div>
+                    <article class="project-card rounded-3xl glass-effect">
+                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Plataformas Web</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Presença Digital Otimizada</h3>
+                                <p class="text-gray-300">Desenvolvimento de sites responsivos e focados em SEO para <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a> e outros, aumentando a visibilidade e o tráfego.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="20">+20%</p>
+                                <p class="text-lg font-semibold">em Tráfego Orgânico</p>
                             </div>
                         </div>
                     </article>
                     <!-- Painel 3 -->
-                    <article class="panel">
-                        <div class="w-full max-w-5xl rounded-3xl project-card">
-                           <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 project-card-content">
-                                <div class="project-text-content text-center md:text-left md:w-2/3">
-                                    <span class="font-semibold text-yellow-400">Painel de Gestão</span>
-                                    <h3 class="text-3xl md:text-4xl font-bold my-2">Fim da Desorganização</h3>
-                                    <p class="text-gray-300">Dashboard interativo para centralizar informações e simplificar a organização de eventos e comunicados.</p>
-                                </div>
-                                <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                    <p class="text-5xl md:text-6xl font-extrabold text-yellow-400">Gestão Simplificada</p>
-                                </div>
+                    <article class="project-card rounded-3xl glass-effect">
+                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Painel de Gestão</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Fim da Desorganização</h3>
+                                <p class="text-gray-300">Dashboard interativo para centralizar informações e simplificar a organização de eventos e comunicados.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="text-5xl md:text-6xl font-extrabold text-yellow-400">Gestão Simplificada</p>
                             </div>
                         </div>
                     </article>
-                    <!-- Painel 4 -->
-                     <article class="panel">
-                        <div class="w-full max-w-5xl rounded-3xl project-card">
-                           <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 project-card-content">
-                                <div class="project-text-content text-center md:text-left md:w-2/3">
-                                    <span class="font-semibold text-yellow-400">Geek Store/Bolívia</span>
-                                    <h3 class="text-3xl md:text-4xl font-bold my-2">Vendas em Piloto Automático</h3>
-                                    <p class="text-gray-300">Criação de um motor de vendas com marketing direcionado e automações para impulsionar os resultados de forma consistente.</p>
-                                </div>
-                                <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                    <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="25">+25%</p>
-                                    <p class="text-lg font-semibold">em Vendas Online</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                    <!-- Painel 5 -->
-                    <article class="panel">
-                        <div class="w-full max-w-5xl rounded-3xl project-card">
-                           <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 project-card-content">
-                                <div class="project-text-content text-center md:text-left md:w-2/3">
-                                    <span class="font-semibold text-yellow-400">Brazil Tribal</span>
-                                    <h3 class="text-3xl md:text-4xl font-bold my-2">Experiência que Converte</h3>
-                                    <p class="text-gray-300">Redesign focado no usuário que aumentou vendas, satisfação e fidelização dos clientes do e-commerce.</p>
-                                </div>
-                                <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                    <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="18">+18%</p>
-                                    <p class="text-lg font-semibold">em Vendas Mensais</p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="scroll-indicators"></div>
-                <div class="flex justify-center mt-8 md:hidden">
-                    <button id="prev-project" aria-label="Projeto anterior" class="p-2 mx-2 text-white"><i data-lucide="arrow-left" class="w-6 h-6"></i></button>
-                    <button id="next-project" aria-label="Próximo projeto" class="p-2 mx-2 text-white"><i data-lucide="arrow-right" class="w-6 h-6"></i></button>
                 </div>
             </div>
         </section>
@@ -441,12 +222,12 @@
             <div class="container mx-auto px-6">
                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Minhas <span class="text-yellow-400">ferramentas</span> de trabalho</h2>
                 <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12">
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="Google Apps Script"><i data-lucide="webhook" class="w-8 h-8"></i><span>GAS</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="Python"><i data-lucide="code-2" class="w-8 h-8"></i><span>Python</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="JavaScript"><i data-lucide="braces" class="w-8 h-8"></i><span>JavaScript</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="WordPress"><i data-lucide="wordpress" class="w-8 h-8"></i><span>WordPress</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="APIs RESTful"><i data-lucide="binary" class="w-8 h-8"></i><span>APIs RESTful</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" aria-label="SEO"><i data-lucide="search" class="w-8 h-8"></i><span>SEO</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Google Apps Script"><i data-lucide="webhook" class="w-8 h-8"></i><span>GAS</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Python"><i data-lucide="code-2" class="w-8 h-8"></i><span>Python</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="JavaScript"><i data-lucide="braces" class="w-8 h-8"></i><span>JavaScript</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe Photoshop"><i data-lucide="image" class="w-8 h-8"></i><span>Photoshop</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe After Effects"><i data-lucide="film" class="w-8 h-8"></i><span>After Effects</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Pacote Office"><i data-lucide="file-spreadsheet" class="w-8 h-8"></i><span>Pacote Office</span></div>
                 </div>
             </div>
         </section>
@@ -457,8 +238,8 @@
                 <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 glass-effect p-10 rounded-3xl">
                     <div class="md:w-1/2 about-image-container">
                         <picture>
-                            <source srcset="https://i.ibb.co/FbyNw76/foto-3x4-curriculo.png" type="image/png">
-                            <img src="https://i.ibb.co/FbyNw76/foto-3x4-curriculo.png" alt="Gabriel Alves, especialista em soluções digitais" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="lazy" decoding="async">
+                            <source srcset="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" type="image/png">
+                            <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Gabriel Alves, especialista em soluções digitais" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="lazy" decoding="async">
                         </picture>
                     </div>
                     <div class="md:w-1/2 text-center md:text-left about-text-container">
@@ -495,86 +276,111 @@
 
     <footer class="py-10 text-center text-gray-500">
         <div class="flex justify-center space-x-6 mb-4">
-            <a href="#" class="hover:text-yellow-400">Início</a>
-            <a href="#" class="hover:text-yellow-400">Política de Privacidade</a>
-            <a href="#" class="hover:text-yellow-400">Termos de Uso</a>
+            <a href="/" class="hover:text-yellow-400">Início</a>
+            <a href="/privacidade" class="hover:text-yellow-400">Política de Privacidade</a>
+            <a href="/termos" class="hover:text-yellow-400">Termos de Uso</a>
         </div>
         <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
     </footer>
 
     <!-- Bibliotecas de Animação -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-
     <script>
-        window.addEventListener('error', e => {
-            console.error('Erro capturado:', e.error);
-        });
+        if (window.innerWidth >= 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const threeScript = document.createElement('script');
+            threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+            threeScript.defer = true;
+            document.head.appendChild(threeScript);
+        }
+    </script>
+    <script>
+        window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
 
         document.addEventListener('DOMContentLoaded', function() {
             try {
-                // --- Configurações Iniciais e Otimizações ---
                 lucide.createIcons();
+                gsap.config({ force3D: true });
                 ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
 
-                document.addEventListener('keyup', e => {
-                    if (e.key === 'Tab') document.documentElement.classList.add('keyboard-nav');
+                const header = document.getElementById('main-header');
+                ScrollTrigger.create({
+                    start: 'top -10',
+                    onUpdate: self => header.classList.toggle('scrolled', self.direction === 1)
                 });
                 
-                // --- Header com sombra no scroll ---
-                const header = document.getElementById('main-header');
-                window.addEventListener('scroll', () => {
-                    header.classList.toggle('scrolled', window.scrollY > 50);
-                });
-
-                // --- Animação 3D do Fundo (Otimizada para Mobile) ---
-                const isMobile = window.innerWidth < 768;
-                if (!isMobile && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    const scene = new THREE.Scene();
-                    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
-                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('bg-canvas'), alpha: true, antialias: true });
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-                    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-
-                    const particlesCount = 5000;
-                    const positions = new Float32Array(particlesCount * 3);
-                    for (let i = 0; i < particlesCount * 3; i++) {
-                        positions[i] = (Math.random() - 0.5) * 15;
+                function initLightningEffect() {
+                    if (typeof THREE === 'undefined') {
+                        console.log("Three.js library not loaded. Skipping background effect.");
+                        return;
                     }
-                    const particlesGeometry = new THREE.BufferGeometry();
-                    particlesGeometry.setAttribute('position', new THREE.BufferAttribute(positions, 3));
-                    const particlesMaterial = new THREE.PointsMaterial({ color: 0xaaaaaa, size: 0.005, transparent: true, blending: THREE.AdditiveBlending });
-                    const particleSystem = new THREE.Points(particlesGeometry, particlesMaterial);
-                    scene.add(particleSystem);
-                    camera.position.z = 5;
+                    
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+                    camera.position.z = 1; camera.rotation.x = 1.16; camera.rotation.y = -0.12; camera.rotation.z = 0.27;
 
-                    const mouse = new THREE.Vector2();
-                    window.addEventListener('mousemove', (event) => {
-                        mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
-                        mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('lightning-canvas'), alpha: true });
+                    renderer.setSize(window.innerWidth, window.innerHeight);
+
+                    let cloudParticles = [];
+                    let flash;
+
+                    let loader = new THREE.TextureLoader();
+                    loader.load("https://i.ibb.co/b3vCf9V/smoke-1.png", (texture) => {
+                        const cloudGeo = new THREE.PlaneBufferGeometry(500,500);
+                        const cloudMaterial = new THREE.MeshLambertMaterial({
+                            map: texture,
+                            transparent: true
+                        });
+
+                        for(let p=0; p<25; p++) {
+                            let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
+                            cloud.position.set(
+                                Math.random()*800 -400,
+                                500,
+                                Math.random()*50 - 50
+                            );
+                            cloud.rotation.x = 1.16;
+                            cloud.rotation.y = -0.12;
+                            cloud.rotation.z = Math.random()*2*Math.PI;
+                            cloud.material.opacity = 0.55;
+                            cloudParticles.push(cloud);
+                            scene.add(cloud);
+                        }
                     });
+
+                    flash = new THREE.PointLight(0xFFD700, 30, 500, 1.7);
+                    flash.position.set(200, 300, 100);
+                    scene.add(flash);
+
+                    const ambientLight = new THREE.AmbientLight(0x555555);
+                    scene.add(ambientLight);
 
                     function animate() {
                         requestAnimationFrame(animate);
-                        particleSystem.rotation.y += 0.0002;
-                        camera.position.x += (mouse.x * 0.2 - camera.position.x) * 0.01;
-                        camera.position.y += (mouse.y * 0.2 - camera.position.y) * 0.01;
-                        camera.lookAt(scene.position);
+                        cloudParticles.forEach(p => { p.rotation.z -=0.002; });
+                        
+                        if(Math.random() > 0.93 || flash.power > 100) {
+                            if(flash.power < 100) 
+                                flash.position.set(
+                                    Math.random()*400,
+                                    300 + Math.random()*200,
+                                    100
+                                );
+                            flash.power = 50 + Math.random() * 500;
+                        }
+                        flash.power -= 2.5;
+
                         renderer.render(scene, camera);
                     }
                     animate();
-                
-                    window.addEventListener('resize', () => {
-                        camera.aspect = window.innerWidth / window.innerHeight;
-                        camera.updateProjectionMatrix();
-                        renderer.setSize(window.innerWidth, window.innerHeight);
-                    });
-                } else {
-                    document.getElementById('bg-canvas').style.display = 'none';
+                }
+
+                const threeScript = document.querySelector('script[src*="three.min.js"]');
+                if (threeScript) {
+                    threeScript.onload = initLightningEffect;
                 }
                 
-                // --- Menu Mobile ---
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
                 
@@ -590,13 +396,16 @@
 
                 hamburgerBtn.addEventListener('click', () => toggleMenu());
                 document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
-                document.addEventListener('click', (e) => {
-                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
-                        toggleMenu(false);
-                    }
-                });
+                
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                    const cursor = document.querySelector('.custom-cursor');
+                    window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
+                    document.querySelectorAll('a, button, .tech-logo').forEach(el => {
+                        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+                        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+                    });
+                }
 
-                // --- Animações Coreografadas com GSAP ---
                 gsap.registerPlugin(ScrollTrigger);
                 gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
                 
@@ -605,99 +414,35 @@
                       .from('.hero-subtitle', { y: 20, opacity: 0 }, "-=0.5")
                       .from('.hero-cta', { scale: 0.9, opacity: 0 }, "-=0.7");
                 
-                gsap.utils.toArray('section h2, .service-card, #contact p, #contact a, #contact button').forEach(elem => {
+                gsap.utils.toArray('section h2, .service-card, .project-card, #about div, #contact p, #contact a, #contact button').forEach(elem => {
                     gsap.from(elem, {
                         opacity: 0, y: 50, duration: 1, ease: 'power3.out',
-                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none' }
+                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true }
                     });
                 });
-
-                // Animação da seção Sobre
-                ScrollTrigger.create({
-                    trigger: "#about",
-                    start: "top 70%",
-                    onEnter: () => {
-                        gsap.from(".about-image-container", { scale: 0.9, opacity: 0, duration: 1, ease: 'power3.out' });
-                        gsap.from(".about-text-container", { x: 50, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.2 });
-                    },
-                    once: true
-                });
                 
-                // --- Animação e Navegação do Portfólio ---
-                const panels = gsap.utils.toArray(".panel");
-                const indicatorsContainer = document.querySelector('.scroll-indicators');
-                if (indicatorsContainer) {
-                    panels.forEach(() => indicatorsContainer.appendChild(document.createElement('span')));
-                    const indicators = gsap.utils.toArray('.scroll-indicators span');
-                    indicators[0]?.classList.add('active');
-                }
-                
-                ScrollTrigger.matchMedia({
-                    "(min-width: 1024px)": function() {
-                        let scrollTween = gsap.to(panels, {
-                            xPercent: -100 * (panels.length - 1),
-                            ease: "none",
-                            scrollTrigger: {
-                                trigger: "#portfolio-section-container",
-                                pin: true,
-                                scrub: 1,
-                                snap: 1 / (panels.length - 1),
-                                end: () => "+=" + document.querySelector(".horizontal-scroll-wrapper").offsetWidth,
-                                onUpdate: self => {
-                                    const progress = Math.round(self.progress * (panels.length - 1));
-                                    document.querySelectorAll('.scroll-indicators span').forEach((ind, i) => ind.classList.toggle('active', i === progress));
+                gsap.utils.toArray('.counter-up').forEach(counter => {
+                    ScrollTrigger.create({
+                        trigger: counter,
+                        start: "top 80%",
+                        once: true,
+                        onEnter: () => {
+                            const target = { val: 0 };
+                            const endValue = parseFloat(counter.dataset.value);
+                            const prefix = endValue > 0 ? '+' : '';
+                            const suffix = '%';
+                            gsap.to(target, {
+                                val: endValue,
+                                duration: 2,
+                                ease: 'power3.out',
+                                onUpdate: () => {
+                                    counter.textContent = prefix + Math.round(target.val) + suffix;
                                 }
-                            }
-                        });
-                        document.querySelectorAll('.scroll-indicators span').forEach((indicator, i) => {
-                            indicator.addEventListener('click', () => {
-                                let newProgress = i / (panels.length - 1);
-                                let scrollPos = scrollTween.scrollTrigger.start + (scrollTween.scrollTrigger.end - scrollTween.scrollTrigger.start) * newProgress;
-                                gsap.to(window, { scrollTo: scrollPos, duration: 1, ease: 'power2.inOut' });
                             });
-                        });
-                    },
-                    "(max-width: 1023px)": function() {
-                        const wrapper = document.querySelector('.horizontal-scroll-wrapper');
-                        const prevBtn = document.getElementById('prev-project');
-                        const nextBtn = document.getElementById('next-project');
-
-                        const scrollToAction = (direction) => {
-                            const panelWidth = wrapper.querySelector('.panel').offsetWidth;
-                            wrapper.scrollBy({ left: panelWidth * direction, behavior: 'smooth' });
-                        };
-                        
-                        prevBtn.addEventListener('click', () => scrollToAction(-1));
-                        nextBtn.addEventListener('click', () => scrollToAction(1));
-                    }
+                        }
+                    });
                 });
                 
-                panels.forEach((panel) => {
-                    const counter = panel.querySelector('.counter-up');
-                    if (counter) {
-                        ScrollTrigger.create({
-                            trigger: counter,
-                            start: "top 80%",
-                            once: true,
-                            onEnter: () => {
-                                const target = { val: 0 };
-                                const endValue = parseFloat(counter.dataset.value);
-                                const prefix = endValue > 0 ? '+' : '';
-                                const suffix = '%';
-                                gsap.to(target, {
-                                    val: endValue,
-                                    duration: 2,
-                                    ease: 'power3.out',
-                                    onUpdate: () => {
-                                        counter.textContent = prefix + Math.round(target.val) + suffix;
-                                    }
-                                });
-                            }
-                        });
-                    }
-                });
-                
-                // --- Navegação Ativa ---
                 gsap.utils.toArray("#main-nav a").forEach(link => {
                     const section = document.querySelector(link.getAttribute("href"));
                     ScrollTrigger.create({
@@ -708,11 +453,22 @@
                     });
                 });
 
-                // --- Toggle Formulário de Contato ---
                 const toggleBtn = document.getElementById('toggle-form');
                 const emailForm = document.getElementById('email-form');
+                const form = emailForm.querySelector('form');
+
                 toggleBtn.addEventListener('click', () => {
-                    emailForm.classList.toggle('hidden');
+                    const isHidden = emailForm.classList.toggle('hidden');
+                    if (!isHidden) {
+                        form.querySelector('input').focus();
+                    } else {
+                        toggleBtn.focus();
+                    }
+                });
+
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    form.innerHTML = `<p class="text-green-400 text-center">✓ Mensagem enviada com sucesso!</p>`;
                 });
 
             } catch (error) {
