@@ -47,6 +47,7 @@
             background-color: #000000;
             color: #F5F5F5;
             overflow-x: hidden;
+            position: relative;
         }
 
         :root {
@@ -56,7 +57,7 @@
             --cor-cinza-claro: #1a1a1a;
         }
         
-        #lightning-canvas {
+        #background-container {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -86,7 +87,7 @@
         .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
         nav a.active { color: var(--cor-amarelo); position: relative; }
         nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #lightning-canvas { display: none; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-container { display: none; } }
     </style>
 </head>
 <body class="antialiased">
@@ -98,22 +99,19 @@
     </noscript>
 
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-
-    <canvas id="lightning-canvas" class="js-dependent"></canvas>
+    <canvas id="background-container" class="js-dependent"></canvas>
     <div class="custom-cursor js-dependent"></div>
 
     <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 w-full p-6 z-50">
         <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-8">
             <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
-            
             <nav id="main-nav" class="hidden md:flex space-x-8">
                 <a href="#services" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
                 <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
                 <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">Sobre</a>
                 <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
             </nav>
-
             <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
                 <i data-lucide="menu" class="w-8 h-8"></i>
             </button>
@@ -172,7 +170,6 @@
             <div class="container mx-auto px-6">
                  <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
                 <div class="space-y-16">
-                    <!-- Painel 1 -->
                     <article class="project-card rounded-3xl glass-effect">
                         <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
                             <div class="project-text-content text-center md:text-left md:w-2/3">
@@ -186,7 +183,6 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Painel 2 -->
                     <article class="project-card rounded-3xl glass-effect">
                        <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
                             <div class="project-text-content text-center md:text-left md:w-2/3">
@@ -200,7 +196,6 @@
                             </div>
                         </div>
                     </article>
-                    <!-- Painel 3 -->
                     <article class="project-card rounded-3xl glass-effect">
                        <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
                             <div class="project-text-content text-center md:text-left md:w-2/3">
@@ -261,15 +256,6 @@
                         Falar no WhatsApp
                     </span>
                 </a>
-                <button id="toggle-form" class="text-yellow-400 underline mt-8">Prefere enviar uma mensagem direta?</button>
-                <div id="email-form" class="mt-8 max-w-md mx-auto hidden">
-                    <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="space-y-4">
-                        <input type="text" name="name" placeholder="Nome" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none">
-                        <input type="email" name="email" placeholder="E-mail" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 focus:ring-2 focus:ring-yellow-400 outline-none">
-                        <textarea name="message" placeholder="Mensagem" required class="w-full p-3 rounded-lg bg-gray-800 border border-gray-700 h-32 outline-none focus:ring-2 focus:ring-yellow-400"></textarea>
-                        <button type="submit" class="bg-yellow-400 text-black font-bold py-3 px-6 rounded-lg">Enviar Mensagem</button>
-                    </form>
-                </div>
             </div>
         </section>
     </main>
@@ -287,7 +273,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     <script>
-        if (window.innerWidth >= 768 && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
             const threeScript = document.createElement('script');
             threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
             threeScript.defer = true;
@@ -303,15 +289,16 @@
                 gsap.config({ force3D: true });
                 ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
 
-                const header = document.getElementById('main-header');
-                ScrollTrigger.create({
-                    start: 'top -10',
-                    onUpdate: self => header.classList.toggle('scrolled', self.direction === 1)
-                });
-                
-                function initLightningEffect() {
-                    if (typeof THREE === 'undefined') {
-                        console.log("Three.js library not loaded. Skipping background effect.");
+                const init3DBackground = () => {
+                    if (typeof THREE === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        const bgContainer = document.getElementById('background-container');
+                        if (bgContainer) {
+                           bgContainer.style.background = `
+                                radial-gradient(ellipse at center, rgba(255, 215, 0, 0.08) 0%, rgba(0,0,0,0) 60%),
+                                radial-gradient(ellipse at top left, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%),
+                                radial-gradient(ellipse at bottom right, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%)`;
+                           bgContainer.style.backgroundColor = '#000';
+                        }
                         return;
                     }
                     
@@ -319,66 +306,51 @@
                     const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
                     camera.position.z = 1; camera.rotation.x = 1.16; camera.rotation.y = -0.12; camera.rotation.z = 0.27;
 
-                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('lightning-canvas'), alpha: true });
+                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-container'), alpha: true });
                     renderer.setSize(window.innerWidth, window.innerHeight);
 
-                    let cloudParticles = [];
-                    let flash;
-
-                    let loader = new THREE.TextureLoader();
-                    loader.load("https://i.ibb.co/b3vCf9V/smoke-1.png", (texture) => {
-                        const cloudGeo = new THREE.PlaneBufferGeometry(500,500);
-                        const cloudMaterial = new THREE.MeshLambertMaterial({
-                            map: texture,
-                            transparent: true
-                        });
-
-                        for(let p=0; p<25; p++) {
-                            let cloud = new THREE.Mesh(cloudGeo,cloudMaterial);
-                            cloud.position.set(
-                                Math.random()*800 -400,
-                                500,
-                                Math.random()*50 - 50
-                            );
-                            cloud.rotation.x = 1.16;
-                            cloud.rotation.y = -0.12;
-                            cloud.rotation.z = Math.random()*2*Math.PI;
-                            cloud.material.opacity = 0.55;
-                            cloudParticles.push(cloud);
-                            scene.add(cloud);
-                        }
-                    });
-
-                    flash = new THREE.PointLight(0xFFD700, 30, 500, 1.7);
+                    const flash = new THREE.PointLight(0xFFD700, 30, 500, 1.7);
                     flash.position.set(200, 300, 100);
                     scene.add(flash);
 
                     const ambientLight = new THREE.AmbientLight(0x555555);
                     scene.add(ambientLight);
 
+                    let cloudParticles = [];
+                    let loader = new THREE.TextureLoader();
+                    loader.load("https://i.ibb.co/b3vCf9V/smoke-1.png", (texture) => {
+                        const cloudGeo = new THREE.PlaneBufferGeometry(500,500);
+                        const cloudMaterial = new THREE.MeshLambertMaterial({ map: texture, transparent: true, opacity: 0.55 });
+                        const particleCount = window.innerWidth < 768 ? 15 : 25;
+
+                        for(let p=0; p < particleCount; p++) {
+                            let cloud = new THREE.Mesh(cloudGeo,cloudMaterial.clone());
+                            cloud.position.set( Math.random()*800 -400, 500, Math.random()*50 - 50 );
+                            cloud.rotation.x = 1.16; cloud.rotation.y = -0.12; cloud.rotation.z = Math.random()*2*Math.PI;
+                            cloudParticles.push(cloud);
+                            scene.add(cloud);
+                        }
+                    });
+
                     function animate() {
                         requestAnimationFrame(animate);
-                        cloudParticles.forEach(p => { p.rotation.z -=0.002; });
-                        
+                        cloudParticles.forEach(p => { p.rotation.z -= 0.002; });
                         if(Math.random() > 0.93 || flash.power > 100) {
-                            if(flash.power < 100) 
-                                flash.position.set(
-                                    Math.random()*400,
-                                    300 + Math.random()*200,
-                                    100
-                                );
+                            if(flash.power < 100) flash.position.set( Math.random()*400 - 200, 300 + Math.random()*200, 100 );
                             flash.power = 50 + Math.random() * 500;
                         }
                         flash.power -= 2.5;
-
                         renderer.render(scene, camera);
                     }
                     animate();
-                }
+                };
 
                 const threeScript = document.querySelector('script[src*="three.min.js"]');
                 if (threeScript) {
-                    threeScript.onload = initLightningEffect;
+                    threeScript.onload = init3DBackground;
+                    threeScript.onerror = init3DBackground;
+                } else {
+                    init3DBackground();
                 }
                 
                 const hamburgerBtn = document.getElementById('hamburger-btn');
@@ -451,24 +423,6 @@
                         end: "bottom center",
                         onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link))
                     });
-                });
-
-                const toggleBtn = document.getElementById('toggle-form');
-                const emailForm = document.getElementById('email-form');
-                const form = emailForm.querySelector('form');
-
-                toggleBtn.addEventListener('click', () => {
-                    const isHidden = emailForm.classList.toggle('hidden');
-                    if (!isHidden) {
-                        form.querySelector('input').focus();
-                    } else {
-                        toggleBtn.focus();
-                    }
-                });
-
-                form.addEventListener('submit', async (e) => {
-                    e.preventDefault();
-                    form.innerHTML = `<p class="text-green-400 text-center">✓ Mensagem enviada com sucesso!</p>`;
                 });
 
             } catch (error) {
