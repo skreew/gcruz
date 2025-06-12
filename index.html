@@ -10,7 +10,7 @@
     <meta property="og:title" content="Gabriel Alves – Automação que Multiplica Resultados">
     <meta property="og:description" content="Especialista em automação de processos, otimização de e-commerce e dashboards interativos. Vamos otimizar suas operações.">
     <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png"> <!-- Idealmente, uma imagem de 1200x630px -->
-    <meta property="og:url" content="https://URL_DO_SEU_SITE_AQUI">
+    <meta property="og:url" content="https://skreew.github.io/gcruz/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
@@ -39,7 +39,7 @@
       "name": "Gabriel Alves – Automação e Soluções Digitais",
       "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
       "description": "Automação de processos manuais, otimização de e-commerce e desenvolvimento de dashboards interativos.",
-      "url": "URL_DO_SEU_SITE_AQUI",
+      "url": "https://skreew.github.io/gcruz/",
       "telephone": "+55-11-98106-4061",
       "address": {
         "@type": "PostalAddress",
@@ -79,9 +79,9 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
-        .header-scrolled {
+        .header-container.header-scrolled {
              background: rgba(10, 10, 10, 0.7);
-             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
              backdrop-filter: blur(15px);
              -webkit-backdrop-filter: blur(15px);
         }
@@ -101,6 +101,21 @@
         .hero-cta:hover {
             transform: scale(1.05);
             box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+        }
+        
+        nav a.active { 
+            color: var(--cor-amarelo); 
+            position: relative; 
+        }
+        nav a.active::after { 
+            content: ''; 
+            position: absolute; 
+            bottom: -6px; 
+            left: 0; 
+            width: 100%; 
+            height: 2px; 
+            background: var(--cor-amarelo);
+            transition: width 0.3s;
         }
 
         ::-webkit-scrollbar { width: 8px; }
@@ -193,7 +208,7 @@
         </section>
 
         <!-- Seção Soluções -->
-        <section id="solutions" class="py-20">
+        <section id="solutions" class="py-20 md:py-28">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-bold">Soluções Completas para o Seu Negócio</h2>
@@ -220,7 +235,7 @@
         </section>
 
         <!-- Seção Portfólio -->
-        <section id="portfolio" class="py-20">
+        <section id="portfolio" class="py-20 md:py-28">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                  <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
                 <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
@@ -253,7 +268,7 @@
         </section>
 
         <!-- Seção Sobre -->
-        <section id="about" class="py-20">
+        <section id="about" class="py-20 md:py-28">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="glass-effect rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div class="flex-shrink-0">
@@ -272,7 +287,7 @@
         </section>
 
         <!-- Seção Contato -->
-        <section id="contact" class="py-20">
+        <section id="contact" class="py-20 md:py-28">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
                 <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Preencha o formulário abaixo ou chame diretamente no WhatsApp.</p>
@@ -413,6 +428,18 @@
                         }
                     });
                 });
+                
+                // Highlight active nav link on scroll
+                gsap.utils.toArray("#main-nav a").forEach(link => {
+                    const section = document.querySelector(link.getAttribute("href"));
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: "top center",
+                        end: "bottom center",
+                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(a => a.classList.toggle("active", a === link))
+                    });
+                });
+
 
             } catch (error) {
                 console.error("Erro ao inicializar o site:", error);
