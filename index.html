@@ -1,451 +1,89 @@
 <!DOCTYPE html>
-<html lang="pt-BR" class="scroll-smooth">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Alves - Automação e Soluções Digitais</title>
+    <title>Portfólio | Gabriel Alves da Cruz</title>
+    <meta name="description" content="Portfólio de Gabriel Alves da Cruz, especialista em automação, desenvolvimento web e soluções digitais.">
     
-    <!-- SEO e Metadados Sociais Aprimorados -->
-    <meta name="description" content="Transforme processos manuais em eficiência. Especialista em automação, otimização de e-commerce e dashboards interativos para multiplicar seus resultados.">
-    <meta property="og:title" content="Gabriel Alves – Automação que Multiplica Resultados">
-    <meta property="og:description" content="Especialista em automação de processos, otimização de e-commerce e dashboards interativos. Vamos otimizar suas operações.">
-    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png"> <!-- Idealmente, uma imagem de 1200x630px -->
-    <meta property="og:url" content="https://skreew.github.io/gcruz/">
+    <!-- SEO e Redes Sociais - ATUALIZE ESTES DADOS -->
     <meta property="og:type" content="website">
-    <meta name="twitter:card" content="summary_large_image">
+    <meta property="og:url" content="https://seusite.com/"> <!-- Substitua pela URL final do seu site -->
+    <meta property="og:title" content="Portfólio | Gabriel Alves da Cruz">
+    <meta property="og:description" content="Projetos de automação e artes visuais que geram resultados.">
+    <meta property="og:image" content="https://seusite.com/assets/images/og-image.png"> <!-- Crie e adicione uma imagem de partilha -->
 
-    <!-- Otimização de Fontes e Recursos -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://seusite.com/"> <!-- Substitua pela URL final do seu site -->
+    <meta property="twitter:title" content="Portfólio | Gabriel Alves da Cruz">
+    <meta property="twitter:description" content="Projetos de automação e artes visuais que geram resultados.">
+    <meta property="twitter:image" content="https://seusite.com/assets/images/og-image.png"> <!-- Crie e adicione uma imagem de partilha -->
 
-    <!-- Favicon -->
-    <link rel="icon" href="https://img.icons8.com/fluency/48/lightning-bolt.png" type="image/png">
-
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="assets/css/style.css">
     
-    <!-- Lucide Icons -->
-    <script src="https://unpkg.com/lucide@latest"></script>
-
-    <!-- Schema Markup para ProfessionalService -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ProfessionalService",
-      "name": "Gabriel Alves – Automação e Soluções Digitais",
-      "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
-      "description": "Automação de processos manuais, otimização de e-commerce e desenvolvimento de dashboards interativos.",
-      "url": "https://skreew.github.io/gcruz/",
-      "telephone": "+55-11-98106-4061",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Macapá",
-        "addressRegion": "AP",
-        "addressCountry": "BR"
-      },
-      "areaServed": "Brazil"
-    }
-    </script>
-
-    <style>
-        :root {
-            --cor-amarelo: #FFD700;
-            --cor-preto: #0a0a0a;
-            --cor-branco: #F5F5F5;
-            --cor-cinza-texto: #b0b0b0;
-        }
-        
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: var(--cor-preto);
-            color: var(--cor-branco);
-            overflow-x: hidden;
-            position: relative;
-        }
-        
-        #tsparticles {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
-        }
-        
-        .glass-effect {
-            background: rgba(26, 26, 26, 0.5);
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.08);
-        }
-        
-        #header-container.header-scrolled {
-             background: rgba(10, 10, 10, 0.7);
-             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
-             backdrop-filter: blur(15px);
-             -webkit-backdrop-filter: blur(15px);
-        }
-
-        .card-hover-effect {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .card-hover-effect:hover { 
-            transform: translateY(-8px); 
-            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
-        }
-
-        .cta-button {
-             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-        }
-        
-        .cta-button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
-        }
-        
-        nav a.active { 
-            color: var(--cor-amarelo); 
-            position: relative; 
-        }
-        nav a.active::after { 
-            content: ''; 
-            position: absolute; 
-            bottom: -8px; 
-            left: 0; 
-            width: 100%; 
-            height: 3px; 
-            background-color: var(--cor-amarelo);
-            border-radius: 2px;
-            transition: width 0.3s;
-        }
-
-        ::-webkit-scrollbar { width: 10px; }
-        ::-webkit-scrollbar-track { background: var(--cor-preto); }
-        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; border: 2px solid var(--cor-preto); }
-        
-        .skip-link:focus, .skip-link:active { 
-            position: fixed; top: 1rem; left: 1rem;
-            width: auto; height: auto; 
-            overflow: visible; z-index: 9999; 
-            background: var(--cor-amarelo); color: var(--cor-preto); 
-            padding: 0.75rem 1.25rem; border-radius: 8px; font-weight: 600;
-        }
-        
-        :focus-visible {
-            outline: 3px solid var(--cor-amarelo);
-            outline-offset: 4px;
-            border-radius: 6px;
-        }
-        
-        #back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            z-index: 50;
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-            transform: translateY(20px);
-        }
-        
-        #back-to-top.visible {
-            opacity: 1;
-            visibility: visible;
-            transform: translateY(0);
-        }
-
-        @media (prefers-reduced-motion: reduce) { 
-            * {
-              animation: none !important;
-              transition-duration: 0.01ms !important;
-              scroll-behavior: auto !important;
-            } 
-            #tsparticles { display: none; } 
-        }
-    </style>
+    <!-- O script é carregado com 'defer' para não bloquear a renderização da página -->
+    <script src="assets/js/script.js" defer></script>
 </head>
-<body class="antialiased">
+<body>
 
-    <noscript>
-        <div class="bg-yellow-400 text-black p-4 text-center fixed top-0 w-full z-[9999]">
-            Este site funciona melhor com JavaScript habilitado. Para uma experiência completa, por favor, ative-o.
-        </div>
-    </noscript>
-
-    <a href="#main-content" class="skip-link absolute left-[-9999px] top-auto w-px h-px overflow-hidden z-[-999]">Pular para o conteúdo principal</a>
-    
-    <div id="tsparticles"></div>
-
-    <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="header-container" class="flex justify-between items-center mt-4 rounded-full py-3 px-8 transition-all duration-300">
-                <a href="#" class="text-2xl font-bold text-white" aria-label="Página inicial de Gabriel Alves">Gabriel Alves<span class="text-yellow-400">.</span></a>
-                <nav id="main-nav" class="hidden md:flex space-x-8">
-                    <a href="#solutions" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Soluções</a>
-                    <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Projetos</a>
-                    <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Sobre</a>
-                    <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Contato</a>
-                </nav>
-                <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden z-[101] text-white">
-                    <i data-lucide="menu" class="w-8 h-8"></i>
-                </button>
-            </div>
+    <header class="site-header">
+        <div class="container">
+            <a href="/" class="logo" aria-label="Página Inicial de Gabriel Alves da Cruz">GAC</a>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#portfolio">Portfólio</a></li>
+                    <li><a href="#contact">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
-    <!-- Menu Mobile Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#solutions" class="mobile-link text-white font-semibold">Soluções</a>
-        <a href="#portfolio" class="mobile-link text-white font-semibold">Projetos</a>
-        <a href="#about" class="mobile-link text-white font-semibold">Sobre</a>
-        <a href="#contact" class="mobile-link text-white font-semibold">Contato</a>
-    </div>
-
-    <!-- Main Content -->
-    <main id="main-content">
-        <!-- Seção Hero -->
-        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center text-center relative overflow-hidden">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
-                    Automação que Multiplica 
-                    <span class="text-yellow-400">Seus Resultados</span>
-                </h1>
-                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-[var(--cor-cinza-texto)]">
-                    Transforme processos manuais em eficiência. Economize tempo e recursos para focar no crescimento estratégico do seu negócio.
-                </p>
-                <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
-                     <a href="#contact" aria-label="Solicitar um diagnóstico gratuito" class="cta-button inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg">
-                        Solicitar Diagnóstico Gratuito
-                    </a>
-                     <a href="#portfolio" aria-label="Ver cases de sucesso" class="cta-button inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-8 rounded-full text-lg">
-                        Ver Cases de Sucesso
-                    </a>
-                </div>
+    <main>
+        <section id="hero" class="hero-section" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">Gabriel Alves da Cruz</h1>
+                <p class="subtitle">Especialista em Automação e Soluções Digitais</p>
+                <p>A transformar desafios em eficiência operacional e crescimento de vendas com soluções de baixo custo e alto impacto.</p>
             </div>
         </section>
 
-        <!-- Seção Soluções -->
-        <section id="solutions" class="py-20 md:py-28">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center">
-                    <h2 class="text-3xl md:text-4xl font-bold">Soluções Completas para o Seu Negócio</h2>
-                    <p class="mt-4 text-lg text-[var(--cor-cinza-texto)] mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
+        <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
+            <div class="container">
+                <h2 id="portfolio-title">Portfólio de Projetos</h2>
+                <p>Uma seleção de projetos que ilustram a minha experiência em automação de processos e criação digital.</p>
+
+                <div class="filter-controls" role="toolbar" aria-label="Filtrar projetos">
+                    <button class="filter-btn active" data-filter="all">Todos</button>
+                    <button class="filter-btn" data-filter="Automação">Automação</button>
+                    <button class="filter-btn" data-filter="Artes Visuais">Artes Visuais</button>
                 </div>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
-                        <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-3">Automação e APIs</h3>
-                        <p class="text-[var(--cor-cinza-texto)]">Integro sistemas e automatizo tarefas repetitivas para que sua equipe foque no que realmente importa. Menos trabalho manual, mais estratégia.</p>
-                    </article>
-                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
-                         <div class="mb-4"><i data-lucide="shopping-cart" class="w-12 h-12 text-yellow-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-3">Otimização de E-commerce</h3>
-                        <p class="text-[var(--cor-cinza-texto)]">Analiso e otimizo a jornada do seu cliente, desde a descoberta até a conversão, para maximizar suas vendas e a fidelidade à marca.</p>
-                    </article>
-                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
-                         <div class="mb-4"><i data-lucide="layout-dashboard" class="w-12 h-12 text-yellow-400"></i></div>
-                        <h3 class="text-2xl font-bold mb-3">Dashboards Interativos</h3>
-                        <p class="text-[var(--cor-cinza-texto)]">Transformo planilhas e dados complexos em painéis visuais e intuitivos, permitindo decisões mais rápidas e inteligentes.</p>
-                    </article>
+
+                <div id="portfolio-grid" class="portfolio-grid">
+                    <!-- Cards dos projetos serão inseridos aqui pelo JavaScript -->
                 </div>
+                
+                <!-- Indicadores de estado para acessibilidade e feedback visual -->
+                <div id="loading-indicator" class="status-indicator">A carregar projetos...</div>
+                <div id="no-results" class="status-indicator hidden" aria-live="polite">Nenhum projeto encontrado para este filtro.</div>
             </div>
         </section>
 
-        <!-- Seção Portfólio -->
-        <section id="portfolio" class="py-20 md:py-28">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
-                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
-                    <article class="glass-effect rounded-2xl p-8 flex flex-col card-hover-effect">
-                        <div class="flex-grow">
-                             <span class="font-semibold text-yellow-400 block mb-2">Posto Ipiranga/PR</span>
-                            <h3 class="text-3xl font-bold mb-4">Automação de Notificações</h3>
-                            <p class="text-[var(--cor-cinza-texto)] mb-2"><strong>Desafio:</strong> O processo de notificação manual era lento, caro e propenso a erros.</p>
-                            <p class="text-[var(--cor-cinza-texto)]"><strong>Solução:</strong> Um sistema centralizado que automatiza o envio de comunicações, reduzindo o tempo da tarefa de horas para segundos.</p>
-                        </div>
-                        <div class="mt-6 pt-6 border-t border-gray-700">
-                            <p class="text-5xl font-extrabold text-yellow-400">-90%</p>
-                            <p class="text-lg font-semibold text-gray-300">em Custos Operacionais</p>
-                        </div>
-                    </article>
-                    <article class="glass-effect rounded-2xl p-8 flex flex-col card-hover-effect">
-                        <div class="flex-grow">
-                            <span class="font-semibold text-yellow-400 block mb-2">Plataformas Web</span>
-                            <h3 class="text-3xl font-bold mb-4">Presença Digital Otimizada</h3>
-                            <p class="text-[var(--cor-cinza-texto)] mb-2"><strong>Desafio:</strong> Clientes com baixa visibilidade online e tráfego orgânico estagnado.</p>
-                            <p class="text-[var(--cor-cinza-texto)]"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
-                        </div>
-                        <div class="mt-6 pt-6 border-t border-gray-700">
-                            <p class="text-5xl font-extrabold text-yellow-400">+20%</p>
-                            <p class="text-lg font-semibold text-gray-300">em Tráfego Orgânico (Média)</p>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Sobre -->
-        <section id="about" class="py-20 md:py-28">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="glass-effect rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
-                    <div class="flex-shrink-0">
-                        <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Foto de Gabriel Alves" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-yellow-400 shadow-lg" loading="lazy">
-                    </div>
-                    <div class="text-center md:text-left">
-                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Um Estrategista por Trás do Código</h2>
-                        <p class="mt-6 text-lg text-[var(--cor-cinza-texto)]">Com mais de 5 anos de experiência, minha paixão é resolver problemas complexos com tecnologia. Acredito que a automação certa não apenas economiza recursos, mas libera o potencial humano para a inovação. Minha abordagem é colaborativa, transparente e sempre focada nos seus objetivos de negócio.</p>
-                        <blockquote class="mt-6 border-l-4 border-yellow-400 pl-4 italic text-[var(--cor-cinza-texto)]">
-                            "A automação implementada pelo Gabriel foi um divisor de águas para nossa operação. Rápido, eficiente e com um suporte incrível."<br>
-                            <cite class="mt-2 block not-italic font-semibold text-gray-300">– Gestor, Cliente Satisfeito</cite>
-                        </blockquote>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção Contato -->
-        <section id="contact" class="py-20 md:py-28">
-            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
-                <p class="mt-4 text-lg text-[var(--cor-cinza-texto)] max-w-2xl mx-auto">A forma mais rápida de discutirmos seu projeto é através do WhatsApp. Clique no botão abaixo para iniciar uma conversa.</p>
-                <div class="mt-12">
-                     <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="cta-button inline-flex items-center gap-3 bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl">
-                        <i data-lucide="send"></i>
-                        Iniciar Conversa no WhatsApp
-                    </a>
-                </div>
+        <section id="contact" class="contact-section" aria-labelledby="contact-title">
+            <div class="container">
+                 <h2 id="contact-title">Vamos Conversar?</h2>
+                 <p>Estou disponível para novos projetos e desafios. Entre em contacto para discutirmos como posso ajudar a impulsionar os seus resultados.</p>
+                 <a href="mailto:gabrielalveslu@gmail.com" class="cta-button">Enviar E-mail</a>
             </div>
         </section>
     </main>
 
-    <footer class="py-10 text-center text-gray-500 border-t border-gray-800">
-        <div class="container mx-auto px-6">
-            <div class="flex justify-center space-x-6 mb-4">
-                <a href="#hero" class="hover:text-yellow-400 transition-colors">Início</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
-                <a href="#" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
-            </div>
-            <p>&copy; <span id="current-year">2025</span> Gabriel Alves. Todos os direitos reservados.</p>
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; <span id="current-year"></span> Gabriel Alves da Cruz. Todos os direitos reservados.</p>
+            <!-- Adicione aqui links para redes sociais, se desejar -->
         </div>
     </footer>
-    
-    <a href="#" id="back-to-top" aria-label="Voltar ao topo" class="bg-yellow-400 text-black p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-all duration-300">
-        <i data-lucide="arrow-up" class="w-6 h-6"></i>
-    </a>
 
-
-    <!-- Bibliotecas de Animação -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
-    
-    <script>
-        window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
-
-        document.addEventListener('DOMContentLoaded', function() {
-            try {
-                if(typeof tsParticles !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    tsParticles.load("tsparticles", {
-                        fullScreen: { enable: true, zIndex: -1 },
-                        background: { color: { value: "#0a0a0a" } },
-                        fpsLimit: 60,
-                        particles: {
-                            number: { value: 60, density: { enable: true, value_area: 800 } },
-                            color: { value: "#FFD700" },
-                            shape: { type: "circle" },
-                            opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.1, sync: false } },
-                            size: { value: 2, random: true },
-                            links: { enable: true, distance: 150, color: "#FFD700", opacity: 0.15, width: 1 },
-                            move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, out_mode: "out" }
-                        },
-                        interactivity: {
-                            events: { onhover: { enable: true, mode: "grab" }, resize: true },
-                            modes: { grab: { distance: 140, line_linked: { opacity: 0.3 } } }
-                        },
-                        detectRetina: true
-                    });
-                }
-                
-                lucide.createIcons();
-                gsap.registerPlugin(ScrollTrigger);
-
-                const particlesContainer = document.getElementById('tsparticles');
-                if (particlesContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                    window.addEventListener('scroll', () => {
-                        gsap.to(particlesContainer, {
-                            y: window.scrollY * 0.3,
-                            duration: 0.8,
-                            ease: "power2.out"
-                        });
-                    });
-                }
-                
-                const headerContainer = document.getElementById('header-container');
-                const backToTopButton = document.getElementById('back-to-top');
-                
-                ScrollTrigger.create({
-                    start: 'top top',
-                    end: 99999,
-                    onUpdate: (self) => {
-                        const isScrolled = self.scroll() > 50;
-                        headerContainer.classList.toggle('header-scrolled', isScrolled);
-                        backToTopButton.classList.toggle('visible', isScrolled);
-                    }
-                });
-                
-                backToTopButton.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                });
-
-
-                const hamburgerBtn = document.getElementById('hamburger-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-               
-                const toggleMenu = (isOpen) => {
-                    const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
-                    mobileMenu.classList.toggle('hidden', !isNowOpen);
-                    mobileMenu.classList.toggle('flex', isNowOpen);
-                    hamburgerBtn.setAttribute('aria-expanded', String(isNowOpen));
-                    document.body.style.overflow = isNowOpen ? 'hidden' : '';
-                    hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
-                    lucide.createIcons();
-                };
-
-                hamburgerBtn.addEventListener('click', () => toggleMenu());
-                document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
-                
-                gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
-               
-                gsap.from("#hero h1, #hero p, #hero .flex", {
-                    opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: 'power3.out', delay: 0.8
-                });
-                
-                gsap.utils.toArray('section:not(#hero)').forEach(section => {
-                     gsap.from(section.children, {
-                        opacity: 0, y: 50, stagger: 0.15,
-                        scrollTrigger: {
-                            trigger: section, start: 'top 85%', toggleActions: 'play none none none', once: true,
-                        }
-                    });
-                });
-                
-                gsap.utils.toArray("#main-nav a").forEach(link => {
-                    const section = document.querySelector(link.getAttribute("href"));
-                    ScrollTrigger.create({
-                        trigger: section, start: "top center", end: "bottom center",
-                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(a => a.classList.toggle("active", a === link))
-                    });
-                });
-
-                document.getElementById('current-year').textContent = new Date().getFullYear();
-
-            } catch (error) {
-                console.error("Erro ao inicializar o site:", error);
-            }
-        });
-    </script>
 </body>
 </html>
