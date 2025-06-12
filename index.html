@@ -21,9 +21,8 @@
     <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Favicon (Exemplo) -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <!-- Favicon -->
+    <link rel="icon" href="https://img.icons8.com/fluency/48/lightning-bolt.png" type="image/png">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -46,7 +45,8 @@
         "addressLocality": "Macapá",
         "addressRegion": "AP",
         "addressCountry": "BR"
-      }
+      },
+      "areaServed": "Brazil"
     }
     </script>
 
@@ -55,6 +55,7 @@
             --cor-amarelo: #FFD700;
             --cor-preto: #0a0a0a;
             --cor-branco: #F5F5F5;
+            --cor-cinza-texto: #b0b0b0;
         }
         
         body {
@@ -91,16 +92,16 @@
         }
         .card-hover-effect:hover { 
             transform: translateY(-8px); 
-            box-shadow: 0 20px 30px rgba(0,0,0,0.3); 
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4); 
         }
 
-        .hero-cta {
-             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .cta-button {
+             transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
         }
         
-        .hero-cta:hover {
+        .cta-button:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
         }
         
         nav a.active { 
@@ -110,35 +111,53 @@
         nav a.active::after { 
             content: ''; 
             position: absolute; 
-            bottom: -6px; 
+            bottom: -8px; 
             left: 0; 
             width: 100%; 
-            height: 2px; 
-            background: var(--cor-amarelo);
+            height: 3px; 
+            background-color: var(--cor-amarelo);
+            border-radius: 2px;
             transition: width 0.3s;
         }
 
-        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar { width: 10px; }
         ::-webkit-scrollbar-track { background: var(--cor-preto); }
-        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
+        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; border: 2px solid var(--cor-preto); }
         
         .skip-link:focus, .skip-link:active { 
-            position: static; width: auto; height: auto; 
+            position: fixed; top: 1rem; left: 1rem;
+            width: auto; height: auto; 
             overflow: visible; z-index: 9999; 
             background: var(--cor-amarelo); color: var(--cor-preto); 
-            padding: 10px; border-radius: 8px; margin: 10px; 
+            padding: 0.75rem 1.25rem; border-radius: 8px; font-weight: 600;
         }
         
         :focus-visible {
-            outline: 2px solid var(--cor-amarelo);
-            outline-offset: 3px;
-            border-radius: 4px;
+            outline: 3px solid var(--cor-amarelo);
+            outline-offset: 4px;
+            border-radius: 6px;
+        }
+        
+        #back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            z-index: 50;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+            transform: translateY(20px);
+        }
+        
+        #back-to-top.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
         }
 
         @media (prefers-reduced-motion: reduce) { 
             * {
-              animation-duration: 0.01ms !important;
-              animation-iteration-count: 1 !important;
+              animation: none !important;
               transition-duration: 0.01ms !important;
               scroll-behavior: auto !important;
             } 
@@ -150,7 +169,7 @@
 
     <noscript>
         <div class="bg-yellow-400 text-black p-4 text-center fixed top-0 w-full z-[9999]">
-            Este site funciona melhor com JavaScript habilitado.
+            Este site funciona melhor com JavaScript habilitado. Para uma experiência completa, por favor, ative-o.
         </div>
     </noscript>
 
@@ -162,14 +181,14 @@
     <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div id="header-container" class="flex justify-between items-center mt-4 rounded-full py-3 px-8 transition-all duration-300">
-                <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
+                <a href="#" class="text-2xl font-bold text-white" aria-label="Página inicial de Gabriel Alves">Gabriel Alves<span class="text-yellow-400">.</span></a>
                 <nav id="main-nav" class="hidden md:flex space-x-8">
-                    <a href="#solutions" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
-                    <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
-                    <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">Sobre</a>
-                    <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
+                    <a href="#solutions" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Soluções</a>
+                    <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Projetos</a>
+                    <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Sobre</a>
+                    <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300 font-medium">Contato</a>
                 </nav>
-                <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
+                <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu" class="md:hidden z-[101] text-white">
                     <i data-lucide="menu" class="w-8 h-8"></i>
                 </button>
             </div>
@@ -178,10 +197,10 @@
 
     <!-- Menu Mobile Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#solutions" class="mobile-link text-white">Soluções</a>
-        <a href="#portfolio" class="mobile-link text-white">Projetos</a>
-        <a href="#about" class="mobile-link text-white">Sobre</a>
-        <a href="#contact" class="mobile-link text-white">Contato</a>
+        <a href="#solutions" class="mobile-link text-white font-semibold">Soluções</a>
+        <a href="#portfolio" class="mobile-link text-white font-semibold">Projetos</a>
+        <a href="#about" class="mobile-link text-white font-semibold">Sobre</a>
+        <a href="#contact" class="mobile-link text-white font-semibold">Contato</a>
     </div>
 
     <!-- Main Content -->
@@ -193,14 +212,14 @@
                     Automação que Multiplica 
                     <span class="text-yellow-400">Seus Resultados</span>
                 </h1>
-                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-[var(--cor-cinza-texto)]">
                     Transforme processos manuais em eficiência. Economize tempo e recursos para focar no crescimento estratégico do seu negócio.
                 </p>
                 <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
-                     <a href="#contact" aria-label="Solicitar um diagnóstico gratuito" class="hero-cta inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg">
+                     <a href="#contact" aria-label="Solicitar um diagnóstico gratuito" class="cta-button inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg">
                         Solicitar Diagnóstico Gratuito
                     </a>
-                     <a href="#portfolio" aria-label="Ver cases de sucesso" class="hero-cta inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-8 rounded-full text-lg">
+                     <a href="#portfolio" aria-label="Ver cases de sucesso" class="cta-button inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-8 rounded-full text-lg">
                         Ver Cases de Sucesso
                     </a>
                 </div>
@@ -212,23 +231,23 @@
             <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center">
                     <h2 class="text-3xl md:text-4xl font-bold">Soluções Completas para o Seu Negócio</h2>
-                    <p class="mt-4 text-lg text-gray-400 mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
+                    <p class="mt-4 text-lg text-[var(--cor-cinza-texto)] mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
                 </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                         <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Automação e APIs</h3>
-                        <p class="text-gray-400">Integro sistemas e automatizo tarefas repetitivas para que sua equipe foque no que realmente importa. Menos trabalho manual, mais estratégia.</p>
+                        <p class="text-[var(--cor-cinza-texto)]">Integro sistemas e automatizo tarefas repetitivas para que sua equipe foque no que realmente importa. Menos trabalho manual, mais estratégia.</p>
                     </article>
                     <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                          <div class="mb-4"><i data-lucide="shopping-cart" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Otimização de E-commerce</h3>
-                        <p class="text-gray-400">Analiso e otimizo a jornada do seu cliente, desde a descoberta até a conversão, para maximizar suas vendas e a fidelidade à marca.</p>
+                        <p class="text-[var(--cor-cinza-texto)]">Analiso e otimizo a jornada do seu cliente, desde a descoberta até a conversão, para maximizar suas vendas e a fidelidade à marca.</p>
                     </article>
                     <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                          <div class="mb-4"><i data-lucide="layout-dashboard" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Dashboards Interativos</h3>
-                        <p class="text-gray-400">Transformo planilhas e dados complexos em painéis visuais e intuitivos, permitindo decisões mais rápidas e inteligentes.</p>
+                        <p class="text-[var(--cor-cinza-texto)]">Transformo planilhas e dados complexos em painéis visuais e intuitivos, permitindo decisões mais rápidas e inteligentes.</p>
                     </article>
                 </div>
             </div>
@@ -243,8 +262,8 @@
                         <div class="flex-grow">
                              <span class="font-semibold text-yellow-400 block mb-2">Posto Ipiranga/PR</span>
                             <h3 class="text-3xl font-bold mb-4">Automação de Notificações</h3>
-                            <p class="text-gray-400 mb-2"><strong>Desafio:</strong> O processo de notificação manual era lento, caro e propenso a erros.</p>
-                            <p class="text-gray-400"><strong>Solução:</strong> Um sistema centralizado que automatiza o envio de comunicações, reduzindo o tempo da tarefa de horas para segundos.</p>
+                            <p class="text-[var(--cor-cinza-texto)] mb-2"><strong>Desafio:</strong> O processo de notificação manual era lento, caro e propenso a erros.</p>
+                            <p class="text-[var(--cor-cinza-texto)]"><strong>Solução:</strong> Um sistema centralizado que automatiza o envio de comunicações, reduzindo o tempo da tarefa de horas para segundos.</p>
                         </div>
                         <div class="mt-6 pt-6 border-t border-gray-700">
                             <p class="text-5xl font-extrabold text-yellow-400">-90%</p>
@@ -255,8 +274,8 @@
                         <div class="flex-grow">
                             <span class="font-semibold text-yellow-400 block mb-2">Plataformas Web</span>
                             <h3 class="text-3xl font-bold mb-4">Presença Digital Otimizada</h3>
-                            <p class="text-gray-400 mb-2"><strong>Desafio:</strong> Clientes com baixa visibilidade online e tráfego orgânico estagnado.</p>
-                            <p class="text-gray-400"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
+                            <p class="text-[var(--cor-cinza-texto)] mb-2"><strong>Desafio:</strong> Clientes com baixa visibilidade online e tráfego orgânico estagnado.</p>
+                            <p class="text-[var(--cor-cinza-texto)]"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
                         </div>
                         <div class="mt-6 pt-6 border-t border-gray-700">
                             <p class="text-5xl font-extrabold text-yellow-400">+20%</p>
@@ -276,8 +295,8 @@
                     </div>
                     <div class="text-center md:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Um Estrategista por Trás do Código</h2>
-                        <p class="mt-6 text-lg text-gray-300">Com mais de 5 anos de experiência, minha paixão é resolver problemas complexos com tecnologia. Acredito que a automação certa não apenas economiza recursos, mas libera o potencial humano para a inovação. Minha abordagem é colaborativa, transparente e sempre focada nos seus objetivos de negócio.</p>
-                        <blockquote class="mt-6 border-l-4 border-yellow-400 pl-4 italic text-gray-400">
+                        <p class="mt-6 text-lg text-[var(--cor-cinza-texto)]">Com mais de 5 anos de experiência, minha paixão é resolver problemas complexos com tecnologia. Acredito que a automação certa não apenas economiza recursos, mas libera o potencial humano para a inovação. Minha abordagem é colaborativa, transparente e sempre focada nos seus objetivos de negócio.</p>
+                        <blockquote class="mt-6 border-l-4 border-yellow-400 pl-4 italic text-[var(--cor-cinza-texto)]">
                             "A automação implementada pelo Gabriel foi um divisor de águas para nossa operação. Rápido, eficiente e com um suporte incrível."<br>
                             <cite class="mt-2 block not-italic font-semibold text-gray-300">– Gestor, Cliente Satisfeito</cite>
                         </blockquote>
@@ -290,38 +309,13 @@
         <section id="contact" class="py-20 md:py-28">
             <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
-                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Preencha o formulário abaixo ou chame diretamente no WhatsApp.</p>
-                <div class="max-w-xl mx-auto mt-12 text-left glass-effect p-8 rounded-2xl">
-                     <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
-                        <!-- Honeypot para spam -->
-                        <input type="text" name="_gotcha" style="display:none">
-                        
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label for="nome" class="block text-sm font-medium text-gray-300">Seu nome</label>
-                                <input type="text" id="nome" name="nome" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" aria-describedby="nome-error">
-                                <p id="nome-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, informe seu nome.</p>
-                            </div>
-                            <div>
-                                <label for="email" class="block text-sm font-medium text-gray-300">Seu e-mail</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" aria-describedby="email-error">
-                                <p id="email-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, insira um e-mail válido.</p>
-                            </div>
-                        </div>
-                        <div class="mt-6">
-                            <label for="mensagem" class="block text-sm font-medium text-gray-300">Descreva seu desafio</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" placeholder="Ex: Preciso automatizar o envio de relatórios semanais." aria-describedby="mensagem-error"></textarea>
-                            <p id="mensagem-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, descreva seu desafio.</p>
-                        </div>
-                        <div class="mt-6 text-center">
-                             <button type="submit" class="hero-cta w-full sm:w-auto bg-yellow-400 text-black font-bold py-3 px-10 rounded-full text-lg">
-                                Enviar Mensagem
-                            </button>
-                        </div>
-                        <p id="form-status" class="mt-4 text-center" aria-live="assertive"></p>
-                    </form>
+                <p class="mt-4 text-lg text-[var(--cor-cinza-texto)] max-w-2xl mx-auto">A forma mais rápida de discutirmos seu projeto é através do WhatsApp. Clique no botão abaixo para iniciar uma conversa.</p>
+                <div class="mt-12">
+                     <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="cta-button inline-flex items-center gap-3 bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl">
+                        <i data-lucide="send"></i>
+                        Iniciar Conversa no WhatsApp
+                    </a>
                 </div>
-                 <p class="mt-8 text-lg text-gray-400">Prefere uma resposta mais rápida? <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="text-yellow-400 font-semibold hover:underline">Fale comigo no WhatsApp.</a></p>
             </div>
         </section>
     </main>
@@ -333,9 +327,14 @@
                 <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
                 <a href="#" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
             </div>
-            <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
+            <p>&copy; <span id="current-year">2025</span> Gabriel Alves. Todos os direitos reservados.</p>
         </div>
     </footer>
+    
+    <a href="#" id="back-to-top" aria-label="Voltar ao topo" class="bg-yellow-400 text-black p-3 rounded-full shadow-lg hover:bg-yellow-500 transition-all duration-300">
+        <i data-lucide="arrow-up" class="w-6 h-6"></i>
+    </a>
+
 
     <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -384,17 +383,23 @@
                 }
                 
                 const headerContainer = document.getElementById('header-container');
+                const backToTopButton = document.getElementById('back-to-top');
+                
                 ScrollTrigger.create({
                     start: 'top top',
                     end: 99999,
                     onUpdate: (self) => {
-                        if (self.scroll() > 50) {
-                            headerContainer.classList.add('header-scrolled');
-                        } else {
-                            headerContainer.classList.remove('header-scrolled');
-                        }
+                        const isScrolled = self.scroll() > 50;
+                        headerContainer.classList.toggle('header-scrolled', isScrolled);
+                        backToTopButton.classList.toggle('visible', isScrolled);
                     }
                 });
+                
+                backToTopButton.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+
 
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
@@ -403,7 +408,7 @@
                     const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
                     mobileMenu.classList.toggle('hidden', !isNowOpen);
                     mobileMenu.classList.toggle('flex', isNowOpen);
-                    hamburgerBtn.setAttribute('aria-expanded', isNowOpen);
+                    hamburgerBtn.setAttribute('aria-expanded', String(isNowOpen));
                     document.body.style.overflow = isNowOpen ? 'hidden' : '';
                     hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
                     lucide.createIcons();
@@ -420,7 +425,7 @@
                 
                 gsap.utils.toArray('section:not(#hero)').forEach(section => {
                      gsap.from(section.children, {
-                        opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: 'power3.out',
+                        opacity: 0, y: 50, stagger: 0.15,
                         scrollTrigger: {
                             trigger: section, start: 'top 85%', toggleActions: 'play none none none', once: true,
                         }
@@ -435,65 +440,7 @@
                     });
                 });
 
-                // Form validation and submission
-                const form = document.getElementById('contact-form');
-                const formStatus = document.getElementById('form-status');
-
-                form.addEventListener('submit', async function(event) {
-                    event.preventDefault();
-                    
-                    let isValid = true;
-                    const name = document.getElementById('nome');
-                    const email = document.getElementById('email');
-                    const message = document.getElementById('mensagem');
-
-                    // Simple validation
-                    if (!name.value.trim()) {
-                        document.getElementById('nome-error').classList.remove('hidden');
-                        isValid = false;
-                    } else {
-                         document.getElementById('nome-error').classList.add('hidden');
-                    }
-
-                    if (!/^\S+@\S+\.\S+$/.test(email.value)) {
-                         document.getElementById('email-error').classList.remove('hidden');
-                         isValid = false;
-                    } else {
-                         document.getElementById('email-error').classList.add('hidden');
-                    }
-
-                    if (!message.value.trim()) {
-                         document.getElementById('mensagem-error').classList.remove('hidden');
-                         isValid = false;
-                    } else {
-                        document.getElementById('mensagem-error').classList.add('hidden');
-                    }
-
-                    if (!isValid) return;
-
-                    const formData = new FormData(form);
-                    formStatus.textContent = 'Enviando...';
-                    formStatus.className = 'mt-4 text-center text-yellow-400';
-
-                    try {
-                        const response = await fetch(form.action, {
-                            method: form.method,
-                            body: formData,
-                            headers: { 'Accept': 'application/json' }
-                        });
-
-                        if (response.ok) {
-                            formStatus.textContent = 'Obrigado! Sua mensagem foi enviada.';
-                            formStatus.className = 'mt-4 text-center text-green-400';
-                            form.reset();
-                        } else {
-                            throw new Error('Network response was not ok.');
-                        }
-                    } catch (error) {
-                        formStatus.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
-                        formStatus.className = 'mt-4 text-center text-red-500';
-                    }
-                });
+                document.getElementById('current-year').textContent = new Date().getFullYear();
 
             } catch (error) {
                 console.error("Erro ao inicializar o site:", error);
