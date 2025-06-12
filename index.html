@@ -79,7 +79,7 @@
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
-        .header-container.header-scrolled {
+        #header-container.header-scrolled {
              background: rgba(10, 10, 10, 0.7);
              box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
              backdrop-filter: blur(15px);
@@ -256,7 +256,7 @@
                             <span class="font-semibold text-yellow-400 block mb-2">Plataformas Web</span>
                             <h3 class="text-3xl font-bold mb-4">Presença Digital Otimizada</h3>
                             <p class="text-gray-400 mb-2"><strong>Desafio:</strong> Clientes com baixa visibilidade online e tráfego orgânico estagnado.</p>
-                            <p class="text-gray-400"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
+                            <p class="text-gray-400"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener noreferrer" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
                         </div>
                         <div class="mt-6 pt-6 border-t border-gray-700">
                             <p class="text-5xl font-extrabold text-yellow-400">+20%</p>
@@ -292,29 +292,36 @@
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
                 <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Preencha o formulário abaixo ou chame diretamente no WhatsApp.</p>
                 <div class="max-w-xl mx-auto mt-12 text-left glass-effect p-8 rounded-2xl">
-                     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                     <form id="contact-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" novalidate>
+                        <!-- Honeypot para spam -->
+                        <input type="text" name="_gotcha" style="display:none">
+                        
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                             <div>
                                 <label for="nome" class="block text-sm font-medium text-gray-300">Seu nome</label>
-                                <input type="text" id="nome" name="nome" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400">
+                                <input type="text" id="nome" name="nome" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" aria-describedby="nome-error">
+                                <p id="nome-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, informe seu nome.</p>
                             </div>
                             <div>
                                 <label for="email" class="block text-sm font-medium text-gray-300">Seu e-mail</label>
-                                <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400">
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" aria-describedby="email-error">
+                                <p id="email-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, insira um e-mail válido.</p>
                             </div>
                         </div>
                         <div class="mt-6">
                             <label for="mensagem" class="block text-sm font-medium text-gray-300">Descreva seu desafio</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" placeholder="Ex: Preciso automatizar o envio de relatórios semanais."></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" placeholder="Ex: Preciso automatizar o envio de relatórios semanais." aria-describedby="mensagem-error"></textarea>
+                            <p id="mensagem-error" class="mt-1 text-red-500 text-sm hidden" aria-live="polite">Por favor, descreva seu desafio.</p>
                         </div>
                         <div class="mt-6 text-center">
                              <button type="submit" class="hero-cta w-full sm:w-auto bg-yellow-400 text-black font-bold py-3 px-10 rounded-full text-lg">
                                 Enviar Mensagem
                             </button>
                         </div>
+                        <p id="form-status" class="mt-4 text-center" aria-live="assertive"></p>
                     </form>
                 </div>
-                 <p class="mt-8 text-lg text-gray-400">Prefere uma resposta mais rápida? <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="text-yellow-400 font-semibold hover:underline">Fale comigo no WhatsApp.</a></p>
+                 <p class="mt-8 text-lg text-gray-400">Prefere uma resposta mais rápida? <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener noreferrer" class="text-yellow-400 font-semibold hover:underline">Fale comigo no WhatsApp.</a></p>
             </div>
         </section>
     </main>
@@ -333,7 +340,7 @@
     <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js" defer></script>
     
     <script>
         window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
@@ -365,7 +372,6 @@
                 lucide.createIcons();
                 gsap.registerPlugin(ScrollTrigger);
 
-                // Efeito Parallax no Fundo de Partículas
                 const particlesContainer = document.getElementById('tsparticles');
                 if (particlesContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                     window.addEventListener('scroll', () => {
@@ -377,16 +383,18 @@
                     });
                 }
                 
-                // Header com fundo no scroll
                 const headerContainer = document.getElementById('header-container');
-                window.addEventListener('scroll', () => {
-                    if (window.scrollY > 50) {
-                        headerContainer.classList.add('header-scrolled');
-                    } else {
-                        headerContainer.classList.remove('header-scrolled');
+                ScrollTrigger.create({
+                    start: 'top top',
+                    end: 99999,
+                    onUpdate: (self) => {
+                        if (self.scroll() > 50) {
+                            headerContainer.classList.add('header-scrolled');
+                        } else {
+                            headerContainer.classList.remove('header-scrolled');
+                        }
                     }
                 });
-
 
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
@@ -396,6 +404,7 @@
                     mobileMenu.classList.toggle('hidden', !isNowOpen);
                     mobileMenu.classList.toggle('flex', isNowOpen);
                     hamburgerBtn.setAttribute('aria-expanded', isNowOpen);
+                    document.body.style.overflow = isNowOpen ? 'hidden' : '';
                     hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
                     lucide.createIcons();
                 };
@@ -406,40 +415,85 @@
                 gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
                
                 gsap.from("#hero h1, #hero p, #hero .flex", {
-                    opacity: 0,
-                    y: 50,
-                    stagger: 0.2,
-                    duration: 1,
-                    ease: 'power3.out',
-                    delay: 0.8
+                    opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: 'power3.out', delay: 0.8
                 });
                 
                 gsap.utils.toArray('section:not(#hero)').forEach(section => {
-                     gsap.from(section, {
-                        opacity: 0,
-                        y: 50,
-                        duration: 1,
-                        ease: 'power3.out',
+                     gsap.from(section.children, {
+                        opacity: 0, y: 50, stagger: 0.2, duration: 1, ease: 'power3.out',
                         scrollTrigger: {
-                            trigger: section,
-                            start: 'top 85%',
-                            toggleActions: 'play none none none',
-                            once: true,
+                            trigger: section, start: 'top 85%', toggleActions: 'play none none none', once: true,
                         }
                     });
                 });
                 
-                // Highlight active nav link on scroll
                 gsap.utils.toArray("#main-nav a").forEach(link => {
                     const section = document.querySelector(link.getAttribute("href"));
                     ScrollTrigger.create({
-                        trigger: section,
-                        start: "top center",
-                        end: "bottom center",
+                        trigger: section, start: "top center", end: "bottom center",
                         onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(a => a.classList.toggle("active", a === link))
                     });
                 });
 
+                // Form validation and submission
+                const form = document.getElementById('contact-form');
+                const formStatus = document.getElementById('form-status');
+
+                form.addEventListener('submit', async function(event) {
+                    event.preventDefault();
+                    
+                    let isValid = true;
+                    const name = document.getElementById('nome');
+                    const email = document.getElementById('email');
+                    const message = document.getElementById('mensagem');
+
+                    // Simple validation
+                    if (!name.value.trim()) {
+                        document.getElementById('nome-error').classList.remove('hidden');
+                        isValid = false;
+                    } else {
+                         document.getElementById('nome-error').classList.add('hidden');
+                    }
+
+                    if (!/^\S+@\S+\.\S+$/.test(email.value)) {
+                         document.getElementById('email-error').classList.remove('hidden');
+                         isValid = false;
+                    } else {
+                         document.getElementById('email-error').classList.add('hidden');
+                    }
+
+                    if (!message.value.trim()) {
+                         document.getElementById('mensagem-error').classList.remove('hidden');
+                         isValid = false;
+                    } else {
+                        document.getElementById('mensagem-error').classList.add('hidden');
+                    }
+
+                    if (!isValid) return;
+
+                    const formData = new FormData(form);
+                    formStatus.textContent = 'Enviando...';
+                    formStatus.className = 'mt-4 text-center text-yellow-400';
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: { 'Accept': 'application/json' }
+                        });
+
+                        if (response.ok) {
+                            formStatus.textContent = 'Obrigado! Sua mensagem foi enviada.';
+                            formStatus.className = 'mt-4 text-center text-green-400';
+                            form.reset();
+                        } else {
+                            throw new Error('Network response was not ok.');
+                        }
+                    } catch (error) {
+                        formStatus.textContent = 'Ocorreu um erro. Por favor, tente novamente.';
+                        formStatus.className = 'mt-4 text-center text-red-500';
+                    }
+                });
 
             } catch (error) {
                 console.error("Erro ao inicializar o site:", error);
