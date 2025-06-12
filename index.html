@@ -5,22 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Alves - Automação e Soluções Digitais</title>
     
-    <!-- SEO e Metadados Sociais -->
-    <meta name="description" content="Especialista em automação de processos e soluções digitais que otimizam operações, reduzem custos e maximizam resultados.">
-    <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
-    <meta property="og:description" content="Transformo processos manuais em sistemas inteligentes que economizam tempo e recursos.">
-    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png">
-    <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
+    <!-- SEO e Metadados Sociais Aprimorados -->
+    <meta name="description" content="Transforme processos manuais em eficiência. Especialista em automação, otimização de e-commerce e dashboards interativos para multiplicar seus resultados.">
+    <meta property="og:title" content="Gabriel Alves – Automação que Multiplica Resultados">
+    <meta property="og:description" content="Especialista em automação de processos, otimização de e-commerce e dashboards interativos. Vamos otimizar suas operações.">
+    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png"> <!-- Idealmente, uma imagem de 1200x630px -->
+    <meta property="og:url" content="https://URL_DO_SEU_SITE_AQUI">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
     <!-- Otimização de Fontes e Recursos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
-    <link rel="preconnect" href="https://wa.me">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Favicon (Exemplo) -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -28,23 +31,29 @@
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Schema Markup -->
+    <!-- Schema Markup para ProfessionalService -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "Person",
-      "name": "Gabriel Alves",
-      "jobTitle": "Especialista em Automação e Soluções Digitais",
-      "url": "URL_DO_SEU_SITE_AQUI",
+      "@type": "ProfessionalService",
+      "name": "Gabriel Alves – Automação e Soluções Digitais",
       "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
-      "sameAs": []
+      "description": "Automação de processos manuais, otimização de e-commerce e desenvolvimento de dashboards interativos.",
+      "url": "URL_DO_SEU_SITE_AQUI",
+      "telephone": "+55-11-98106-4061",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Macapá",
+        "addressRegion": "AP",
+        "addressCountry": "BR"
+      }
     }
     </script>
 
     <style>
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: #000000;
+            background-color: #0a0a0a;
             color: #F5F5F5;
             overflow-x: hidden;
             position: relative;
@@ -52,12 +61,11 @@
 
         :root {
             --cor-amarelo: #FFD700;
-            --cor-preto: #000000;
+            --cor-preto: #0a0a0a;
             --cor-branco: #F5F5F5;
-            --cor-cinza-claro: #1a1a1a;
         }
         
-        #background-container {
+        #tsparticles {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -65,29 +73,49 @@
         }
         
         .glass-effect {
-            background: rgba(10, 10, 10, 0.6);
+            background: rgba(26, 26, 26, 0.6);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        
+        .card-hover-effect {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card-hover-effect:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 20px 30px rgba(0,0,0,0.3); 
         }
 
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.4); }
-        .about-image-container:hover img { transform: scale(1.03); }
+        .hero-cta {
+             transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .hero-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.3);
+        }
 
-        @media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: var(--cor-preto); }
         ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
-        .custom-cursor { display: none; }
-        @media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
-        .about-image-container img { transition: transform 0.5s ease; }
-        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
-        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
-        .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
-        nav a.active { color: var(--cor-amarelo); position: relative; }
-        nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-container { display: none; } }
+        
+        .skip-link:focus, .skip-link:active { 
+            position: static; width: auto; height: auto; 
+            overflow: visible; z-index: 9999; 
+            background: var(--cor-amarelo); color: var(--cor-preto); 
+            padding: 10px; border-radius: 8px; margin: 10px; 
+        }
+
+        @media (prefers-reduced-motion: reduce) { 
+            * {
+              animation-duration: 0.01ms !important;
+              animation-iteration-count: 1 !important;
+              transition-duration: 0.01ms !important;
+              scroll-behavior: auto !important;
+            } 
+            #tsparticles { display: none; } 
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -98,29 +126,31 @@
         </div>
     </noscript>
 
-    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-    <canvas id="background-container" class="js-dependent"></canvas>
-    <div class="custom-cursor js-dependent"></div>
+    <a href="#main-content" class="skip-link absolute left-[-9999px] top-auto w-px h-px overflow-hidden z-[-999]">Pular para o conteúdo principal</a>
+    
+    <div id="tsparticles"></div>
 
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 w-full p-6 z-50">
-        <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-8">
-            <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
-            <nav id="main-nav" class="hidden md:flex space-x-8">
-                <a href="#services" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
-                <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
-                <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">Sobre</a>
-                <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
-            </nav>
-            <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-shadow duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center glass-effect rounded-full py-3 px-8">
+                <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
+                <nav id="main-nav" class="hidden md:flex space-x-8">
+                    <a href="#solutions" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
+                    <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
+                    <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">Sobre</a>
+                    <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
+                </nav>
+                <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <!-- Menu Mobile Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#services" class="mobile-link text-white">Soluções</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
+        <a href="#solutions" class="mobile-link text-white">Soluções</a>
         <a href="#portfolio" class="mobile-link text-white">Projetos</a>
         <a href="#about" class="mobile-link text-white">Sobre</a>
         <a href="#contact" class="mobile-link text-white">Contato</a>
@@ -131,115 +161,96 @@
         <!-- Seção Hero -->
         <section id="hero" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
             <div class="container mx-auto px-6 z-10">
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight hero-line">
-                    Operações mais inteligentes.
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+                    Automação que Multiplica 
+                    <span class="text-yellow-400">Resultados</span>
                 </h1>
-                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-yellow-400 leading-tight hero-line mt-2">
-                    Resultados multiplicados.
-                </h1>
-                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300 hero-subtitle">
-                    Automações que transformam processos manuais em eficiência. Economize tempo e recursos para focar no crescimento.
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
+                    Transforme processos manuais em eficiência. Economize tempo e recursos para focar no crescimento estratégico do seu negócio.
                 </p>
-                <a href="#contact" aria-label="Otimizar meu negócio" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg hero-cta">
-                    OTIMIZAR MEU NEGÓCIO
-                </a>
+                <div class="mt-12 flex flex-col sm:flex-row justify-center items-center gap-4">
+                     <a href="#contact" aria-label="Solicitar um diagnóstico gratuito" class="hero-cta inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg">
+                        Solicitar Diagnóstico Gratuito
+                    </a>
+                     <a href="#portfolio" aria-label="Ver cases de sucesso" class="hero-cta inline-block bg-transparent border-2 border-yellow-400 text-yellow-400 font-bold py-3 px-8 rounded-full text-lg">
+                        Ver Cases de Sucesso
+                    </a>
+                </div>
             </div>
         </section>
 
-        <!-- Seção Serviços -->
-        <section id="services" class="py-20">
+        <!-- Seção Soluções -->
+        <section id="solutions" class="py-20">
             <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Foco em <span class="text-yellow-400">Automação de Processos</span></h2>
-                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                    <article class="service-card glass-effect rounded-3xl p-8 lg:col-span-2 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Como Posso Ajudar?</h2>
+                <p class="text-lg text-gray-400 text-center mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                         <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Automação e APIs</h3>
-                        <p class="text-gray-400">Sistemas que eliminam tarefas manuais. Menos repetição, mais estratégia.</p>
+                        <p class="text-gray-400">Integro sistemas e automatizo tarefas repetitivas para que sua equipe foque no que realmente importa. Menos trabalho manual, mais estratégia.</p>
                     </article>
-                    <article class="service-card glass-effect rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
+                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                          <div class="mb-4"><i data-lucide="shopping-cart" class="w-12 h-12 text-yellow-400"></i></div>
                         <h3 class="text-2xl font-bold mb-3">Otimização de E-commerce</h3>
-                        <p class="text-gray-400">Otimização da experiência do cliente para converter visitas em vendas.</p>
+                        <p class="text-gray-400">Analiso e otimizo a jornada do seu cliente, desde a descoberta até a conversão, para maximizar suas vendas e a fidelidade à marca.</p>
+                    </article>
+                    <article class="glass-effect rounded-2xl p-8 card-hover-effect">
+                         <div class="mb-4"><i data-lucide="layout-dashboard" class="w-12 h-12 text-yellow-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">Dashboards Interativos</h3>
+                        <p class="text-gray-400">Transformo planilhas e dados complexos em painéis visuais e intuitivos, permitindo decisões mais rápidas e inteligentes.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Portfólio (Layout Vertical) -->
-        <section id="portfolio" class="bg-transparent py-20">
+        <!-- Seção Portfólio -->
+        <section id="portfolio" class="py-20">
             <div class="container mx-auto px-6">
-                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
-                <div class="space-y-16">
-                    <article class="project-card rounded-3xl glass-effect">
-                        <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
-                            <div class="project-text-content text-center md:text-left md:w-2/3">
-                                <span class="font-semibold text-yellow-400">Posto Ipiranga/PR</span>
-                                <h3 class="text-3xl md:text-4xl font-bold my-2">Automação de Notificações</h3>
-                                <p class="text-gray-300">Criei um sistema automatizado para a comunicação de notificações, transformando horas de trabalho manual em segundos.</p>
-                            </div>
-                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="-90">-90%</p>
-                                <p class="text-lg font-semibold">em Custos Operacionais</p>
-                            </div>
+                 <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
+                <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
+                    <article class="glass-effect rounded-2xl p-8 flex flex-col card-hover-effect">
+                        <div class="flex-grow">
+                             <span class="font-semibold text-yellow-400 block mb-2">Posto Ipiranga/PR</span>
+                            <h3 class="text-3xl font-bold mb-4">Automação de Notificações</h3>
+                            <p class="text-gray-400 mb-2"><strong>Desafio:</strong> O processo de notificação manual era lento, caro e propenso a erros.</p>
+                            <p class="text-gray-400"><strong>Solução:</strong> Um sistema centralizado que automatiza o envio de comunicações, reduzindo o tempo da tarefa de horas para segundos.</p>
+                        </div>
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <p class="text-5xl font-extrabold text-yellow-400">-90%</p>
+                            <p class="text-lg font-semibold text-gray-300">em Custos Operacionais</p>
                         </div>
                     </article>
-                    <article class="project-card rounded-3xl glass-effect">
-                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
-                            <div class="project-text-content text-center md:text-left md:w-2/3">
-                                <span class="font-semibold text-yellow-400">Plataformas Web</span>
-                                <h3 class="text-3xl md:text-4xl font-bold my-2">Presença Digital Otimizada</h3>
-                                <p class="text-gray-300">Desenvolvimento de sites responsivos e focados em SEO para <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a> e outros, aumentando a visibilidade e o tráfego.</p>
-                            </div>
-                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="20">+20%</p>
-                                <p class="text-lg font-semibold">em Tráfego Orgânico</p>
-                            </div>
+                    <article class="glass-effect rounded-2xl p-8 flex flex-col card-hover-effect">
+                        <div class="flex-grow">
+                            <span class="font-semibold text-yellow-400 block mb-2">Plataformas Web</span>
+                            <h3 class="text-3xl font-bold mb-4">Presença Digital Otimizada</h3>
+                            <p class="text-gray-400 mb-2"><strong>Desafio:</strong> Clientes com baixa visibilidade online e tráfego orgânico estagnado.</p>
+                            <p class="text-gray-400"><strong>Solução:</strong> Desenvolvimento de sites responsivos e otimizados para SEO, como o da <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a>, focados em performance e experiência.</p>
                         </div>
-                    </article>
-                    <article class="project-card rounded-3xl glass-effect">
-                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
-                            <div class="project-text-content text-center md:text-left md:w-2/3">
-                                <span class="font-semibold text-yellow-400">Painel de Gestão</span>
-                                <h3 class="text-3xl md:text-4xl font-bold my-2">Fim da Desorganização</h3>
-                                <p class="text-gray-300">Dashboard interativo para centralizar informações e simplificar a organização de eventos e comunicados.</p>
-                            </div>
-                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
-                                <p class="text-5xl md:text-6xl font-extrabold text-yellow-400">Gestão Simplificada</p>
-                            </div>
+                        <div class="mt-6 pt-6 border-t border-gray-700">
+                            <p class="text-5xl font-extrabold text-yellow-400">+20%</p>
+                            <p class="text-lg font-semibold text-gray-300">em Tráfego Orgânico (Média)</p>
                         </div>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Tech Stack -->
-        <section id="tech" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Minhas <span class="text-yellow-400">ferramentas</span> de trabalho</h2>
-                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12">
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Google Apps Script"><i data-lucide="webhook" class="w-8 h-8"></i><span>GAS</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Python"><i data-lucide="code-2" class="w-8 h-8"></i><span>Python</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="JavaScript"><i data-lucide="braces" class="w-8 h-8"></i><span>JavaScript</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe Photoshop"><i data-lucide="image" class="w-8 h-8"></i><span>Photoshop</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe After Effects"><i data-lucide="film" class="w-8 h-8"></i><span>After Effects</span></div>
-                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Pacote Office"><i data-lucide="file-spreadsheet" class="w-8 h-8"></i><span>Pacote Office</span></div>
-                </div>
-            </div>
-        </section>
-        
         <!-- Seção Sobre -->
         <section id="about" class="py-20">
             <div class="container mx-auto px-6">
-                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 glass-effect p-10 rounded-3xl">
-                    <div class="md:w-1/2 about-image-container">
-                        <picture>
-                            <source srcset="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" type="image/png">
-                            <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Gabriel Alves, especialista em soluções digitais" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="lazy" decoding="async">
-                        </picture>
+                <div class="glass-effect rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
+                    <div class="flex-shrink-0">
+                        <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Foto de Gabriel Alves" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-yellow-400 shadow-lg">
                     </div>
-                    <div class="md:w-1/2 text-center md:text-left about-text-container">
-                        <h2 class="text-4xl md:text-5xl font-bold">Quem está <span class="text-yellow-400">por trás do código</span></h2>
-                        <p class="mt-6 text-lg text-gray-300">Com 5+ anos de experiência em automação e desenvolvimento web, já ajudei mais de 30 empresas a otimizar processos e aumentar resultados. Minha abordagem combina soluções técnicas com foco estratégico nos objetivos de negócio.</p>
+                    <div class="text-center md:text-left">
+                        <h2 class="text-3xl md:text-4xl font-bold mb-4">Um Estrategista por Trás do Código</h2>
+                        <p class="mt-6 text-lg text-gray-300">Com mais de 5 anos de experiência, minha paixão é resolver problemas complexos com tecnologia. Acredito que a automação certa não apenas economiza recursos, mas libera o potencial humano para a inovação. Minha abordagem é colaborativa, transparente e sempre focada nos seus objetivos de negócio.</p>
+                        <blockquote class="mt-6 border-l-4 border-yellow-400 pl-4 italic text-gray-400">
+                            "A automação implementada pelo Gabriel foi um divisor de águas para nossa operação. Rápido, eficiente e com um suporte incrível."<br>
+                            <cite class="mt-2 block not-italic font-semibold text-gray-300">– Gestor, Cliente Satisfeito</cite>
+                        </blockquote>
                     </div>
                 </div>
             </div>
@@ -248,114 +259,96 @@
         <!-- Seção Contato -->
         <section id="contact" class="py-20">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-5xl font-bold">Entre em contato <span class="text-yellow-400">já</span></h2>
-                <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Estou aqui para ouvir e, juntos, encontrarmos o melhor caminho para o seu negócio.</p>
-                <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
-                    <span class="flex items-center justify-center gap-2">
-                        <i data-lucide="send"></i>
-                        Falar no WhatsApp
-                    </span>
-                </a>
+                <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
+                <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Preencha o formulário abaixo ou chame diretamente no WhatsApp.</p>
+                <div class="max-w-xl mx-auto mt-12 text-left glass-effect p-8 rounded-2xl">
+                     <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                            <div>
+                                <label for="nome" class="block text-sm font-medium text-gray-300">Seu nome</label>
+                                <input type="text" id="nome" name="nome" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400">
+                            </div>
+                            <div>
+                                <label for="email" class="block text-sm font-medium text-gray-300">Seu e-mail</label>
+                                <input type="email" id="email" name="email" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400">
+                            </div>
+                        </div>
+                        <div class="mt-6">
+                            <label for="mensagem" class="block text-sm font-medium text-gray-300">Descreva seu desafio</label>
+                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400"></textarea>
+                        </div>
+                        <div class="mt-6 text-center">
+                             <button type="submit" class="hero-cta w-full sm:w-auto bg-yellow-400 text-black font-bold py-3 px-10 rounded-full text-lg">
+                                Enviar Mensagem
+                            </button>
+                        </div>
+                    </form>
+                </div>
+                 <p class="mt-8 text-lg text-gray-400">Prefere uma resposta mais rápida? <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="text-yellow-400 font-semibold hover:underline">Fale comigo no WhatsApp.</a></p>
             </div>
         </section>
     </main>
 
-    <footer class="py-10 text-center text-gray-500">
-        <div class="flex justify-center space-x-6 mb-4">
-            <a href="/" class="hover:text-yellow-400">Início</a>
-            <a href="/privacidade" class="hover:text-yellow-400">Política de Privacidade</a>
-            <a href="/termos" class="hover:text-yellow-400">Termos de Uso</a>
+    <footer class="py-10 text-center text-gray-500 border-t border-gray-800">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="#hero" class="hover:text-yellow-400 transition-colors">Início</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Política de Privacidade</a>
+                <a href="#" class="hover:text-yellow-400 transition-colors">Termos de Uso</a>
+            </div>
+            <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
         </div>
-        <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
     </footer>
 
     <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    <script>
-        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-            const threeScript = document.createElement('script');
-            threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
-            threeScript.defer = true;
-            document.head.appendChild(threeScript);
-        }
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.12.0/tsparticles.bundle.min.js"></script>
+    
     <script>
         window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
 
         document.addEventListener('DOMContentLoaded', function() {
             try {
-                lucide.createIcons();
-                gsap.config({ force3D: true });
-                ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
-
-                const init3DBackground = () => {
-                    if (typeof THREE === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                        const bgContainer = document.getElementById('background-container');
-                        if (bgContainer) {
-                           bgContainer.style.background = `
-                                radial-gradient(ellipse at center, rgba(255, 215, 0, 0.08) 0%, rgba(0,0,0,0) 60%),
-                                radial-gradient(ellipse at top left, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%),
-                                radial-gradient(ellipse at bottom right, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%)`;
-                           bgContainer.style.backgroundColor = '#000';
-                        }
-                        return;
-                    }
-                    
-                    const scene = new THREE.Scene();
-                    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
-                    camera.position.z = 1; camera.rotation.x = 1.16; camera.rotation.y = -0.12; camera.rotation.z = 0.27;
-
-                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-container'), alpha: true });
-                    renderer.setSize(window.innerWidth, window.innerHeight);
-
-                    const flash = new THREE.PointLight(0xFFD700, 30, 500, 1.7);
-                    flash.position.set(200, 300, 100);
-                    scene.add(flash);
-
-                    const ambientLight = new THREE.AmbientLight(0x555555);
-                    scene.add(ambientLight);
-
-                    let cloudParticles = [];
-                    let loader = new THREE.TextureLoader();
-                    loader.load("https://i.ibb.co/b3vCf9V/smoke-1.png", (texture) => {
-                        const cloudGeo = new THREE.PlaneBufferGeometry(500,500);
-                        const cloudMaterial = new THREE.MeshLambertMaterial({ map: texture, transparent: true, opacity: 0.55 });
-                        const particleCount = window.innerWidth < 768 ? 15 : 25;
-
-                        for(let p=0; p < particleCount; p++) {
-                            let cloud = new THREE.Mesh(cloudGeo,cloudMaterial.clone());
-                            cloud.position.set( Math.random()*800 -400, 500, Math.random()*50 - 50 );
-                            cloud.rotation.x = 1.16; cloud.rotation.y = -0.12; cloud.rotation.z = Math.random()*2*Math.PI;
-                            cloudParticles.push(cloud);
-                            scene.add(cloud);
-                        }
+                if(typeof tsParticles !== 'undefined' && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    tsParticles.load("tsparticles", {
+                        fullScreen: { enable: true, zIndex: -1 },
+                        background: { color: { value: "#0a0a0a" } },
+                        fpsLimit: 60,
+                        particles: {
+                            number: { value: 60, density: { enable: true, value_area: 800 } },
+                            color: { value: "#FFD700" },
+                            shape: { type: "circle" },
+                            opacity: { value: 0.4, random: true, anim: { enable: true, speed: 0.3, opacity_min: 0.1, sync: false } },
+                            size: { value: 2, random: true },
+                            links: { enable: true, distance: 150, color: "#FFD700", opacity: 0.15, width: 1 },
+                            move: { enable: true, speed: 0.5, direction: "none", random: true, straight: false, out_mode: "out" }
+                        },
+                        interactivity: {
+                            events: { onhover: { enable: true, mode: "grab" }, resize: true },
+                            modes: { grab: { distance: 140, line_linked: { opacity: 0.3 } } }
+                        },
+                        detectRetina: true
                     });
-
-                    function animate() {
-                        requestAnimationFrame(animate);
-                        cloudParticles.forEach(p => { p.rotation.z -= 0.002; });
-                        if(Math.random() > 0.93 || flash.power > 100) {
-                            if(flash.power < 100) flash.position.set( Math.random()*400 - 200, 300 + Math.random()*200, 100 );
-                            flash.power = 50 + Math.random() * 500;
-                        }
-                        flash.power -= 2.5;
-                        renderer.render(scene, camera);
-                    }
-                    animate();
-                };
-
-                const threeScript = document.querySelector('script[src*="three.min.js"]');
-                if (threeScript) {
-                    threeScript.onload = init3DBackground;
-                    threeScript.onerror = init3DBackground;
-                } else {
-                    init3DBackground();
                 }
                 
+                lucide.createIcons();
+                gsap.registerPlugin(ScrollTrigger);
+
+                const particlesContainer = document.getElementById('tsparticles');
+                if (particlesContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                    window.addEventListener('scroll', () => {
+                        gsap.to(particlesContainer, {
+                            y: window.scrollY * 0.3,
+                            duration: 0.8,
+                            ease: "power2.out"
+                        });
+                    });
+                }
+
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
-                
+               
                 const toggleMenu = (isOpen) => {
                     const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
                     mobileMenu.classList.toggle('hidden', !isNowOpen);
@@ -363,71 +356,32 @@
                     hamburgerBtn.setAttribute('aria-expanded', isNowOpen);
                     hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
                     lucide.createIcons();
-                    if (!isNowOpen) hamburgerBtn.focus();
                 };
 
                 hamburgerBtn.addEventListener('click', () => toggleMenu());
                 document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
                 
-                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-                    const cursor = document.querySelector('.custom-cursor');
-                    window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
-                    document.querySelectorAll('a, button, .tech-logo').forEach(el => {
-                        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-                        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-                    });
-                }
-
-                gsap.registerPlugin(ScrollTrigger);
                 gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
+               
+                gsap.from(".hero-line", { y: 100, opacity: 0, stagger: 0.2, delay: 1, ease: 'power3.out', duration: 1 });
                 
-                const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
-                heroTl.from('.hero-line', { y: 100, opacity: 0, stagger: 0.2, delay: 1 })
-                      .from('.hero-subtitle', { y: 20, opacity: 0 }, "-=0.5")
-                      .from('.hero-cta', { scale: 0.9, opacity: 0 }, "-=0.7");
-                
-                gsap.utils.toArray('section h2, .service-card, .project-card, #about div, #contact p, #contact a, #contact button').forEach(elem => {
-                    gsap.from(elem, {
-                        opacity: 0, y: 50, duration: 1, ease: 'power3.out',
-                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true }
-                    });
-                });
-                
-                gsap.utils.toArray('.counter-up').forEach(counter => {
-                    ScrollTrigger.create({
-                        trigger: counter,
-                        start: "top 80%",
-                        once: true,
-                        onEnter: () => {
-                            const target = { val: 0 };
-                            const endValue = parseFloat(counter.dataset.value);
-                            const prefix = endValue > 0 ? '+' : '';
-                            const suffix = '%';
-                            gsap.to(target, {
-                                val: endValue,
-                                duration: 2,
-                                ease: 'power3.out',
-                                onUpdate: () => {
-                                    counter.textContent = prefix + Math.round(target.val) + suffix;
-                                }
-                            });
+                gsap.utils.toArray('section').forEach(section => {
+                     gsap.from(section, {
+                        opacity: 0,
+                        y: 50,
+                        duration: 1,
+                        ease: 'power3.out',
+                        scrollTrigger: {
+                            trigger: section,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none',
+                            once: true,
                         }
-                    });
-                });
-                
-                gsap.utils.toArray("#main-nav a").forEach(link => {
-                    const section = document.querySelector(link.getAttribute("href"));
-                    ScrollTrigger.create({
-                        trigger: section,
-                        start: "top center",
-                        end: "bottom center",
-                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link))
                     });
                 });
 
             } catch (error) {
                 console.error("Erro ao inicializar o site:", error);
-                document.body.classList.add('js-error');
             }
         });
     </script>
