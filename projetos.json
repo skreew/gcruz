@@ -1,0 +1,88 @@
+[
+  {
+    "slug": "automacao-notificacoes-posto-ipiranga",
+    "titulo": "Sistema de Notificação Automatizada",
+    "cliente": "Posto Ipiranga/PR",
+    "categoria": "Automação",
+    "tags": ["Google Apps Script", "API", "Low-Code"],
+    "descricao_curta": "Desenvolvimento de um sistema de notificação que reduziu em 90% os custos operacionais da empresa.",
+    "descricao_detalhada": "O projeto foi concebido para eliminar a necessidade de processos manuais de comunicação com clientes e fornecedores. Utilizando o ecossistema Google, criamos um script que monitoriza planilhas de controlo (Google Sheets) e dispara e-mails e notificações automaticamente via APIs, agendando eventos e follow-ups sem intervenção humana. A solução mostrou-se robusta, escalável e de baixíssimo custo de manutenção.",
+    "tecnologias": ["Google Apps Script", "Gmail API", "Google Sheets API", "Google Calendar API", "JavaScript"],
+    "resultados": [
+      "Redução de 90% nos custos operacionais relacionados a notificações.",
+      "Eliminação de 100% de erros humanos no processo de agendamento.",
+      "Aumento da eficiência da equipa, que pôde focar em tarefas estratégicas."
+    ],
+    "data_conclusao": "2023-11-01",
+    "thumbnail": "assets/images/portfolio/automacao_thumb.png",
+    "imagens": [
+      "assets/images/portfolio/automacao_gallery_1.png",
+      "assets/images/portfolio/automacao_gallery_2.png"
+    ],
+    "video_embed": null,
+    "links_externos": null
+  },
+  {
+    "slug": "consultoria-performance-geek-store-bolivia",
+    "titulo": "Consultoria de Performance Digital",
+    "cliente": "Geek Store/Bolívia",
+    "categoria": "Automação",
+    "tags": ["Marketing Digital", "E-commerce"],
+    "descricao_curta": "Estratégias de marketing digital e automação que resultaram num aumento de 25% nas vendas online.",
+    "descricao_detalhada": "A Geek Store procurava ampliar a sua presença digital e otimizar o funil de vendas. Realizámos uma consultoria completa, implementando campanhas de Meta Ads segmentadas, automação de e-mail marketing com Mailchimp para nutrição de leads e recuperação de carrinhos abandonados. A análise de dados via Google Analytics foi fundamental para ajustar as estratégias em tempo real, focando nos canais de maior conversão.",
+    "tecnologias": ["Meta Ads", "Mailchimp", "Google Analytics (GA4)", "Automação de Marketing"],
+    "resultados": [
+      "Aumento de 25% nas vendas online em períodos promocionais.",
+      "Crescimento de 40% no engajamento das redes sociais.",
+      "Expansão de 50% no alcance da marca."
+    ],
+    "data_conclusao": "2022-12-01",
+    "thumbnail": "assets/images/portfolio/marketing_thumb.png",
+    "imagens": [
+      "assets/images/portfolio/marketing_gallery_1.png"
+    ],
+    "video_embed": null,
+    "links_externos": null
+  },
+  {
+    "slug": "revitalizacao-ecommerce-brazil-tribal",
+    "titulo": "Revitalização de E-commerce",
+    "cliente": "Brazil Tribal",
+    "categoria": "Automação",
+    "tags": ["E-commerce", "SEO", "UX/UI"],
+    "descricao_curta": "Redesign UX/UI e otimização SEO que elevaram as vendas mensais em 18%, de R$15 mil para R$17.7 mil.",
+    "descricao_detalhada": "O desafio era modernizar a plataforma de e-commerce da Brazil Tribal, melhorando a experiência do utilizador e a visibilidade nos motores de busca. O projeto incluiu uma completa reformulação do layout no WordPress/WooCommerce, com foco em design responsivo e jornada de compra intuitiva. A otimização de SEO on-page e a integração com Google Analytics permitiram monitorizar o comportamento do utilizador e validar as melhorias.",
+    "tecnologias": ["WordPress", "WooCommerce", "SEO", "Google Analytics", "UX/UI Design"],
+    "resultados": [
+      "Aumento de 18% nas vendas mensais.",
+      "Crescimento de 20% no tráfego orgânico em três meses."
+    ],
+    "data_conclusao": "2023-06-01",
+    "thumbnail": "assets/images/portfolio/ecommerce_thumb.png",
+    "imagens": [],
+    "video_embed": null,
+    "links_externos": null
+  },
+  {
+    "slug": "identidade-visual-prime-invest",
+    "titulo": "Criação de Identidade Visual",
+    "cliente": "Prime Invest",
+    "categoria": "Artes Visuais",
+    "subcategoria": "Design",
+    "tags": ["Branding", "Design Gráfico"],
+    "descricao_curta": "Elaboração da identidade visual completa, incluindo logótipo, paleta de cores e templates para materiais digitais.",
+    "descricao_detalhada": "O projeto consistiu em criar uma identidade visual forte e coesa para a Prime Invest. O processo envolveu a definição de conceitos, a criação do logótipo, a escolha de uma paleta de cores e tipografia que transmitissem os valores da marca. Foram desenvolvidos templates para apresentações, posts em redes sociais e outros materiais de marketing, garantindo consistência em todos os pontos de contacto.",
+    "tecnologias": ["Adobe Photoshop", "Adobe Illustrator"],
+    "resultados": [
+      "Entrega de manual de marca completo.",
+      "Criação de mais de 10 templates para uso contínuo."
+    ],
+    "data_conclusao": "2023-07-01",
+    "thumbnail": "assets/images/portfolio/design_thumb.png",
+    "imagens": [
+        "assets/images/portfolio/design_gallery_1.png"
+    ],
+    "video_embed": null,
+    "links_externos": null
+  }
+]
