@@ -51,18 +51,18 @@
     </script>
 
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #0a0a0a;
-            color: #F5F5F5;
-            overflow-x: hidden;
-            position: relative;
-        }
-
         :root {
             --cor-amarelo: #FFD700;
             --cor-preto: #0a0a0a;
             --cor-branco: #F5F5F5;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-preto);
+            color: var(--cor-branco);
+            overflow-x: hidden;
+            position: relative;
         }
         
         #tsparticles {
@@ -73,12 +73,19 @@
         }
         
         .glass-effect {
-            background: rgba(26, 26, 26, 0.6);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
+            background: rgba(26, 26, 26, 0.5);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.08);
         }
         
+        .header-scrolled {
+             background: rgba(10, 10, 10, 0.7);
+             box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+             backdrop-filter: blur(15px);
+             -webkit-backdrop-filter: blur(15px);
+        }
+
         .card-hover-effect {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -106,6 +113,12 @@
             background: var(--cor-amarelo); color: var(--cor-preto); 
             padding: 10px; border-radius: 8px; margin: 10px; 
         }
+        
+        :focus-visible {
+            outline: 2px solid var(--cor-amarelo);
+            outline-offset: 3px;
+            border-radius: 4px;
+        }
 
         @media (prefers-reduced-motion: reduce) { 
             * {
@@ -131,9 +144,9 @@
     <div id="tsparticles"></div>
 
     <!-- Header -->
-    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-shadow duration-300">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center glass-effect rounded-full py-3 px-8">
+    <header id="main-header" class="fixed top-0 left-0 w-full z-50 transition-all duration-300">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="header-container" class="flex justify-between items-center mt-4 rounded-full py-3 px-8 transition-all duration-300">
                 <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
                 <nav id="main-nav" class="hidden md:flex space-x-8">
                     <a href="#solutions" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
@@ -149,7 +162,7 @@
     </header>
 
     <!-- Menu Mobile Overlay -->
-    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
+    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
         <a href="#solutions" class="mobile-link text-white">Soluções</a>
         <a href="#portfolio" class="mobile-link text-white">Projetos</a>
         <a href="#about" class="mobile-link text-white">Sobre</a>
@@ -159,11 +172,11 @@
     <!-- Main Content -->
     <main id="main-content">
         <!-- Seção Hero -->
-        <section id="hero" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
-            <div class="container mx-auto px-6 z-10">
-                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight">
+        <section id="hero" class="h-screen min-h-[600px] flex items-center justify-center text-center relative overflow-hidden">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 z-10">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight">
                     Automação que Multiplica 
-                    <span class="text-yellow-400">Resultados</span>
+                    <span class="text-yellow-400">Seus Resultados</span>
                 </h1>
                 <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300">
                     Transforme processos manuais em eficiência. Economize tempo e recursos para focar no crescimento estratégico do seu negócio.
@@ -181,9 +194,11 @@
 
         <!-- Seção Soluções -->
         <section id="solutions" class="py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-4">Como Posso Ajudar?</h2>
-                <p class="text-lg text-gray-400 text-center mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl md:text-4xl font-bold">Soluções Completas para o Seu Negócio</h2>
+                    <p class="mt-4 text-lg text-gray-400 mb-16 max-w-3xl mx-auto">Desenvolvo soluções digitais focadas em resolver problemas reais e gerar valor mensurável.</p>
+                </div>
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <article class="glass-effect rounded-2xl p-8 card-hover-effect">
                         <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
@@ -206,7 +221,7 @@
 
         <!-- Seção Portfólio -->
         <section id="portfolio" class="py-20">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                  <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
                 <div class="grid md:grid-cols-1 lg:grid-cols-2 gap-12">
                     <article class="glass-effect rounded-2xl p-8 flex flex-col card-hover-effect">
@@ -239,10 +254,10 @@
 
         <!-- Seção Sobre -->
         <section id="about" class="py-20">
-            <div class="container mx-auto px-6">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="glass-effect rounded-2xl p-8 md:p-12 flex flex-col md:flex-row items-center gap-10 md:gap-16">
                     <div class="flex-shrink-0">
-                        <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Foto de Gabriel Alves" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-yellow-400 shadow-lg">
+                        <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Foto de Gabriel Alves" class="rounded-full w-48 h-48 md:w-64 md:h-64 object-cover border-4 border-yellow-400 shadow-lg" loading="lazy">
                     </div>
                     <div class="text-center md:text-left">
                         <h2 class="text-3xl md:text-4xl font-bold mb-4">Um Estrategista por Trás do Código</h2>
@@ -258,7 +273,7 @@
 
         <!-- Seção Contato -->
         <section id="contact" class="py-20">
-            <div class="container mx-auto px-6 text-center">
+            <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
                 <h2 class="text-3xl md:text-4xl font-bold">Pronto para Otimizar seu Negócio?</h2>
                 <p class="mt-4 text-lg text-gray-400 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Preencha o formulário abaixo ou chame diretamente no WhatsApp.</p>
                 <div class="max-w-xl mx-auto mt-12 text-left glass-effect p-8 rounded-2xl">
@@ -275,7 +290,7 @@
                         </div>
                         <div class="mt-6">
                             <label for="mensagem" class="block text-sm font-medium text-gray-300">Descreva seu desafio</label>
-                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400"></textarea>
+                            <textarea id="mensagem" name="mensagem" rows="4" required class="mt-1 block w-full bg-gray-800 border-gray-600 rounded-md shadow-sm py-2 px-3 text-white focus:outline-none focus:ring-yellow-400 focus:border-yellow-400" placeholder="Ex: Preciso automatizar o envio de relatórios semanais."></textarea>
                         </div>
                         <div class="mt-6 text-center">
                              <button type="submit" class="hero-cta w-full sm:w-auto bg-yellow-400 text-black font-bold py-3 px-10 rounded-full text-lg">
@@ -335,6 +350,7 @@
                 lucide.createIcons();
                 gsap.registerPlugin(ScrollTrigger);
 
+                // Efeito Parallax no Fundo de Partículas
                 const particlesContainer = document.getElementById('tsparticles');
                 if (particlesContainer && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
                     window.addEventListener('scroll', () => {
@@ -345,6 +361,17 @@
                         });
                     });
                 }
+                
+                // Header com fundo no scroll
+                const headerContainer = document.getElementById('header-container');
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 50) {
+                        headerContainer.classList.add('header-scrolled');
+                    } else {
+                        headerContainer.classList.remove('header-scrolled');
+                    }
+                });
+
 
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
@@ -363,9 +390,16 @@
                 
                 gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
                
-                gsap.from(".hero-line", { y: 100, opacity: 0, stagger: 0.2, delay: 1, ease: 'power3.out', duration: 1 });
+                gsap.from("#hero h1, #hero p, #hero .flex", {
+                    opacity: 0,
+                    y: 50,
+                    stagger: 0.2,
+                    duration: 1,
+                    ease: 'power3.out',
+                    delay: 0.8
+                });
                 
-                gsap.utils.toArray('section').forEach(section => {
+                gsap.utils.toArray('section:not(#hero)').forEach(section => {
                      gsap.from(section, {
                         opacity: 0,
                         y: 50,
