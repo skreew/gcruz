@@ -57,7 +57,7 @@
             --cor-cinza-claro: #1a1a1a;
         }
         
-        #background-canvas {
+        #background-container {
             position: fixed;
             top: 0; left: 0;
             width: 100%; height: 100%;
@@ -87,7 +87,7 @@
         .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
         nav a.active { color: var(--cor-amarelo); position: relative; }
         nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-canvas { display: none; } }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-container { display: none; } }
     </style>
 </head>
 <body class="antialiased">
@@ -99,7 +99,7 @@
     </noscript>
 
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-    <canvas id="background-canvas" class="js-dependent"></canvas>
+    <canvas id="background-container" class="js-dependent"></canvas>
     <div class="custom-cursor js-dependent"></div>
 
     <!-- Header -->
@@ -272,7 +272,14 @@
     <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
-    
+    <script>
+        if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+            const threeScript = document.createElement('script');
+            threeScript.src = 'https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js';
+            threeScript.defer = true;
+            document.head.appendChild(threeScript);
+        }
+    </script>
     <script>
         window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
 
@@ -282,113 +289,69 @@
                 gsap.config({ force3D: true });
                 ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
 
-                const initBackground = () => {
-                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                const init3DBackground = () => {
+                    if (typeof THREE === 'undefined' || window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                        const bgContainer = document.getElementById('background-container');
+                        if (bgContainer) {
+                           bgContainer.style.background = `
+                                radial-gradient(ellipse at center, rgba(255, 215, 0, 0.08) 0%, rgba(0,0,0,0) 60%),
+                                radial-gradient(ellipse at top left, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%),
+                                radial-gradient(ellipse at bottom right, rgba(255, 215, 0, 0.05) 0%, rgba(0,0,0,0) 50%)`;
+                           bgContainer.style.backgroundColor = '#000';
+                        }
+                        return;
+                    }
                     
-                    const canvas = document.getElementById('background-canvas');
-                    if (!canvas) return;
+                    const scene = new THREE.Scene();
+                    const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 1, 1000);
+                    camera.position.z = 1; camera.rotation.x = 1.16; camera.rotation.y = -0.12; camera.rotation.z = 0.27;
 
-                    const ctx = canvas.getContext('2d');
-                    let width = canvas.width = window.innerWidth;
-                    let height = canvas.height = window.innerHeight;
-                    let lastTime = 0;
+                    const renderer = new THREE.WebGLRenderer({ canvas: document.getElementById('background-container'), alpha: true });
+                    renderer.setSize(window.innerWidth, window.innerHeight);
 
-                    window.addEventListener('resize', () => {
-                        width = canvas.width = window.innerWidth;
-                        height = canvas.height = window.innerHeight;
+                    const flash = new THREE.PointLight(0xFFD700, 30, 500, 1.7);
+                    flash.position.set(200, 300, 100);
+                    scene.add(flash);
+
+                    const ambientLight = new THREE.AmbientLight(0x555555);
+                    scene.add(ambientLight);
+
+                    let cloudParticles = [];
+                    let loader = new THREE.TextureLoader();
+                    loader.load("https://i.ibb.co/b3vCf9V/smoke-1.png", (texture) => {
+                        const cloudGeo = new THREE.PlaneBufferGeometry(500,500);
+                        const cloudMaterial = new THREE.MeshLambertMaterial({ map: texture, transparent: true, opacity: 0.55 });
+                        const particleCount = window.innerWidth < 768 ? 15 : 25;
+
+                        for(let p=0; p < particleCount; p++) {
+                            let cloud = new THREE.Mesh(cloudGeo,cloudMaterial.clone());
+                            cloud.position.set( Math.random()*800 -400, 500, Math.random()*50 - 50 );
+                            cloud.rotation.x = 1.16; cloud.rotation.y = -0.12; cloud.rotation.z = Math.random()*2*Math.PI;
+                            cloudParticles.push(cloud);
+                            scene.add(cloud);
+                        }
                     });
 
-                    const particles = [];
-                    const particleCount = 80;
-
-                    for(let i = 0; i < particleCount; i++) {
-                        particles.push({
-                            x: Math.random() * width,
-                            y: Math.random() * height,
-                            vx: (Math.random() - 0.5) * 0.5,
-                            vy: (Math.random() - 0.5) * 0.5,
-                            size: 40 + Math.random() * 80,
-                            opacity: 0.1 + Math.random() * 0.2
-                        });
-                    }
-
-                    function drawSmoke(deltaTime) {
-                        ctx.clearRect(0, 0, width, height);
-                        particles.forEach(p => {
-                            ctx.beginPath();
-                            const grad = ctx.createRadialGradient(p.x, p.y, p.size * 0.1, p.x, p.y, p.size);
-                            grad.addColorStop(0, `rgba(50, 50, 50, ${p.opacity})`);
-                            grad.addColorStop(1, `rgba(0, 0, 0, 0)`);
-                            ctx.fillStyle = grad;
-                            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
-                            ctx.fill();
-
-                            p.x += p.vx * (deltaTime * 60);
-                            p.y += p.vy * (deltaTime * 60);
-
-                            if(p.x > width + p.size) p.x = -p.size;
-                            if(p.x < -p.size) p.x = width + p.size;
-                            if(p.y > height + p.size) p.y = -p.size;
-                            if(p.y < -p.size) p.y = height + p.size;
-                        });
-                    }
-                    
-                    let lightningGlow = 0;
-                    let lightningCooldown = 0;
-                    
-                    function drawLightning(deltaTime) {
-                        if (lightningGlow > 0.01) {
-                            ctx.fillStyle = `rgba(255, 215, 120, ${lightningGlow * 0.15})`;
-                            ctx.fillRect(0, 0, width, height);
-                            lightningGlow *= 0.92;
-                        }
-
-                        if (lightningCooldown <= 0 && Math.random() < 0.005) {
-                            ctx.save();
-                            ctx.globalAlpha = Math.random() * 0.6 + 0.4;
-                            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.7})`;
-                            ctx.lineWidth = Math.random() * 4 + 2;
-                            ctx.shadowBlur = 50;
-                            ctx.shadowColor = 'rgba(255, 215, 180, 0.9)';
-                            lightningGlow = 1;
-                            lightningCooldown = 2; // 2 segundos de cooldown
-
-                            ctx.beginPath();
-                            const startX = Math.random() * width;
-                            let currentX = startX;
-                            let currentY = 0;
-                            ctx.moveTo(currentX, currentY);
-
-                            while (currentY < height) {
-                                const newX = currentX + (Math.random() - 0.5) * 60;
-                                const newY = currentY + Math.random() * 30 + 10;
-                                ctx.lineTo(newX, newY);
-                                currentX = newX;
-                                currentY = newY;
-                            }
-
-                            ctx.stroke();
-                            ctx.restore();
-                        }
-                        
-                        if (lightningCooldown > 0) {
-                           lightningCooldown -= deltaTime;
-                        }
-                    }
-
-                    function animate(currentTime) {
-                        const deltaTime = (currentTime - lastTime) / 1000;
-                        lastTime = currentTime;
-                        
-                        const dt = deltaTime || 1/60;
-                        drawSmoke(dt);
-                        drawLightning(dt);
+                    function animate() {
                         requestAnimationFrame(animate);
+                        cloudParticles.forEach(p => { p.rotation.z -= 0.002; });
+                        if(Math.random() > 0.93 || flash.power > 100) {
+                            if(flash.power < 100) flash.position.set( Math.random()*400 - 200, 300 + Math.random()*200, 100 );
+                            flash.power = 50 + Math.random() * 500;
+                        }
+                        flash.power -= 2.5;
+                        renderer.render(scene, camera);
                     }
-                    animate(0);
+                    animate();
                 };
-                
-                initBackground();
+
+                const threeScript = document.querySelector('script[src*="three.min.js"]');
+                if (threeScript) {
+                    threeScript.onload = init3DBackground;
+                    threeScript.onerror = init3DBackground;
+                } else {
+                    init3DBackground();
+                }
                 
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
