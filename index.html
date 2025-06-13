@@ -1,89 +1,472 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-BR" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfólio | Gabriel Alves da Cruz</title>
-    <meta name="description" content="Portfólio de Gabriel Alves da Cruz, especialista em automação, desenvolvimento web e soluções digitais.">
+    <title>Gabriel Alves - Automação e Soluções Digitais</title>
     
-    <!-- SEO e Redes Sociais - ATUALIZE ESTES DADOS -->
+    <!-- SEO e Metadados Sociais -->
+    <meta name="description" content="Especialista em automação de processos e soluções digitais que otimizam operações, reduzem custos e maximizam resultados.">
+    <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
+    <meta property="og:description" content="Transformo processos manuais em sistemas inteligentes que economizam tempo e recursos.">
+    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png">
+    <meta property="og:url" content="URL_DO_SEU_SITE_AQUI">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://seusite.com/"> <!-- Substitua pela URL final do seu site -->
-    <meta property="og:title" content="Portfólio | Gabriel Alves da Cruz">
-    <meta property="og:description" content="Projetos de automação e artes visuais que geram resultados.">
-    <meta property="og:image" content="https://seusite.com/assets/images/og-image.png"> <!-- Crie e adicione uma imagem de partilha -->
+    <meta name="twitter:card" content="summary_large_image">
 
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://seusite.com/"> <!-- Substitua pela URL final do seu site -->
-    <meta property="twitter:title" content="Portfólio | Gabriel Alves da Cruz">
-    <meta property="twitter:description" content="Projetos de automação e artes visuais que geram resultados.">
-    <meta property="twitter:image" content="https://seusite.com/assets/images/og-image.png"> <!-- Crie e adicione uma imagem de partilha -->
+    <!-- Otimização de Fontes e Recursos -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link rel="preconnect" href="https://wa.me">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <link rel="stylesheet" href="assets/css/style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- O script é carregado com 'defer' para não bloquear a renderização da página -->
-    <script src="assets/js/script.js" defer></script>
-</head>
-<body>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-    <header class="site-header">
-        <div class="container">
-            <a href="/" class="logo" aria-label="Página Inicial de Gabriel Alves da Cruz">GAC</a>
-            <nav class="main-nav">
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#portfolio">Portfólio</a></li>
-                    <li><a href="#contact">Contato</a></li>
-                </ul>
+    <!-- Schema Markup -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Gabriel Alves",
+      "jobTitle": "Especialista em Automação e Soluções Digitais",
+      "url": "URL_DO_SEU_SITE_AQUI",
+      "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
+      "sameAs": []
+    }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #F5F5F5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        :root {
+            --cor-amarelo: #FFD700;
+            --cor-preto: #000000;
+            --cor-branco: #F5F5F5;
+            --cor-cinza-claro: #1a1a1a;
+        }
+        
+        #background-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+        
+        .glass-effect {
+            background: rgba(10, 10, 10, 0.6);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.4); }
+        .about-image-container:hover img { transform: scale(1.03); }
+
+        @media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--cor-preto); }
+        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
+        .custom-cursor { display: none; }
+        @media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
+        .about-image-container img { transition: transform 0.5s ease; }
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
+        .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
+        nav a.active { color: var(--cor-amarelo); position: relative; }
+        nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-canvas { display: none; } }
+    </style>
+</head>
+<body class="antialiased">
+
+    <noscript>
+        <div class="bg-yellow-400 text-black p-4 text-center fixed top-0 w-full z-[9999]">
+            Este site funciona melhor com JavaScript habilitado.
+        </div>
+    </noscript>
+
+    <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
+    <canvas id="background-canvas" class="js-dependent"></canvas>
+    <div class="custom-cursor js-dependent"></div>
+
+    <!-- Header -->
+    <header id="main-header" class="fixed top-0 left-0 w-full p-6 z-50">
+        <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-8">
+            <a href="#" class="text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
+            <nav id="main-nav" class="hidden md:flex space-x-8">
+                <a href="#services" class="text-white hover:text-yellow-400 transition-colors duration-300">Soluções</a>
+                <a href="#portfolio" class="text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
+                <a href="#about" class="text-white hover:text-yellow-400 transition-colors duration-300">Sobre</a>
+                <a href="#contact" class="text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
             </nav>
+            <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
+                <i data-lucide="menu" class="w-8 h-8"></i>
+            </button>
         </div>
     </header>
 
-    <main>
-        <section id="hero" class="hero-section" aria-labelledby="hero-title">
-            <div class="container">
-                <h1 id="hero-title">Gabriel Alves da Cruz</h1>
-                <p class="subtitle">Especialista em Automação e Soluções Digitais</p>
-                <p>A transformar desafios em eficiência operacional e crescimento de vendas com soluções de baixo custo e alto impacto.</p>
+    <!-- Menu Mobile Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
+        <a href="#services" class="mobile-link text-white">Soluções</a>
+        <a href="#portfolio" class="mobile-link text-white">Projetos</a>
+        <a href="#about" class="mobile-link text-white">Sobre</a>
+        <a href="#contact" class="mobile-link text-white">Contato</a>
+    </div>
+
+    <!-- Main Content -->
+    <main id="main-content">
+        <!-- Seção Hero -->
+        <section id="hero" class="h-screen flex items-center justify-center text-center relative overflow-hidden">
+            <div class="container mx-auto px-6 z-10">
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-white leading-tight hero-line">
+                    Operações mais inteligentes.
+                </h1>
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold text-yellow-400 leading-tight hero-line mt-2">
+                    Resultados multiplicados.
+                </h1>
+                <p class="mt-8 max-w-3xl mx-auto text-lg md:text-xl text-gray-300 hero-subtitle">
+                    Automações que transformam processos manuais em eficiência. Economize tempo e recursos para focar no crescimento.
+                </p>
+                <a href="#contact" aria-label="Otimizar meu negócio" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-3 px-8 rounded-full text-lg hero-cta">
+                    OTIMIZAR MEU NEGÓCIO
+                </a>
             </div>
         </section>
 
-        <section id="portfolio" class="portfolio-section" aria-labelledby="portfolio-title">
-            <div class="container">
-                <h2 id="portfolio-title">Portfólio de Projetos</h2>
-                <p>Uma seleção de projetos que ilustram a minha experiência em automação de processos e criação digital.</p>
-
-                <div class="filter-controls" role="toolbar" aria-label="Filtrar projetos">
-                    <button class="filter-btn active" data-filter="all">Todos</button>
-                    <button class="filter-btn" data-filter="Automação">Automação</button>
-                    <button class="filter-btn" data-filter="Artes Visuais">Artes Visuais</button>
+        <!-- Seção Serviços -->
+        <section id="services" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Foco em <span class="text-yellow-400">Automação de Processos</span></h2>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <article class="service-card glass-effect rounded-3xl p-8 lg:col-span-2 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
+                        <div class="mb-4"><i data-lucide="zap" class="w-12 h-12 text-yellow-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">Automação e APIs</h3>
+                        <p class="text-gray-400">Sistemas que eliminam tarefas manuais. Menos repetição, mais estratégia.</p>
+                    </article>
+                    <article class="service-card glass-effect rounded-3xl p-8 transition-transform duration-300 hover:-translate-y-2" tabindex="0">
+                         <div class="mb-4"><i data-lucide="shopping-cart" class="w-12 h-12 text-yellow-400"></i></div>
+                        <h3 class="text-2xl font-bold mb-3">Otimização de E-commerce</h3>
+                        <p class="text-gray-400">Otimização da experiência do cliente para converter visitas em vendas.</p>
+                    </article>
                 </div>
-
-                <div id="portfolio-grid" class="portfolio-grid">
-                    <!-- Cards dos projetos serão inseridos aqui pelo JavaScript -->
-                </div>
-                
-                <!-- Indicadores de estado para acessibilidade e feedback visual -->
-                <div id="loading-indicator" class="status-indicator">A carregar projetos...</div>
-                <div id="no-results" class="status-indicator hidden" aria-live="polite">Nenhum projeto encontrado para este filtro.</div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section" aria-labelledby="contact-title">
-            <div class="container">
-                 <h2 id="contact-title">Vamos Conversar?</h2>
-                 <p>Estou disponível para novos projetos e desafios. Entre em contacto para discutirmos como posso ajudar a impulsionar os seus resultados.</p>
-                 <a href="mailto:gabrielalveslu@gmail.com" class="cta-button">Enviar E-mail</a>
+        <!-- Seção Portfólio (Layout Vertical) -->
+        <section id="portfolio" class="bg-transparent py-20">
+            <div class="container mx-auto px-6">
+                 <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Resultados Reais: <span class="text-yellow-400">Cases de Sucesso</span></h2>
+                <div class="space-y-16">
+                    <article class="project-card rounded-3xl glass-effect">
+                        <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Posto Ipiranga/PR</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Automação de Notificações</h3>
+                                <p class="text-gray-300">Criei um sistema automatizado para a comunicação de notificações, transformando horas de trabalho manual em segundos.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="-90">-90%</p>
+                                <p class="text-lg font-semibold">em Custos Operacionais</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card rounded-3xl glass-effect">
+                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Plataformas Web</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Presença Digital Otimizada</h3>
+                                <p class="text-gray-300">Desenvolvimento de sites responsivos e focados em SEO para <a href="http://hokenmacapa.com.br/" target="_blank" rel="noopener" class="text-yellow-400 hover:underline">Hoken</a> e outros, aumentando a visibilidade e o tráfego.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="counter-up text-6xl md:text-8xl font-extrabold text-yellow-400" data-value="20">+20%</p>
+                                <p class="text-lg font-semibold">em Tráfego Orgânico</p>
+                            </div>
+                        </div>
+                    </article>
+                    <article class="project-card rounded-3xl glass-effect">
+                       <div class="p-8 md:p-12 flex flex-col md:flex-row items-center gap-10">
+                            <div class="project-text-content text-center md:text-left md:w-2/3">
+                                <span class="font-semibold text-yellow-400">Painel de Gestão</span>
+                                <h3 class="text-3xl md:text-4xl font-bold my-2">Fim da Desorganização</h3>
+                                <p class="text-gray-300">Dashboard interativo para centralizar informações e simplificar a organização de eventos e comunicados.</p>
+                            </div>
+                            <div class="project-number-content md:w-1/3 text-center mt-6 md:mt-0">
+                                <p class="text-5xl md:text-6xl font-extrabold text-yellow-400">Gestão Simplificada</p>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Tech Stack -->
+        <section id="tech" class="py-20">
+            <div class="container mx-auto px-6">
+                <h2 class="text-4xl md:text-5xl font-bold text-center mb-16">Minhas <span class="text-yellow-400">ferramentas</span> de trabalho</h2>
+                <div class="flex flex-wrap justify-center items-center gap-x-8 gap-y-8 md:gap-x-12">
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Google Apps Script"><i data-lucide="webhook" class="w-8 h-8"></i><span>GAS</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Python"><i data-lucide="code-2" class="w-8 h-8"></i><span>Python</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="JavaScript"><i data-lucide="braces" class="w-8 h-8"></i><span>JavaScript</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe Photoshop"><i data-lucide="image" class="w-8 h-8"></i><span>Photoshop</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Adobe After Effects"><i data-lucide="film" class="w-8 h-8"></i><span>After Effects</span></div>
+                     <div class="tech-logo flex flex-col items-center gap-2 text-gray-400 hover:text-white transition-all duration-300 hover:scale-110 cursor-pointer" role="img" aria-label="Pacote Office"><i data-lucide="file-spreadsheet" class="w-8 h-8"></i><span>Pacote Office</span></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Sobre -->
+        <section id="about" class="py-20">
+            <div class="container mx-auto px-6">
+                <div class="flex flex-col md:flex-row items-center gap-10 md:gap-16 glass-effect p-10 rounded-3xl">
+                    <div class="md:w-1/2 about-image-container">
+                        <picture>
+                            <source srcset="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" type="image/png">
+                            <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Gabriel Alves, especialista em soluções digitais" class="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="lazy" decoding="async">
+                        </picture>
+                    </div>
+                    <div class="md:w-1/2 text-center md:text-left about-text-container">
+                        <h2 class="text-4xl md:text-5xl font-bold">Quem está <span class="text-yellow-400">por trás do código</span></h2>
+                        <p class="mt-6 text-lg text-gray-300">Com 5+ anos de experiência em automação e desenvolvimento web, já ajudei mais de 30 empresas a otimizar processos e aumentar resultados. Minha abordagem combina soluções técnicas com foco estratégico nos objetivos de negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contato -->
+        <section id="contact" class="py-20">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-5xl font-bold">Entre em contato <span class="text-yellow-400">já</span></h2>
+                <p class="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">Vamos conversar sobre seu desafio, sem compromisso. Estou aqui para ouvir e, juntos, encontrarmos o melhor caminho para o seu negócio.</p>
+                <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
+                    <span class="flex items-center justify-center gap-2">
+                        <i data-lucide="send"></i>
+                        Falar no WhatsApp
+                    </span>
+                </a>
             </div>
         </section>
     </main>
 
-    <footer class="site-footer">
-        <div class="container">
-            <p>&copy; <span id="current-year"></span> Gabriel Alves da Cruz. Todos os direitos reservados.</p>
-            <!-- Adicione aqui links para redes sociais, se desejar -->
+    <footer class="py-10 text-center text-gray-500">
+        <div class="flex justify-center space-x-6 mb-4">
+            <a href="/" class="hover:text-yellow-400">Início</a>
+            <a href="/privacidade" class="hover:text-yellow-400">Política de Privacidade</a>
+            <a href="/termos" class="hover:text-yellow-400">Termos de Uso</a>
         </div>
+        <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
     </footer>
 
+    <!-- Bibliotecas de Animação -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    
+    <script>
+        window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                lucide.createIcons();
+                gsap.config({ force3D: true });
+                ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+
+                const initBackground = () => {
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                    
+                    const canvas = document.getElementById('background-canvas');
+                    if (!canvas) return;
+
+                    const ctx = canvas.getContext('2d');
+                    let width = canvas.width = window.innerWidth;
+                    let height = canvas.height = window.innerHeight;
+                    let lastTime = 0;
+
+                    window.addEventListener('resize', () => {
+                        width = canvas.width = window.innerWidth;
+                        height = canvas.height = window.innerHeight;
+                    });
+
+                    const particles = [];
+                    const particleCount = 80;
+
+                    for(let i = 0; i < particleCount; i++) {
+                        particles.push({
+                            x: Math.random() * width,
+                            y: Math.random() * height,
+                            vx: (Math.random() - 0.5) * 0.5,
+                            vy: (Math.random() - 0.5) * 0.5,
+                            size: 40 + Math.random() * 80,
+                            opacity: 0.1 + Math.random() * 0.2
+                        });
+                    }
+
+                    function drawSmoke(deltaTime) {
+                        ctx.clearRect(0, 0, width, height);
+                        particles.forEach(p => {
+                            ctx.beginPath();
+                            const grad = ctx.createRadialGradient(p.x, p.y, p.size * 0.1, p.x, p.y, p.size);
+                            grad.addColorStop(0, `rgba(50, 50, 50, ${p.opacity})`);
+                            grad.addColorStop(1, `rgba(0, 0, 0, 0)`);
+                            ctx.fillStyle = grad;
+                            ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                            ctx.fill();
+
+                            p.x += p.vx * (deltaTime * 60);
+                            p.y += p.vy * (deltaTime * 60);
+
+                            if(p.x > width + p.size) p.x = -p.size;
+                            if(p.x < -p.size) p.x = width + p.size;
+                            if(p.y > height + p.size) p.y = -p.size;
+                            if(p.y < -p.size) p.y = height + p.size;
+                        });
+                    }
+                    
+                    let lightningGlow = 0;
+                    let lightningCooldown = 0;
+                    
+                    function drawLightning(deltaTime) {
+                        if (lightningGlow > 0.01) {
+                            ctx.fillStyle = `rgba(255, 215, 120, ${lightningGlow * 0.15})`;
+                            ctx.fillRect(0, 0, width, height);
+                            lightningGlow *= 0.92;
+                        }
+
+                        if (lightningCooldown <= 0 && Math.random() < 0.005) {
+                            ctx.save();
+                            ctx.globalAlpha = Math.random() * 0.6 + 0.4;
+                            ctx.strokeStyle = `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.7})`;
+                            ctx.lineWidth = Math.random() * 4 + 2;
+                            ctx.shadowBlur = 50;
+                            ctx.shadowColor = 'rgba(255, 215, 180, 0.9)';
+                            lightningGlow = 1;
+                            lightningCooldown = 2; // 2 segundos de cooldown
+
+                            ctx.beginPath();
+                            const startX = Math.random() * width;
+                            let currentX = startX;
+                            let currentY = 0;
+                            ctx.moveTo(currentX, currentY);
+
+                            while (currentY < height) {
+                                const newX = currentX + (Math.random() - 0.5) * 60;
+                                const newY = currentY + Math.random() * 30 + 10;
+                                ctx.lineTo(newX, newY);
+                                currentX = newX;
+                                currentY = newY;
+                            }
+
+                            ctx.stroke();
+                            ctx.restore();
+                        }
+                        
+                        if (lightningCooldown > 0) {
+                           lightningCooldown -= deltaTime;
+                        }
+                    }
+
+                    function animate(currentTime) {
+                        const deltaTime = (currentTime - lastTime) / 1000;
+                        lastTime = currentTime;
+                        
+                        const dt = deltaTime || 1/60;
+                        drawSmoke(dt);
+                        drawLightning(dt);
+                        requestAnimationFrame(animate);
+                    }
+                    animate(0);
+                };
+                
+                initBackground();
+                
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                const toggleMenu = (isOpen) => {
+                    const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden', !isNowOpen);
+                    mobileMenu.classList.toggle('flex', isNowOpen);
+                    hamburgerBtn.setAttribute('aria-expanded', isNowOpen);
+                    hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
+                    lucide.createIcons();
+                    if (!isNowOpen) hamburgerBtn.focus();
+                };
+
+                hamburgerBtn.addEventListener('click', () => toggleMenu());
+                document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+                
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                    const cursor = document.querySelector('.custom-cursor');
+                    window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
+                    document.querySelectorAll('a, button, .tech-logo').forEach(el => {
+                        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+                        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+                    });
+                }
+
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
+                
+                const heroTl = gsap.timeline({ defaults: { ease: 'power3.out', duration: 1 } });
+                heroTl.from('.hero-line', { y: 100, opacity: 0, stagger: 0.2, delay: 1 })
+                      .from('.hero-subtitle', { y: 20, opacity: 0 }, "-=0.5")
+                      .from('.hero-cta', { scale: 0.9, opacity: 0 }, "-=0.7");
+                
+                gsap.utils.toArray('section h2, .service-card, .project-card, #about div, #contact p, #contact a, #contact button').forEach(elem => {
+                    gsap.from(elem, {
+                        opacity: 0, y: 50, duration: 1, ease: 'power3.out',
+                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true }
+                    });
+                });
+                
+                gsap.utils.toArray('.counter-up').forEach(counter => {
+                    ScrollTrigger.create({
+                        trigger: counter,
+                        start: "top 80%",
+                        once: true,
+                        onEnter: () => {
+                            const target = { val: 0 };
+                            const endValue = parseFloat(counter.dataset.value);
+                            const prefix = endValue > 0 ? '+' : '';
+                            const suffix = '%';
+                            gsap.to(target, {
+                                val: endValue,
+                                duration: 2,
+                                ease: 'power3.out',
+                                onUpdate: () => {
+                                    counter.textContent = prefix + Math.round(target.val) + suffix;
+                                }
+                            });
+                        }
+                    });
+                });
+                
+                gsap.utils.toArray("#main-nav a").forEach(link => {
+                    const section = document.querySelector(link.getAttribute("href"));
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: "top center",
+                        end: "bottom center",
+                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link))
+                    });
+                });
+
+            } catch (error) {
+                console.error("Erro ao inicializar o site:", error);
+                document.body.classList.add('js-error');
+            }
+        });
+    </script>
 </body>
 </html>
