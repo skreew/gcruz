@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Alves - Automação e Soluções Digitais</title>
     
-    <!-- SEO e Metadados Sociais -->
     <meta name="description" content="Especialista em automação e soluções digitais. +5 anos de experiência em redução de custos, aumento de eficiência e desenvolvimento web.">
     <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
     <meta property="og:description" content="Automatize rotinas e acelere seu crescimento. Libere sua equipe de tarefas repetitivas com sistemas que trabalham sozinhos.">
@@ -14,7 +13,6 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Otimização de Fontes e Recursos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -22,16 +20,10 @@
     <link rel="preconnect" href="https://wa.me">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Nosso CSS Personalizado -->
-    <link rel="stylesheet" href="assets/css/style.css">
-
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -43,6 +35,58 @@
       "sameAs": []
     }
     </script>
+
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #000000;
+            color: #F5F5F5;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        :root {
+            --cor-amarelo: #FFD700;
+            --cor-preto: #000000;
+            --cor-branco: #F5F5F5;
+            --cor-cinza-claro: #1a1a1a;
+        }
+        
+        #background-canvas {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+        }
+        
+        #main-header.scrolled .glass-effect {
+            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
+        }
+
+        .glass-effect {
+            background: rgba(10, 10, 10, 0.4); /* Opacidade reduzida */
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .about-image-container:hover img { transform: scale(1.03); }
+
+        @media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--cor-preto); }
+        ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
+        .custom-cursor { display: none; }
+        @media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
+        .about-image-container img { transition: transform 0.5s ease; }
+        .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
+        .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
+        nav a.active { color: var(--cor-amarelo); position: relative; }
+        nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
+        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-canvas { display: none; } }
+    </style>
 </head>
 <body class="antialiased">
 
@@ -56,22 +100,15 @@
     <canvas id="background-canvas" class="js-dependent"></canvas>
     <div class="custom-cursor js-dependent"></div>
 
-    <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 w-full p-4 md:p-6 z-50">
         <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-6 md:px-8">
             <a href="#" class="text-xl md:text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
-            <nav id="main-nav" class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_profile">Perfil</a>
-                <a href="#results" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_results">Resultados</a>
-                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_projects">Projetos</a>
-                <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_skills">Competências</a>
-                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_contact">Contato</a>
-                 <!-- Language Switcher -->
-                <div class="flex items-center space-x-1 ml-4 bg-black/20 p-1 rounded-full">
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="pt">PT</button>
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="en">EN</button>
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="es">ES</button>
-                </div>
+            <nav id="main-nav" class="hidden md:flex space-x-8 items-center">
+                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Perfil</a>
+                <a href="#results" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Resultados</a>
+                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
+                <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Competências</a>
+                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
             </nav>
             <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
                 <i data-lucide="menu" class="w-8 h-8"></i>
@@ -79,18 +116,15 @@
         </div>
     </header>
 
-    <!-- Menu Mobile Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#about" class="mobile-link text-white" data-lang-key="nav_profile">Perfil</a>
-        <a href="#results" class="mobile-link text-white" data-lang-key="nav_results">Resultados</a>
-        <a href="#projects" class="mobile-link text-white" data-lang-key="nav_projects">Projetos</a>
-        <a href="#skills" class="mobile-link text-white" data-lang-key="nav_skills">Competências</a>
-        <a href="#contact" class="mobile-link text-white" data-lang-key="nav_contact">Contato</a>
+        <a href="#about" class="mobile-link text-white">Perfil</a>
+        <a href="#results" class="mobile-link text-white">Resultados</a>
+        <a href="#projects" class="mobile-link text-white">Projetos</a>
+        <a href="#skills" class="mobile-link text-white">Competências</a>
+        <a href="#contact" class="mobile-link text-white">Contato</a>
     </div>
 
-    <!-- Main Content -->
     <main id="main-content">
-        <!-- Seção Hero / Perfil -->
         <section id="about" class="min-h-screen flex items-center justify-center text-center relative overflow-hidden py-20 px-4">
             <div class="container mx-auto z-10">
                 <div class="max-w-4xl mx-auto glass-effect p-6 md:p-10 rounded-3xl">
@@ -102,28 +136,28 @@
                             </picture>
                         </div>
                         <div class="md:w-2/3 text-center md:text-left">
-                            <h1 class="text-3xl md:text-5xl font-bold text-white" data-lang-key="profile_title">Perfil Profissional</h1>
+                            <h1 class="text-3xl md:text-5xl font-bold text-white">Perfil Profissional</h1>
                             <ul class="mt-4 md:mt-6 space-y-3 text-base md:text-lg text-gray-300">
-                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item1"><i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>+5 anos em automação e soluções digitais</li>
-                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item2"><i data-lucide="rocket" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Foco: Redução de custos, aumento da eficiência</li>
-                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item3"><i data-lucide="globe" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Atuação Brasil & Bolívia — soluções adaptáveis e eficazes</li>
+                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>+5 anos em automação e soluções digitais</li>
+                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="rocket" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Foco: Redução de custos, aumento da eficiência</li>
+                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="globe" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Atuação Brasil & Bolívia — soluções adaptáveis e eficazes</li>
                             </ul>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-gray-700 grid md:grid-cols-2 gap-8 text-center md:text-left">
                         <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4" data-lang-key="education_title"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i>Formação</h3>
+                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i>Formação</h3>
                             <div class="space-y-2 text-gray-300">
-                                <p data-lang-key="education_item1">Técnico em Administração — Bolívia</p>
-                                <p data-lang-key="education_item2">Tecnólogo em Informática — Jalasoft, Bolívia</p>
+                                <p>Técnico em Administração — Bolívia</p>
+                                <p>Tecnólogo em Informática — Jalasoft, Bolívia</p>
                             </div>
                         </div>
                          <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4" data-lang-key="languages_title"><i data-lucide="languages" class="w-6 h-6 mr-3"></i>Idiomas</h3>
+                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4"><i data-lucide="languages" class="w-6 h-6 mr-3"></i>Idiomas</h3>
                             <div class="space-y-2 text-gray-300">
-                                <p data-lang-key="lang_pt">🇧🇷 Português — Nativo</p>
-                                <p data-lang-key="lang_es">🇪🇸 Espanhol — Nativo</p>
-                                <p data-lang-key="lang_en">�🇸 Inglês — Técnico (B1)</p>
+                                <p>🇧🇷 Português — Nativo</p>
+                                <p>🇪🇸 Espanhol — Nativo</p>
+                                <p>🇺🇸 Inglês — Técnico (B1)</p>
                             </div>
                         </div>
                     </div>
@@ -131,106 +165,102 @@
             </div>
         </section>
 
-        <!-- Seção Resultados Rápidos -->
         <section id="results" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="results_title">Resultados Reais</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Resultados Reais</h2>
                 <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 text-center">
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result1_title">MAIS VENDAS</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result1_value">+25% Online</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS VENDAS</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl">+25% Online</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result2_title">MENOS CUSTO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result2_value">-90%</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MENOS CUSTO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl">-90%</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result3_title">MAIS PRODUÇÃO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result3_value">+40% de Engajamento</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS PRODUÇÃO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl">+40% de Engajamento</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result4_title">MAIS CLIENTES</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result4_value">+20% em Tráfego</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS CLIENTES</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl">+20% em Tráfego</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result5_title">MAIS RAPIDEZ</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl text-center" data-lang-key="result5_value">Horas para Segundos</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS RAPIDEZ</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl text-center">Horas para Segundos</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result6_title">MAIS CONVERSÃO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result6_value">9% em Lançamentos</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS CONVERSÃO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl">9% em Lançamentos</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Projetos em Destaque -->
         <section id="projects" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="projects_title">Principais Áreas de Atuação</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Principais Áreas de Atuação</h2>
                 <div class="max-w-4xl mx-auto space-y-8">
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project1_title"><i data-lucide="bell-ring" class="w-6 h-6 mr-3"></i>Automação</h3>
-                        <p data-lang-key="project1_desc">Apps Script, APIs (Gmail/Sheets/Calendar)</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="bell-ring" class="w-6 h-6 mr-3"></i>Automação</h3>
+                        <p>Apps Script, APIs (Gmail/Sheets/Calendar)</p>
                     </article>
                      <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project2_title"><i data-lucide="shopping-cart" class="w-6 h-6 mr-3"></i>E-commerce</h3>
-                        <p data-lang-key="project2_desc">WordPress, WooCommerce, SEO</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="shopping-cart" class="w-6 h-6 mr-3"></i>E-commerce</h3>
+                        <p>WordPress, WooCommerce, SEO</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project3_title"><i data-lucide="megaphone" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
-                        <p data-lang-key="project3_desc">Meta Ads, Mailchimp, Funis de Venda</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="megaphone" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
+                        <p>Meta Ads, Mailchimp, Funis de Venda</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project4_title"><i data-lucide="video" class="w-6 h-6 mr-3"></i>Mídia</h3>
-                        <p data-lang-key="project4_desc">Criação de vídeos e imagens profissionais</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="video" class="w-6 h-6 mr-3"></i>Mídia</h3>
+                        <p>Criação de vídeos e imagens profissionais</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project5_title"><i data-lucide="globe-2" class="w-6 h-6 mr-3"></i>Web Dev</h3>
-                        <p data-lang-key="project5_desc">Sites responsivos para diversos clientes.</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="globe-2" class="w-6 h-6 mr-3"></i>Web Dev</h3>
+                        <p>Sites responsivos para diversos clientes.</p>
                     </article>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Competências -->
         <section id="skills" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="skills_title">Competências Técnicas</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Competências Técnicas</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                     <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="code-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill1_title">Dev/Automação</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill1_desc">Python, JS, HTML/CSS, GAS</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1">Dev/Automação</h3>
+                        <p class="text-gray-400 text-sm">Python, JS, HTML/CSS, GAS</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="wrench" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill2_title">Ferramentas</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill2_desc">WordPress, Woo, Trello</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1">Ferramentas</h3>
+                        <p class="text-gray-400 text-sm">WordPress, Woo, Trello</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="palette" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill3_title">Design e Mídia</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill3_desc">Photoshop, After Effects</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1">Design e Mídia</h3>
+                        <p class="text-gray-400 text-sm">Photoshop, After Effects</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="bar-chart-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill4_title">Marketing</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill4_desc">SEO, GA4, E-mail</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1">Marketing</h3>
+                        <p class="text-gray-400 text-sm">SEO, GA4, E-mail</p>
                     </div>
                 </div>
             </div>
         </section>
         
-        <!-- Seção Contato -->
         <section id="contact" class="py-20 px-4">
             <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-bold" data-lang-key="contact_title">Vamos conversar?</h2>
-                <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl mx-auto" data-lang-key="contact_subtitle">A primeira conversa é sem compromisso. Conte-me seu desafio.</p>
+                <h2 class="text-3xl md:text-5xl font-bold">Vamos conversar?</h2>
+                <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl mx-auto">A primeira conversa é sem compromisso. Conte-me seu desafio.</p>
                 <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
                     <span class="flex items-center justify-center gap-2">
                         <i data-lucide="send"></i>
-                        <span data-lang-key="contact_cta">Falar no WhatsApp</span>
+                        Falar no WhatsApp
                     </span>
                 </a>
             </div>
@@ -239,19 +269,193 @@
 
     <footer class="py-10 text-center text-gray-500 px-4">
         <div class="flex justify-center space-x-6 mb-4">
-            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400" data-lang-key="footer_home">Início</a>
-            <a href="pages/privacidade.html" class="hover:text-yellow-400" data-lang-key="footer_privacy">Privacidade</a>
-            <a href="pages/termos.html" class="hover:text-yellow-400" data-lang-key="footer_terms">Termos</a>
+            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400">Início</a>
+            <a href="pages/privacidade.html" class="hover:text-yellow-400">Privacidade</a>
+            <a href="pages/termos.html" class="hover:text-yellow-400">Termos</a>
         </div>
-        <p>&copy; 2025 Gabriel Alves. <span data-lang-key="footer_rights">Todos os direitos reservados.</span></p>
+        <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
     </footer>
 
-    <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     
-    <!-- Nosso JavaScript -->
-    <script src="assets/js/main.js" defer></script>
+    <script>
+        window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            try {
+                lucide.createIcons();
+                gsap.config({ force3D: true });
+                ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+
+                const initBackground = () => {
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                    
+                    const canvas = document.getElementById('background-canvas');
+                    if (!canvas) return;
+
+                    const ctx = canvas.getContext('2d');
+                    let width = canvas.width = window.innerWidth;
+                    let height = canvas.height = window.innerHeight;
+                    let lastScrollY = window.scrollY;
+
+                    const mouse = { x: width / 2, y: height / 2, radius: 150 };
+                    
+                    window.addEventListener('mousemove', e => {
+                        gsap.to(mouse, { x: e.clientX, y: e.clientY, duration: 0.8, ease: 'power2.out' });
+                    });
+                    
+                    window.addEventListener('click', e => {
+                       gsap.fromTo(mouse, {radius: 300}, {radius: 150, duration: 0.5, ease: 'power3.out'});
+                    });
+                    
+                    window.addEventListener('resize', () => {
+                        width = canvas.width = window.innerWidth;
+                        height = canvas.height = window.innerHeight;
+                    });
+
+                    const particles = [];
+                    const particleCount = window.innerWidth < 768 ? 80 : 150;
+
+                    class Particle {
+                        constructor() {
+                            this.x = Math.random() * width;
+                            this.y = Math.random() * height;
+                            this.vx = (Math.random() - 0.5) * 0.4;
+                            this.vy = (Math.random() - 0.5) * 0.4;
+                            this.radius = 1 + Math.random() * 2;
+                            this.color = `rgba(255, 215, 0, ${0.1 + Math.random() * 0.2})`;
+                        }
+                        update(scrollDelta) {
+                            const dx = this.x - mouse.x;
+                            const dy = this.y - mouse.y;
+                            const dist = Math.hypot(dx, dy);
+                            
+                            if (dist < mouse.radius) {
+                                const angle = Math.atan2(dy, dx);
+                                const force = (mouse.radius - dist) / mouse.radius;
+                                this.vx += Math.cos(angle) * force * 0.5;
+                                this.vy += Math.sin(angle) * force * 0.5;
+                            }
+
+                            this.vx *= 0.98;
+                            this.vy *= 0.98;
+                            
+                            this.x += this.vx;
+                            this.y += this.vy;
+
+                            // Aplica o efeito de scroll
+                            this.y += scrollDelta * 0.1;
+
+                            if (this.x > width + 5) { this.x = -5; } else if (this.x < -5) { this.x = width + 5; }
+                            if (this.y > height + 5) { this.y = -5; } else if (this.y < -5) { this.y = height + 5; }
+                        }
+                        draw() {
+                            ctx.beginPath();
+                            ctx.fillStyle = this.color;
+                            ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+                            ctx.fill();
+                        }
+                    }
+
+                    for(let i = 0; i < particleCount; i++) {
+                        particles.push(new Particle());
+                    }
+                    
+                    function handleConnections() {
+                        let opacity;
+                        for(let i = 0; i < particles.length; i++) {
+                            for(let j = i; j < particles.length; j++) {
+                                const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                                if (dist < 120) {
+                                    opacity = 1 - (dist / 120);
+                                    ctx.beginPath();
+                                    ctx.strokeStyle = `rgba(255, 215, 0, ${opacity * 0.3})`;
+                                    ctx.lineWidth = 0.5;
+                                    ctx.moveTo(particles[i].x, particles[i].y);
+                                    ctx.lineTo(particles[j].x, particles[j].y);
+                                    ctx.stroke();
+                                }
+                            }
+                        }
+                    }
+
+                    function animate() {
+                        const currentScrollY = window.scrollY;
+                        const scrollDelta = currentScrollY - lastScrollY;
+                        
+                        ctx.clearRect(0, 0, width, height);
+                        particles.forEach(p => {
+                            p.update(scrollDelta);
+                            p.draw();
+                        });
+                        handleConnections();
+                        lastScrollY = currentScrollY;
+                        requestAnimationFrame(animate);
+                    }
+                    animate();
+                };
+                
+                initBackground();
+                
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                
+                const toggleMenu = (isOpen) => {
+                    const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden', !isNowOpen);
+                    mobileMenu.classList.toggle('flex', isNowOpen);
+                    hamburgerBtn.setAttribute('aria-expanded', isNowOpen);
+                    hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
+                    lucide.createIcons();
+                    if (!isNowOpen) hamburgerBtn.focus();
+                };
+
+                hamburgerBtn.addEventListener('click', () => toggleMenu());
+                document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+                
+                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
+                    const cursor = document.querySelector('.custom-cursor');
+                    window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
+                    document.querySelectorAll('a, button, .tech-logo').forEach(el => {
+                        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
+                        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
+                    });
+                }
+
+                gsap.registerPlugin(ScrollTrigger);
+                gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
+                
+                gsap.utils.toArray('section h2, .glass-effect, #about div, #contact p, #contact a, #contact button').forEach(elem => {
+                    gsap.from(elem, {
+                        opacity: 0, y: 50, duration: 1, ease: 'power3.out',
+                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true }
+                    });
+                });
+                
+                gsap.utils.toArray("#main-nav a").forEach(link => {
+                    const section = document.querySelector(link.getAttribute("href"));
+                    ScrollTrigger.create({
+                        trigger: section,
+                        start: "top center",
+                        end: "bottom center",
+                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link))
+                    });
+                });
+
+                 // Blur on Contact Section
+                 ScrollTrigger.create({
+                    trigger: '#contact',
+                    start: 'top bottom',
+                    end: 'bottom top',
+                    onToggle: self => document.getElementById('background-canvas').classList.toggle('is-blurred', self.isActive)
+                });
+
+            } catch (error) {
+                console.error("Erro ao inicializar o site:", error);
+                document.body.classList.add('js-error');
+            }
+        });
+    </script>
 </body>
 </html>
-�
