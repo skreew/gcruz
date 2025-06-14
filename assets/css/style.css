@@ -1,377 +1,57 @@
-/* assets/css/style.css */
-
-/* 1. Reset e Variáveis Globais 
-   -------------------------------------------------- */
-:root {
-    /* Personalize estas cores para combinar com a sua identidade visual */
-    --color-primary: #007bff;
-    --color-primary-dark: #0056b3;
-    --color-bg: #f8f9fa;
-    --color-bg-alt: #ffffff;
-    --color-text: #212529;
-    --color-text-light: #6c757d;
-    --color-border: #dee2e6;
-    --shadow: 0 4px 12px rgba(0,0,0,0.08);
-    --shadow-hover: 0 8px 20px rgba(0,0,0,0.12);
-    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    --border-radius: 8px;
-}
-
-*, *::before, *::after {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    scroll-padding-top: 80px; /* Evita que o header fixo cubra o título da seção */
-}
-
 body {
-    font-family: var(--font-family);
-    line-height: 1.7;
-    background-color: var(--color-bg);
-    color: var(--color-text);
-}
-
-.container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Foco visível para acessibilidade */
-:focus-visible {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 3px;
-    border-radius: 2px;
-}
-
-
-/* 2. Header e Navegação
-   -------------------------------------------------- */
-.site-header {
-    background: var(--color-bg-alt);
-    padding: 1rem 0;
-    border-bottom: 1px solid var(--color-border);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-    transition: box-shadow 0.3s ease;
-}
-
-.site-header .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-weight: bold;
-    font-size: 1.8rem;
-    color: var(--color-primary);
-    text-decoration: none;
-}
-
-.main-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 2rem;
-}
-
-.main-nav a {
-    text-decoration: none;
-    color: var(--color-text);
-    font-weight: 500;
-    padding: 0.5rem 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #000000;
+    color: #F5F5F5;
+    overflow-x: hidden;
     position: relative;
-    transition: color 0.3s ease;
 }
 
-.main-nav a::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transition: width 0.3s ease;
+:root {
+    --cor-amarelo: #FFD700;
+    --cor-preto: #000000;
+    --cor-branco: #F5F5F5;
+    --cor-cinza-claro: #1a1a1a;
 }
 
-.main-nav a:hover,
-.main-nav a:focus-visible {
-    color: var(--color-primary);
+#background-canvas {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: -1;
+    transition: filter 0.5s ease-out, transform 0.5s ease-out;
 }
 
-.main-nav a:hover::after {
-    width: 100%;
+#background-canvas.is-blurred {
+    filter: blur(8px);
+    transform: scale(1.1);
 }
 
-
-/* 3. Seções Principais
-   -------------------------------------------------- */
-main > section, .case-study-container {
-    padding: 80px 0;
+#main-header.scrolled .glass-effect {
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);
 }
 
-.hero-section {
-    text-align: center;
-    background-color: var(--color-bg-alt);
+.glass-effect {
+    background: rgba(10, 10, 10, 0.6);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transition: background 0.5s ease, box-shadow 0.5s ease;
 }
 
-.hero-section h1 {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
-    margin-bottom: 0.5rem;
-}
+.project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.4); }
+.about-image-container:hover img { transform: scale(1.03); }
 
-.hero-section .subtitle {
-    font-size: clamp(1.2rem, 3vw, 1.5rem);
-    color: var(--color-text-light);
-    margin-bottom: 1rem;
-    font-weight: 400;
-}
-
-.hero-section > .container > p:last-of-type {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-/* 4. Seção do Portfólio e Filtros
-   -------------------------------------------------- */
-.portfolio-section h2, .contact-section h2 { 
-    text-align: center; 
-    font-size: 2.5rem;
-    margin-bottom: 1rem; 
-}
-
-.portfolio-section > .container > p,
-.contact-section > .container > p { 
-    text-align: center; 
-    margin-bottom: 3rem; 
-    max-width: 600px; 
-    margin-left: auto; 
-    margin-right: auto; 
-    color: var(--color-text-light);
-}
-
-.filter-controls {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 1rem;
-    margin-bottom: 3.5rem;
-}
-
-.filter-btn {
-    background: transparent;
-    border: 1px solid var(--color-border);
-    padding: 0.6rem 1.5rem;
-    border-radius: 50px;
-    cursor: pointer;
-    font-size: 0.9rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-
-.filter-btn:hover, .filter-btn:focus-visible {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-}
-
-.filter-btn.active {
-    background-color: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
-}
-
-
-/* 5. Grid e Cards de Projeto
-   -------------------------------------------------- */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 2rem;
-}
-
-.project-card {
-    background: var(--color-bg-alt);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    box-shadow: var(--shadow);
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    color: var(--color-text);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-    .project-card:hover {
-        transform: translateY(-8px);
-        box-shadow: var(--shadow-hover);
-    }
-}
-
-.project-card.hidden { display: none; }
-
-.card-thumbnail {
-    width: 100%;
-    aspect-ratio: 16 / 10;
-    overflow: hidden;
-}
-
-.card-thumbnail img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-.project-card:hover .card-thumbnail img {
-    transform: scale(1.05);
-}
-
-.card-content {
-    padding: 1.5rem;
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-}
-
-.card-category {
-    font-size: 0.8rem;
-    color: var(--color-text-light);
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    font-weight: 600;
-}
-
-.card-content h3 {
-    margin-bottom: 0.5rem;
-    font-size: 1.3rem;
-}
-
-.card-content p {
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-}
-
-.card-link {
-    color: var(--color-primary);
-    font-weight: bold;
-    align-self: flex-start;
-}
-.card-link:hover { text-decoration: underline; }
-
-
-/* 6. Página de Case de Estudo
-   -------------------------------------------------- */
-.case-study-header {
-    text-align: center;
-    padding-bottom: 40px;
-    border-bottom: 1px solid var(--color-border);
-    margin-bottom: 40px;
-}
-.case-study-header h1 { font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 0.5rem; }
-.case-study-header .category { color: var(--color-text-light); font-weight: 500; }
-.case-study-header .date { font-size: 0.9rem; color: var(--color-text-light); }
-
-.case-study-section { margin-bottom: 60px; }
-.case-study-section h2 {
-    font-size: 1.8rem;
-    margin-bottom: 1.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 3px solid var(--color-primary);
-    display: inline-block;
-}
-
-.tech-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.75rem;
-    list-style: none;
-}
-.tech-list li {
-    background-color: #e9ecef;
-    padding: 0.4rem 1rem;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 500;
-}
-
-.results-list { padding-left: 20px; }
-.results-list li { margin-bottom: 0.5rem; }
-
-.case-gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-.case-gallery img { width: 100%; height: auto; border-radius: var(--border-radius); box-shadow: var(--shadow); }
-
-.case-video-embed {
-    position: relative;
-    padding-bottom: 56.25%; /* 16:9 */
-    height: 0;
-    overflow: hidden;
-    max-width: 100%;
-    background: #000;
-    border-radius: var(--border-radius);
-}
-.case-video-embed iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-
-/* 7. CTA, Footer e Elementos de Status
-   -------------------------------------------------- */
-.cta-button {
-    display: inline-block;
-    background-color: var(--color-primary);
-    color: white;
-    padding: 1rem 2.5rem;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: bold;
-    margin-top: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-.cta-button:hover { background-color: var(--color-primary-dark); transform: translateY(-2px); }
-
-.site-footer {
-    text-align: center;
-    padding: 3rem 0;
-    margin-top: 40px;
-    background: var(--color-bg-alt);
-    border-top: 1px solid var(--color-border);
-    color: var(--color-text-light);
-}
-
-.status-indicator {
-    text-align: center;
-    padding: 2rem;
-    font-weight: 500;
-    color: var(--color-text-light);
-}
-.hidden { display: none; }
-
-
-/* 8. Media Queries para Responsividade
-   -------------------------------------------------- */
-@media (max-width: 768px) {
-    .main-nav { display: none; /* Para um menu real, adicione JS para um hamburger */ }
-}
-
-@media (max-width: 480px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-}
+@media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--cor-preto); }
+::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
+.custom-cursor { display: none; }
+@media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
+.about-image-container img { transition: transform 0.5s ease; }
+.skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
+.skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
+.keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
+nav a.active { color: var(--cor-amarelo); position: relative; }
+nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-canvas { display: none; } }
