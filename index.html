@@ -60,12 +60,18 @@
     <header id="main-header" class="fixed top-0 left-0 w-full p-4 md:p-6 z-50">
         <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-6 md:px-8">
             <a href="#" class="text-xl md:text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
-            <nav id="main-nav" class="hidden md:flex space-x-8 items-center">
-                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Perfil</a>
-                <a href="#results" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Resultados</a>
-                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Projetos</a>
-                <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Competências</a>
-                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300">Contato</a>
+            <nav id="main-nav" class="hidden md:flex space-x-6 items-center">
+                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_profile">Perfil</a>
+                <a href="#results" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_results">Resultados</a>
+                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_projects">Projetos</a>
+                <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_skills">Competências</a>
+                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_contact">Contato</a>
+                 <!-- Language Switcher -->
+                <div class="flex items-center space-x-1 ml-4 bg-black/20 p-1 rounded-full">
+                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="pt">PT</button>
+                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="en">EN</button>
+                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="es">ES</button>
+                </div>
             </nav>
             <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
                 <i data-lucide="menu" class="w-8 h-8"></i>
@@ -75,11 +81,11 @@
 
     <!-- Menu Mobile Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#about" class="mobile-link text-white">Perfil</a>
-        <a href="#results" class="mobile-link text-white">Resultados</a>
-        <a href="#projects" class="mobile-link text-white">Projetos</a>
-        <a href="#skills" class="mobile-link text-white">Competências</a>
-        <a href="#contact" class="mobile-link text-white">Contato</a>
+        <a href="#about" class="mobile-link text-white" data-lang-key="nav_profile">Perfil</a>
+        <a href="#results" class="mobile-link text-white" data-lang-key="nav_results">Resultados</a>
+        <a href="#projects" class="mobile-link text-white" data-lang-key="nav_projects">Projetos</a>
+        <a href="#skills" class="mobile-link text-white" data-lang-key="nav_skills">Competências</a>
+        <a href="#contact" class="mobile-link text-white" data-lang-key="nav_contact">Contato</a>
     </div>
 
     <!-- Main Content -->
@@ -96,28 +102,28 @@
                             </picture>
                         </div>
                         <div class="md:w-2/3 text-center md:text-left">
-                            <h1 class="text-3xl md:text-5xl font-bold text-white">Perfil Profissional</h1>
+                            <h1 class="text-3xl md:text-5xl font-bold text-white" data-lang-key="profile_title">Perfil Profissional</h1>
                             <ul class="mt-4 md:mt-6 space-y-3 text-base md:text-lg text-gray-300">
-                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>+5 anos em automação e soluções digitais</li>
-                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="rocket" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Foco: Redução de custos, aumento da eficiência</li>
-                                <li class="flex items-center justify-center md:justify-start"><i data-lucide="globe" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Atuação Brasil & Bolívia — soluções adaptáveis e eficazes</li>
+                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item1"><i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>+5 anos em automação e soluções digitais</li>
+                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item2"><i data-lucide="rocket" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Foco: Redução de custos, aumento da eficiência</li>
+                                <li class="flex items-center justify-center md:justify-start" data-lang-key="profile_item3"><i data-lucide="globe" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400"></i>Atuação Brasil & Bolívia — soluções adaptáveis e eficazes</li>
                             </ul>
                         </div>
                     </div>
                     <div class="mt-8 pt-6 border-t border-gray-700 grid md:grid-cols-2 gap-8 text-center md:text-left">
                         <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i>Formação</h3>
+                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4" data-lang-key="education_title"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i>Formação</h3>
                             <div class="space-y-2 text-gray-300">
-                                <p>Técnico em Administração — Bolívia</p>
-                                <p>Tecnólogo em Informática — Jalasoft, Bolívia</p>
+                                <p data-lang-key="education_item1">Técnico em Administração — Bolívia</p>
+                                <p data-lang-key="education_item2">Tecnólogo em Informática — Jalasoft, Bolívia</p>
                             </div>
                         </div>
                          <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4"><i data-lucide="languages" class="w-6 h-6 mr-3"></i>Idiomas</h3>
+                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4" data-lang-key="languages_title"><i data-lucide="languages" class="w-6 h-6 mr-3"></i>Idiomas</h3>
                             <div class="space-y-2 text-gray-300">
-                                <p>🇧🇷 Português — Nativo</p>
-                                <p>🇪🇸 Espanhol — Nativo</p>
-                                <p>🇺🇸 Inglês — Técnico (B1)</p>
+                                <p data-lang-key="lang_pt">🇧🇷 Português — Nativo</p>
+                                <p data-lang-key="lang_es">🇪🇸 Espanhol — Nativo</p>
+                                <p data-lang-key="lang_en">🇺🇸 Inglês — Técnico (B1)</p>
                             </div>
                         </div>
                     </div>
@@ -128,31 +134,31 @@
         <!-- Seção Resultados Rápidos -->
         <section id="results" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Resultados Reais</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="results_title">Resultados Reais</h2>
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 text-center">
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS VENDAS</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl">+25% Online</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result1_title">MAIS VENDAS</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result1_value">+25% Online</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MENOS CUSTO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl">-90%</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result2_title">MENOS CUSTO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result2_value">-90%</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS PRODUÇÃO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl">+40% de Engajamento</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result3_title">MAIS PRODUÇÃO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result3_value">+40% de Engajamento</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS CLIENTES</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl">+20% em Tráfego</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result4_title">MAIS CLIENTES</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result4_value">+20% em Tráfego</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS RAPIDEZ</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl text-center">Horas para Segundos</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result5_title">MAIS RAPIDEZ</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl text-center" data-lang-key="result5_value">Horas para Segundos</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center h-40 md:h-48">
-                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400">MAIS CONVERSÃO</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-xl">9% em Lançamentos</p>
+                        <p class="text-2xl md:text-4xl font-extrabold text-yellow-400" data-lang-key="result6_title">MAIS CONVERSÃO</p>
+                        <p class="mt-2 text-gray-300 text-base md:text-xl" data-lang-key="result6_value">9% em Lançamentos</p>
                     </div>
                 </div>
             </div>
@@ -161,27 +167,27 @@
         <!-- Seção Projetos em Destaque -->
         <section id="projects" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Principais Áreas de Atuação</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="projects_title">Principais Áreas de Atuação</h2>
                 <div class="max-w-4xl mx-auto space-y-8">
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="bell-ring" class="w-6 h-6 mr-3"></i>Automação</h3>
-                        <p>Apps Script, APIs (Gmail/Sheets/Calendar)</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project1_title"><i data-lucide="bell-ring" class="w-6 h-6 mr-3"></i>Automação</h3>
+                        <p data-lang-key="project1_desc">Apps Script, APIs (Gmail/Sheets/Calendar)</p>
                     </article>
                      <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="shopping-cart" class="w-6 h-6 mr-3"></i>E-commerce</h3>
-                        <p>WordPress, WooCommerce, SEO</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project2_title"><i data-lucide="shopping-cart" class="w-6 h-6 mr-3"></i>E-commerce</h3>
+                        <p data-lang-key="project2_desc">WordPress, WooCommerce, SEO</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="megaphone" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
-                        <p>Meta Ads, Mailchimp, Funis de Venda</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project3_title"><i data-lucide="megaphone" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
+                        <p data-lang-key="project3_desc">Meta Ads, Mailchimp, Funis de Venda</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="video" class="w-6 h-6 mr-3"></i>Mídia</h3>
-                        <p>Criação de vídeos e imagens profissionais</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project4_title"><i data-lucide="video" class="w-6 h-6 mr-3"></i>Mídia</h3>
+                        <p data-lang-key="project4_desc">Criação de vídeos e imagens profissionais</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="globe-2" class="w-6 h-6 mr-3"></i>Web Dev</h3>
-                        <p>Sites responsivos para diversos clientes.</p>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project5_title"><i data-lucide="globe-2" class="w-6 h-6 mr-3"></i>Web Dev</h3>
+                        <p data-lang-key="project5_desc">Sites responsivos para diversos clientes.</p>
                     </article>
                 </div>
             </div>
@@ -190,27 +196,27 @@
         <!-- Seção Competências -->
         <section id="skills" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Competências Técnicas</h2>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="skills_title">Competências Técnicas</h2>
                 <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
                     <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="code-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1">Dev/Automação</h3>
-                        <p class="text-gray-400 text-sm">Python, JS, HTML/CSS, GAS</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill1_title">Dev/Automação</h3>
+                        <p class="text-gray-400 text-sm" data-lang-key="skill1_desc">Python, JS, HTML/CSS, GAS</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="wrench" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1">Ferramentas</h3>
-                        <p class="text-gray-400 text-sm">WordPress, Woo, Trello</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill2_title">Ferramentas</h3>
+                        <p class="text-gray-400 text-sm" data-lang-key="skill2_desc">WordPress, Woo, Trello</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="palette" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1">Design e Mídia</h3>
-                        <p class="text-gray-400 text-sm">Photoshop, After Effects</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill3_title">Design e Mídia</h3>
+                        <p class="text-gray-400 text-sm" data-lang-key="skill3_desc">Photoshop, After Effects</p>
                     </div>
                      <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
                         <i data-lucide="bar-chart-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1">Marketing</h3>
-                        <p class="text-gray-400 text-sm">SEO, GA4, E-mail</p>
+                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill4_title">Marketing</h3>
+                        <p class="text-gray-400 text-sm" data-lang-key="skill4_desc">SEO, GA4, E-mail</p>
                     </div>
                 </div>
             </div>
@@ -219,12 +225,12 @@
         <!-- Seção Contato -->
         <section id="contact" class="py-20 px-4">
             <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-bold">Vamos conversar?</h2>
-                <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl mx-auto">A primeira conversa é sem compromisso. Conte-me seu desafio.</p>
+                <h2 class="text-3xl md:text-5xl font-bold" data-lang-key="contact_title">Vamos conversar?</h2>
+                <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl mx-auto" data-lang-key="contact_subtitle">A primeira conversa é sem compromisso. Conte-me seu desafio.</p>
                 <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
                     <span class="flex items-center justify-center gap-2">
                         <i data-lucide="send"></i>
-                        Falar no WhatsApp
+                        <span data-lang-key="contact_cta">Falar no WhatsApp</span>
                     </span>
                 </a>
             </div>
@@ -233,11 +239,11 @@
 
     <footer class="py-10 text-center text-gray-500 px-4">
         <div class="flex justify-center space-x-6 mb-4">
-            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400">Início</a>
-            <a href="pages/privacidade.html" class="hover:text-yellow-400">Privacidade</a>
-            <a href="pages/termos.html" class="hover:text-yellow-400">Termos</a>
+            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400" data-lang-key="footer_home">Início</a>
+            <a href="pages/privacidade.html" class="hover:text-yellow-400" data-lang-key="footer_privacy">Privacidade</a>
+            <a href="pages/termos.html" class="hover:text-yellow-400" data-lang-key="footer_terms">Termos</a>
         </div>
-        <p>&copy; 2025 Gabriel Alves. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Gabriel Alves. <span data-lang-key="footer_rights">Todos os direitos reservados.</span></p>
     </footer>
 
     <!-- Bibliotecas de Animação -->
