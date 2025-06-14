@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gabriel Alves - Automação e Soluções Digitais</title>
     
-    <!-- SEO e Metadados Sociais -->
     <meta name="description" content="Especialista em automação e soluções digitais. +5 anos de experiência em redução de custos, aumento de eficiência e desenvolvimento web.">
     <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
     <meta property="og:description" content="Automatize rotinas e acelere seu crescimento. Libere sua equipe de tarefas repetitivas com sistemas que trabalham sozinhos.">
@@ -14,7 +13,6 @@
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
-    <!-- Otimização de Fontes e Recursos -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
@@ -22,13 +20,10 @@
     <link rel="preconnect" href="https://wa.me">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Schema Markup -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -40,7 +35,6 @@
       "sameAs": []
     }
     </script>
-
     <style>
         body {
             font-family: 'Poppins', sans-serif;
@@ -117,7 +111,6 @@
     <canvas id="background-canvas" class="js-dependent"></canvas>
     <div class="custom-cursor js-dependent"></div>
 
-    <!-- Header -->
     <header id="main-header" class="fixed top-0 left-0 w-full p-4 md:p-6 z-50">
         <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-6 md:px-8">
             <a href="#" class="text-xl md:text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
@@ -127,12 +120,11 @@
                 <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_projects">Projetos</a>
                 <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_skills">Competências</a>
                 <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_contact">Contato</a>
-                 <!-- Language Switcher -->
-                <div class="flex items-center space-x-1 ml-4 bg-black/20 p-1 rounded-full">
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="pt">PT</button>
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="en">EN</button>
-                    <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="es">ES</button>
-                </div>
+                 <div class="flex items-center space-x-1 ml-4 bg-black/20 p-1 rounded-full">
+                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="pt">PT</button>
+                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="en">EN</button>
+                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="es">ES</button>
+                 </div>
             </nav>
             <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
                 <i data-lucide="menu" class="w-8 h-8"></i>
@@ -140,7 +132,6 @@
         </div>
     </header>
 
-    <!-- Menu Mobile Overlay -->
     <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
         <a href="#about" class="mobile-link text-white" data-lang-key="nav_profile">Perfil</a>
         <a href="#results" class="mobile-link text-white" data-lang-key="nav_results">Resultados</a>
@@ -149,9 +140,7 @@
         <a href="#contact" class="mobile-link text-white" data-lang-key="nav_contact">Contato</a>
     </div>
 
-    <!-- Main Content -->
     <main id="main-content">
-        <!-- Seção Hero / Perfil -->
         <section id="about" class="min-h-screen flex items-center justify-center text-center relative overflow-hidden py-20 px-4">
             <div class="container mx-auto z-10">
                 <div class="max-w-4xl mx-auto glass-effect p-6 md:p-10 rounded-3xl">
@@ -174,9 +163,9 @@
                     <div class="mt-8 pt-6 border-t border-gray-700 grid md:grid-cols-2 gap-8 text-center md:text-left">
                         <div>
                             <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4" data-lang-key="education_title"><i data-lucide="graduation-cap" class="w-6 h-6 mr-3"></i>Formação</h3>
-                            <div class="space-y-2 text-gray-300">
-                                <p data-lang-key="education_item1">Técnico em Administração — Bolívia</p>
-                                <p data-lang-key="education_item2">Tecnólogo em Informática — Jalasoft, Bolívia</p>
+                            <div class="space-y-3 text-gray-300">
+                                <p class="flex items-center justify-center md:justify-start" data-lang-key="education_item1"><i data-lucide="award" class="w-5 h-5 mr-3 text-yellow-400/80"></i>Técnico em Administração — Bolívia</p>
+                                <p class="flex items-center justify-center md:justify-start" data-lang-key="education_item2"><i data-lucide="laptop" class="w-5 h-5 mr-3 text-yellow-400/80"></i>Tecnólogo em Informática — Jalasoft, Bolívia</p>
                             </div>
                         </div>
                          <div>
@@ -192,46 +181,50 @@
             </div>
         </section>
 
-        <!-- Seção Resultados Rápidos -->
         <section id="results" class="py-20 px-4">
             <div class="container mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="results_title">Resultados Reais</h2>
-                <div class="grid grid-cols-2 md:grid-cols-3 gap-4 md:gap-8 text-center">
+                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 text-center">
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result1_value">+25%</p>
-                        <p class="mt-2 text-gray-300 text-lg md:text-xl" data-lang-key="result1_title">MAIS VENDAS</p>
+                        <i data-lucide="trending-up" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">25</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result1_title">Mais Vendas</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result2_value">-90%</p>
-                        <p class="mt-2 text-gray-300 text-lg md:text-xl" data-lang-key="result2_title">MENOS CUSTO</p>
+                        <i data-lucide="arrow-down-circle" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="-" data-suffix="%">90</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result2_title">Custos Operacionais</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result3_value">+40%</p>
-                        <p class="mt-2 text-gray-300 text-lg md:text-xl" data-lang-key="result3_title">MAIS PRODUÇÃO</p>
+                        <i data-lucide="zap" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">40</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result3_title">Mais Produção</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result4_value">+20%</p>
-                        <p class="mt-2 text-gray-300 text-lg md:text-xl" data-lang-key="result4_title">MAIS CLIENTES</p>
+                        <i data-lucide="users" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">20</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result4_title">Mais Clientes</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result5_title">MAIS RAPIDEZ</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg text-center" data-lang-key="result5_value">Horas para Segundos</p>
+                        <i data-lucide="gauge-circle" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="text-2xl md:text-3xl font-extrabold text-yellow-400 leading-tight" data-lang-key="result5_value">Horas para Segundos</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result5_title">Mais Rapidez</p>
                     </div>
                     <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <p class="text-4xl md:text-6xl font-extrabold text-yellow-400" data-lang-key="result6_value">9%</p>
-                        <p class="mt-2 text-gray-300 text-lg md:text-xl" data-lang-key="result6_title">MAIS CONVERSÃO</p>
+                        <i data-lucide="target" class="w-10 h-10 text-yellow-400 mb-2"></i>
+                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-suffix="%">9</p>
+                        <p class="mt-2 text-gray-300 text-lg md:text-xl uppercase" data-lang-key="result6_title">Mais Conversão</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Seção Projetos em Destaque -->
         <section id="projects" class="py-20 px-4">
             <div class="container mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="projects_title">Principais Áreas de Atuação</h2>
                 <div class="max-w-4xl mx-auto space-y-8">
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project1_title"><i data-lucide="bell-ring" class="w-6 h-6 mr-3"></i>Automação</h3>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project1_title"><i data-lucide="bot" class="w-6 h-6 mr-3"></i>Automação</h3>
                         <p data-lang-key="project1_desc">Apps Script, APIs (Gmail/Sheets/Calendar)</p>
                     </article>
                      <article class="glass-effect p-6 md:p-8 rounded-2xl">
@@ -239,11 +232,11 @@
                         <p data-lang-key="project2_desc">WordPress, WooCommerce, SEO</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project3_title"><i data-lucide="megaphone" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project3_title"><i data-lucide="lightbulb" class="w-6 h-6 mr-3"></i>Consultoria Digital</h3>
                         <p data-lang-key="project3_desc">Meta Ads, Mailchimp, Funis de Venda</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project4_title"><i data-lucide="video" class="w-6 h-6 mr-3"></i>Mídia</h3>
+                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4" data-lang-key="project4_title"><i data-lucide="clapperboard" class="w-6 h-6 mr-3"></i>Mídia</h3>
                         <p data-lang-key="project4_desc">Criação de vídeos e imagens profissionais</p>
                     </article>
                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
@@ -254,7 +247,6 @@
             </div>
         </section>
 
-        <!-- Seção Competências -->
         <section id="skills" class="py-20 px-4">
             <div class="container mx-auto">
                 <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="skills_title">Competências Técnicas</h2>
@@ -283,7 +275,6 @@
             </div>
         </section>
         
-        <!-- Seção Contato -->
         <section id="contact" class="py-20 px-4">
             <div class="container mx-auto text-center">
                 <h2 class="text-3xl md:text-5xl font-bold" data-lang-key="contact_title">Vamos conversar?</h2>
@@ -299,19 +290,17 @@
     </main>
 
     <footer class="py-10 text-center text-gray-500 px-4">
-        <div class="flex justify-center space-x-6 mb-4">
-            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400" data-lang-key="footer_home">Início</a>
-            <a href="pages/privacidade.html" class="hover:text-yellow-400" data-lang-key="footer_privacy">Privacidade</a>
-            <a href="pages/termos.html" class="hover:text-yellow-400" data-lang-key="footer_terms">Termos</a>
+        <div class="flex justify-center items-center space-x-6 mb-4">
+            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400 flex items-center gap-2" data-lang-key="footer_home"><i data-lucide="home" class="w-4 h-4"></i>Início</a>
+            <a href="pages/privacidade.html" class="hover:text-yellow-400 flex items-center gap-2" data-lang-key="footer_privacy"><i data-lucide="shield" class="w-4 h-4"></i>Privacidade</a>
+            <a href="pages/termos.html" class="hover:text-yellow-400 flex items-center gap-2" data-lang-key="footer_terms"><i data-lucide="file-text" class="w-4 h-4"></i>Termos</a>
         </div>
         <p>&copy; 2025 Gabriel Alves. <span data-lang-key="footer_rights">Todos os direitos reservados.</span></p>
     </footer>
 
-    <!-- Bibliotecas de Animação -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     
-    <!-- Nosso JavaScript -->
     <script>
         window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
 
@@ -320,7 +309,7 @@
                 lucide.createIcons();
                 gsap.config({ force3D: true });
                 ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
-
+                
                 // Dicionário de traduções
                 const translations = {
                     pt: {
@@ -330,23 +319,23 @@
                         profile_item2: "Foco: Redução de custos, aumento da eficiência",
                         profile_item3: "Atuação Brasil & Bolívia — soluções adaptáveis e eficazes",
                         education_title: "Formação",
-                        education_item1: "Técnico em Administração — Bolívia",
-                        education_item2: "Tecnólogo em Informática — Jalasoft, Bolívia",
+                        education_item1: "<i data-lucide='award' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Técnico em Administração — Bolívia",
+                        education_item2: "<i data-lucide='laptop' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Tecnólogo em Informática — Jalasoft, Bolívia",
                         languages_title: "Idiomas",
                         lang_pt: "🇧🇷 Português — Nativo", lang_es: "🇪🇸 Espanhol — Nativo", lang_en: "🇺🇸 Inglês — Técnico (B1)",
                         results_title: "Resultados Reais",
-                        result1_title: "MAIS VENDAS", result1_value: "+25% Online",
-                        result2_title: "MENOS CUSTO", result2_value: "-90%",
-                        result3_title: "MAIS PRODUÇÃO", result3_value: "+40% de Engajamento",
-                        result4_title: "MAIS CLIENTES", result4_value: "+20% em Tráfego",
+                        result1_title: "MAIS VENDAS",
+                        result2_title: "CUSTOS OPERACIONAIS",
+                        result3_title: "MAIS PRODUÇÃO",
+                        result4_title: "MAIS CLIENTES",
                         result5_title: "MAIS RAPIDEZ", result5_value: "Horas para Segundos",
-                        result6_title: "MAIS CONVERSÃO", result6_value: "9% em Lançamentos",
+                        result6_title: "MAIS CONVERSÃO",
                         projects_title: "Principais Áreas de Atuação",
-                        project1_title: "Automação", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
-                        project2_title: "E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
-                        project3_title: "Consultoria Digital", project3_desc: "Meta Ads, Mailchimp, Funis de Venda",
-                        project4_title: "Mídia", project4_desc: "Criação de vídeos e imagens profissionais",
-                        project5_title: "Web Dev", project5_desc: "Sites responsivos para diversos clientes.",
+                        project1_title: "<i data-lucide='bot' class='w-6 h-6 mr-3'></i>Automação", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
+                        project2_title: "<i data-lucide='shopping-cart' class='w-6 h-6 mr-3'></i>E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
+                        project3_title: "<i data-lucide='lightbulb' class='w-6 h-6 mr-3'></i>Consultoria Digital", project3_desc: "Meta Ads, Mailchimp, Funis de Venda",
+                        project4_title: "<i data-lucide='clapperboard' class='w-6 h-6 mr-3'></i>Mídia", project4_desc: "Criação de vídeos e imagens profissionais",
+                        project5_title: "<i data-lucide='globe-2' class='w-6 h-6 mr-3'></i>Web Dev", project5_desc: "Sites responsivos para diversos clientes.",
                         skills_title: "Competências Técnicas",
                         skill1_title: "Dev/Automação", skill1_desc: "Python, JS, HTML/CSS, GAS",
                         skill2_title: "Ferramentas", skill2_desc: "WordPress, Woo, Trello",
@@ -355,7 +344,7 @@
                         contact_title: "Vamos conversar?",
                         contact_subtitle: "A primeira conversa é sem compromisso. Conte-me seu desafio.",
                         contact_cta: "Falar no WhatsApp",
-                        footer_home: "Início", footer_privacy: "Privacidade", footer_terms: "Termos", footer_rights: "Todos os direitos reservados."
+                        footer_home: "<i data-lucide='home' class='w-4 h-4'></i>Início", footer_privacy: "<i data-lucide='shield' class='w-4 h-4'></i>Privacidade", footer_terms: "<i data-lucide='file-text' class='w-4 h-4'></i>Termos", footer_rights: "Todos os direitos reservados."
                     },
                     en: {
                         nav_profile: "Profile", nav_results: "Results", nav_projects: "Projects", nav_skills: "Skills", nav_contact: "Contact",
@@ -364,23 +353,23 @@
                         profile_item2: "Focus: Cost reduction, efficiency increase",
                         profile_item3: "Operating in Brazil & Bolivia — adaptable and effective solutions",
                         education_title: "Education",
-                        education_item1: "Technician in Administration — Bolivia",
-                        education_item2: "Technologist in Informatics — Jalasoft, Bolivia",
+                        education_item1: "<i data-lucide='award' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Technician in Administration — Bolivia",
+                        education_item2: "<i data-lucide='laptop' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Technologist in Informatics — Jalasoft, Bolivia",
                         languages_title: "Languages",
                         lang_pt: "🇧🇷 Portuguese — Native", lang_es: "🇪🇸 Spanish — Native", lang_en: "🇺🇸 English — Technical (B1)",
                         results_title: "Real Results",
-                        result1_title: "MORE SALES", result1_value: "+25% Online",
-                        result2_title: "LESS COST", result2_value: "-90%",
-                        result3_title: "MORE PRODUCTION", result3_value: "+40% Engagement",
-                        result4_title: "MORE CLIENTS", result4_value: "+20% in Traffic",
+                        result1_title: "MORE SALES",
+                        result2_title: "OPERATIONAL COSTS",
+                        result3_title: "MORE PRODUCTION",
+                        result4_title: "MORE CLIENTS",
                         result5_title: "MORE SPEED", result5_value: "Hours to Seconds",
-                        result6_title: "MORE CONVERSION", result6_value: "9% in Launches",
+                        result6_title: "MORE CONVERSION",
                         projects_title: "Main Areas of Expertise",
-                        project1_title: "Automation", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
-                        project2_title: "E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
-                        project3_title: "Digital Consulting", project3_desc: "Meta Ads, Mailchimp, Sales Funnels",
-                        project4_title: "Media", project4_desc: "Creation of professional videos and images",
-                        project5_title: "Web Dev", project5_desc: "Responsive sites for various clients.",
+                        project1_title: "<i data-lucide='bot' class='w-6 h-6 mr-3'></i>Automation", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
+                        project2_title: "<i data-lucide='shopping-cart' class='w-6 h-6 mr-3'></i>E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
+                        project3_title: "<i data-lucide='lightbulb' class='w-6 h-6 mr-3'></i>Digital Consulting", project3_desc: "Meta Ads, Mailchimp, Sales Funnels",
+                        project4_title: "<i data-lucide='clapperboard' class='w-6 h-6 mr-3'></i>Media", project4_desc: "Creation of professional videos and images",
+                        project5_title: "<i data-lucide='globe-2' class='w-6 h-6 mr-3'></i>Web Dev", project5_desc: "Responsive sites for various clients.",
                         skills_title: "Technical Skills",
                         skill1_title: "Dev/Automation", skill1_desc: "Python, JS, HTML/CSS, GAS",
                         skill2_title: "Tools", skill2_desc: "WordPress, Woo, Trello",
@@ -389,7 +378,7 @@
                         contact_title: "Let's talk?",
                         contact_subtitle: "The first conversation is non-binding. Tell me your challenge.",
                         contact_cta: "Chat on WhatsApp",
-                        footer_home: "Home", footer_privacy: "Privacy", footer_terms: "Terms", footer_rights: "All rights reserved."
+                        footer_home: "<i data-lucide='home' class='w-4 h-4'></i>Home", footer_privacy: "<i data-lucide='shield' class='w-4 h-4'></i>Privacy", footer_terms: "<i data-lucide='file-text' class='w-4 h-4'></i>Terms", footer_rights: "All rights reserved."
                     },
                     es: {
                         nav_profile: "Perfil", nav_results: "Resultados", nav_projects: "Proyectos", nav_skills: "Competencias", nav_contact: "Contacto",
@@ -398,23 +387,23 @@
                         profile_item2: "Foco: Reducción de costos, aumento de eficiencia",
                         profile_item3: "Actuación en Brasil & Bolivia — soluciones adaptables y eficaces",
                         education_title: "Formación",
-                        education_item1: "Técnico en Administración — Bolivia",
-                        education_item2: "Tecnólogo en Informática — Jalasoft, Bolivia",
+                        education_item1: "<i data-lucide='award' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Técnico en Administración — Bolivia",
+                        education_item2: "<i data-lucide='laptop' class='w-5 h-5 mr-3 text-yellow-400/80'></i>Tecnólogo en Informática — Jalasoft, Bolivia",
                         languages_title: "Idiomas",
                         lang_pt: "🇧🇷 Portugués — Nativo", lang_es: "🇪🇸 Español — Nativo", lang_en: "🇺🇸 Inglés — Técnico (B1)",
                         results_title: "Resultados Reales",
-                        result1_title: "MÁS VENTAS", result1_value: "+25% Online",
-                        result2_title: "MENOS COSTO", result2_value: "-90%",
-                        result3_title: "MÁS PRODUCCIÓN", result3_value: "+40% de Engagement",
-                        result4_title: "MÁS CLIENTES", result4_value: "+20% en Tráfico",
+                        result1_title: "MÁS VENTAS",
+                        result2_title: "COSTOS OPERATIVOS",
+                        result3_title: "MÁS PRODUCCIÓN",
+                        result4_title: "MÁS CLIENTES",
                         result5_title: "MÁS RAPIDEZ", result5_value: "Horas a Segundos",
-                        result6_title: "MÁS CONVERSIÓN", result6_value: "9% en Lanzamientos",
+                        result6_title: "MÁS CONVERSIÓN",
                         projects_title: "Principales Áreas de Actuación",
-                        project1_title: "Automatización", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
-                        project2_title: "E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
-                        project3_title: "Consultoría Digital", project3_desc: "Meta Ads, Mailchimp, Embudos de Venta",
-                        project4_title: "Media", project4_desc: "Creación de videos e imágenes profesionales",
-                        project5_title: "Desarrollo Web", project5_desc: "Sitios web responsivos para diversos clientes.",
+                        project1_title: "<i data-lucide='bot' class='w-6 h-6 mr-3'></i>Automatización", project1_desc: "Apps Script, APIs (Gmail/Sheets/Calendar)",
+                        project2_title: "<i data-lucide='shopping-cart' class='w-6 h-6 mr-3'></i>E-commerce", project2_desc: "WordPress, WooCommerce, SEO",
+                        project3_title: "<i data-lucide='lightbulb' class='w-6 h-6 mr-3'></i>Consultoría Digital", project3_desc: "Meta Ads, Mailchimp, Embudos de Venta",
+                        project4_title: "<i data-lucide='clapperboard' class='w-6 h-6 mr-3'></i>Media", project4_desc: "Creación de videos e imágenes profesionales",
+                        project5_title: "<i data-lucide='globe-2' class='w-6 h-6 mr-3'></i>Desarrollo Web", project5_desc: "Sitios web responsivos para diversos clientes.",
                         skills_title: "Competencias Técnicas",
                         skill1_title: "Des/Automatización", skill1_desc: "Python, JS, HTML/CSS, GAS",
                         skill2_title: "Herramientas", skill2_desc: "WordPress, Woo, Trello",
@@ -423,42 +412,70 @@
                         contact_title: "¿Hablamos?",
                         contact_subtitle: "La primera conversación es sin compromiso. Cuéntame tu desafío.",
                         contact_cta: "Hablar por WhatsApp",
-                        footer_home: "Inicio", footer_privacy: "Privacidad", footer_terms: "Términos", footer_rights: "Todos los derechos reservados."
+                        footer_home: "<i data-lucide='home' class='w-4 h-4'></i>Inicio", footer_privacy: "<i data-lucide='shield' class='w-4 h-4'></i>Privacidad", footer_terms: "<i data-lucide='file-text' class='w-4 h-4'></i>Términos", footer_rights: "Todos los derechos reservados."
                     }
                 };
-
+                
                 const langButtons = document.querySelectorAll('.lang-btn');
-
                 const setLanguage = (lang) => {
+                    if (!translations[lang]) return;
                     document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
                     localStorage.setItem('language', lang);
-                    
                     document.querySelectorAll('[data-lang-key]').forEach(el => {
                         const key = el.dataset.langKey;
-                        if (translations[lang][key]) {
-                            el.innerHTML = translations[lang][key];
-                        }
+                        if (translations[lang][key]) el.innerHTML = translations[lang][key];
                     });
-
                     langButtons.forEach(btn => {
                         btn.classList.toggle('active', btn.dataset.lang === lang);
                         btn.classList.toggle('opacity-50', btn.dataset.lang !== lang);
                     });
+                    // Recriar ícones após a mudança de idioma
+                    lucide.createIcons();
                 };
-                
-                langButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        setLanguage(button.dataset.lang);
-                    });
-                });
-                
-                const savedLang = localStorage.getItem('language') || 'pt';
-                setLanguage(savedLang);
+                langButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
+                setLanguage(localStorage.getItem('language') || 'pt');
 
-                // O restante do seu código JavaScript aqui...
+                const initBackground = () => {
+                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+                    const canvas = document.getElementById('background-canvas');
+                    if (!canvas) return;
+                    const ctx = canvas.getContext('2d');
+                    let width = canvas.width = window.innerWidth;
+                    let height = canvas.height = window.innerHeight;
+                    let lastScrollY = window.scrollY;
+                    const mouse = { x: width / 2, y: height / 2, radius: 150 };
+                    window.addEventListener('mousemove', e => gsap.to(mouse, { x: e.clientX, y: e.clientY, duration: 0.8, ease: 'power2.out' }));
+                    window.addEventListener('click', () => gsap.fromTo(mouse, {radius: 300}, {radius: 150, duration: 0.5, ease: 'power3.out'}));
+                    window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
+                    const particles = [];
+                    const particleCount = window.innerWidth < 768 ? 60 : 100;
+                    class Particle {
+                        constructor() { this.x = Math.random() * width; this.y = Math.random() * height; this.vx = (Math.random() - 0.5) * 0.3; this.vy = (Math.random() - 0.5) * 0.3; this.radius = 1 + Math.random() * 1.5; this.color = `rgba(255, 215, 0, ${0.1 + Math.random() * 0.2})`; }
+                        update(scrollDelta) {
+                            const dx = this.x - mouse.x; const dy = this.y - mouse.y; const dist = Math.hypot(dx, dy);
+                            if (dist < mouse.radius) { const angle = Math.atan2(dy, dx); const force = (mouse.radius - dist) / mouse.radius; this.vx += Math.cos(angle) * force * 0.3; this.vy += Math.sin(angle) * force * 0.3; }
+                            this.vx *= 0.98; this.vy *= 0.98; this.x += this.vx; this.y += this.vy; this.y += scrollDelta * 0.1;
+                            if (this.x > width + 5) this.x = -5; else if (this.x < -5) this.x = width + 5;
+                            if (this.y > height + 5) this.y = -5; else if (this.y < -5) this.y = height + 5;
+                        }
+                        draw() { ctx.beginPath(); ctx.fillStyle = this.color; ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill(); }
+                    }
+                    for(let i = 0; i < particleCount; i++) particles.push(new Particle());
+                    function handleConnections() {
+                        for(let i = 0; i < particles.length; i++) {
+                            for(let j = i; j < particles.length; j++) {
+                                const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
+                                if (dist < 120) { const opacity = 1 - (dist / 120); ctx.beginPath(); ctx.strokeStyle = `rgba(255, 215, 0, ${opacity * 0.3})`; ctx.lineWidth = 0.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
+                            }
+                        }
+                    }
+                    function animate() { const currentScrollY = window.scrollY; const scrollDelta = currentScrollY - lastScrollY; ctx.clearRect(0, 0, width, height); particles.forEach(p => { p.update(scrollDelta); p.draw(); }); handleConnections(); lastScrollY = currentScrollY; requestAnimationFrame(animate); }
+                    animate();
+                };
+                initBackground();
+                
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
-                
                 const toggleMenu = (isOpen) => {
                     const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
                     mobileMenu.classList.toggle('hidden', !isNowOpen);
@@ -468,46 +485,43 @@
                     lucide.createIcons();
                     if (!isNowOpen) hamburgerBtn.focus();
                 };
-
-                hamburgerBtn.addEventListener('click', () => toggleMenu());
+                hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
                 document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+                document.addEventListener('click', (e) => { if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) toggleMenu(false); });
                 
                 if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
                     const cursor = document.querySelector('.custom-cursor');
                     window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
-                    document.querySelectorAll('a, button, .tech-logo').forEach(el => {
-                        el.addEventListener('mouseenter', () => cursor.classList.add('grow'));
-                        el.addEventListener('mouseleave', () => cursor.classList.remove('grow'));
-                    });
+                    document.querySelectorAll('a, button, .tech-logo').forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('grow')); el.addEventListener('mouseleave', () => cursor.classList.remove('grow')); });
                 }
 
                 gsap.registerPlugin(ScrollTrigger);
                 gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
                 
-                gsap.utils.toArray('section h2, .glass-effect, #about div, #contact p, #contact a, #contact button').forEach(elem => {
-                    gsap.from(elem, {
-                        opacity: 0, y: 50, duration: 1, ease: 'power3.out',
-                        scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true }
+                gsap.utils.toArray('section h2, .glass-effect > *:not(.result-number), #about div, #contact p, #contact a, #contact button').forEach(elem => {
+                    gsap.from(elem, { opacity: 0, y: 50, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true } });
+                });
+                
+                gsap.utils.toArray(".result-number").forEach(elem => {
+                    const targetNumber = parseInt(elem.textContent, 10);
+                    const prefix = elem.dataset.prefix || '';
+                    const suffix = elem.dataset.suffix || '';
+                    let counter = { val: 0 };
+                    gsap.to(counter, {
+                        val: targetNumber,
+                        duration: 2,
+                        ease: "power1.out",
+                        scrollTrigger: { trigger: elem, start: "top 85%", once: true },
+                        onUpdate: () => elem.textContent = prefix + Math.ceil(counter.val) + suffix
                     });
                 });
                 
                 gsap.utils.toArray("#main-nav a").forEach(link => {
                     const section = document.querySelector(link.getAttribute("href"));
-                    ScrollTrigger.create({
-                        trigger: section,
-                        start: "top center",
-                        end: "bottom center",
-                        onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link))
-                    });
+                    ScrollTrigger.create({ trigger: section, start: "top center", end: "bottom center", onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link)) });
                 });
 
-                 // Blur on Contact Section
-                 ScrollTrigger.create({
-                    trigger: '#contact',
-                    start: 'top bottom',
-                    end: 'bottom top',
-                    onToggle: self => document.getElementById('background-canvas').classList.toggle('is-blurred', self.isActive)
-                });
+                 ScrollTrigger.create({ trigger: '#contact', start: 'top bottom', end: 'bottom top', onToggle: self => document.getElementById('background-canvas').classList.toggle('is-blurred', self.isActive) });
 
             } catch (error) {
                 console.error("Erro ao inicializar o site:", error);
