@@ -147,6 +147,19 @@
             h1, h2, h3 { color: #000 !important; }
             p, li { color: #333 !important; }
         }
+
+        /* NOVO: Acessibilidade para Redução de Movimento */
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+                scroll-behavior: auto !important;
+            }
+            #background-canvas {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -247,7 +260,7 @@
                     <article class="glass-effect p-6 md:p-8 rounded-2xl flex flex-col interactive-card">
                         <div class="flex-grow">
                             <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="archive" class="w-6 h-6 mr-3"></i>Sistema de Gestão de Compras</h3>
-                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Desafio:</strong> Centralizar a gestão de fornecedores e cotações, que era feita manually em planilhas, causando erros e perda de tempo.</p>
+                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Desafio:</strong> Centralizar a gestão de fornecedores e cotações, que era feita manualmente em planilhas, causando erros e perda de tempo.</p>
                             <p class="text-gray-400 mb-2"><strong class="text-gray-300">Solução:</strong> Criei uma aplicação web com React.js e Firebase para gerenciar produtos, fornecedores e pedidos em tempo real, com uma ferramenta de comparação de custo-benefício e importação de dados de Excel.</p>
                             <p class="text-gray-400 mb-4"><strong class="text-gray-300">Impacto:</strong> Otimização do processo de compras, permitindo decisões mais rápidas e econômicas, e eliminando a necessidade de múltiplas planilhas.</p>
                         </div>
@@ -360,6 +373,8 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
                 // --- SETUP INICIAL ---
                 lucide.createIcons();
                 document.getElementById('current-year').textContent = new Date().getFullYear();
@@ -395,18 +410,7 @@
                     applyTheme(newTheme);
                 });
 
-                // --- ANIMAÇÃO DE DIGITAÇÃO ---
-                if (window.TypeIt) {
-                    new TypeIt("#headline", {
-                        strings: "Desenvolvedor de Software | Foco em Resultados de Negócio",
-                        speed: 50,
-                        waitUntilVisible: true,
-                        cursorChar: "_",
-                        cursorClass: "typeit-cursor"
-                    }).go();
-                }
-
-                // --- MENU MOBILE ---
+                // --- MENU MOBILE (LÓGICA ATUALIZADA) ---
                 const hamburgerBtn = document.getElementById('hamburger-btn');
                 const mobileMenu = document.getElementById('mobile-menu');
                 const toggleMenu = (isOpen) => {
@@ -414,52 +418,91 @@
                     mobileMenu.classList.toggle('hidden', !isNowOpen);
                     mobileMenu.classList.toggle('flex', isNowOpen);
                     hamburgerBtn.setAttribute('aria-expanded', String(isNowOpen));
-                    hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
+                    
+                    if(isNowOpen) {
+                        hamburgerBtn.setAttribute('aria-label', 'Fechar menu');
+                        hamburgerBtn.innerHTML = `<i data-lucide="x" class="w-8 h-8"></i>`;
+                    } else {
+                        hamburgerBtn.setAttribute('aria-label', 'Abrir menu');
+                        hamburgerBtn.innerHTML = `<i data-lucide="menu" class="w-8 h-8"></i>`;
+                    }
                     lucide.createIcons();
                     if (!isNowOpen) hamburgerBtn.focus();
                 };
-                hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+                hamburgerBtn.addEventListener('click', (e) => { 
+                    e.stopPropagation(); 
+                    toggleMenu(); 
+                });
                 document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
+                
+                // NOVO: Lógica para fechar menu ao clicar fora
+                document.addEventListener('click', (e) => {
+                    if (!mobileMenu.classList.contains('hidden') && !mobileMenu.contains(e.target) && !hamburgerBtn.contains(e.target)) {
+                        toggleMenu(false);
+                    }
+                });
 
-                // --- ANIMAÇÕES COM GSAP & SCROLLTRIGGER ---
-                if (window.gsap) {
-                    gsap.registerPlugin(ScrollTrigger);
-                    gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
-                    gsap.utils.toArray('section h2, .glass-effect, #about p, #contact p, #contact a').forEach(elem => {
-                        gsap.from(elem, {
-                            opacity: 0, y: 50, duration: 0.8, ease: 'power3.out',
-                            scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true }
-                        });
-                    });
+                // --- LÓGICA DE ANIMAÇÕES (AGORA CONDICIONAL) ---
+                const headlineElement = document.getElementById('headline');
+                const headlineText = "Desenvolvedor de Software | Foco em Resultados de Negócio";
 
-                    // --- ANIMAÇÃO DOS CONTADORES ---
-                    gsap.utils.toArray(".counter-up").forEach(elem => {
-                        const target = { val: 0 };
-                        const endValue = parseInt(elem.dataset.value, 10);
-                        const prefix = elem.dataset.prefix || '';
-                        const suffix = '%';
-                        gsap.to(target, {
-                            val: endValue, duration: 2, ease: "power1.out",
-                            scrollTrigger: { trigger: elem, start: "top 85%", once: true },
-                            onUpdate: () => elem.textContent = prefix + Math.ceil(target.val) + suffix
-                        });
-                    });
-                    
-                    // --- NAVEGAÇÃO ATIVA COM SCROLL ---
-                    gsap.utils.toArray("#main-nav a").forEach(link => {
-                        const section = document.querySelector(link.getAttribute("href"));
-                        if (section) {
-                            ScrollTrigger.create({
-                                trigger: section, start: "top center", end: "bottom center",
-                                onToggle: self => {
-                                    if (self.isActive) {
-                                        document.querySelectorAll("#main-nav a").forEach(l => l.classList.remove("active"));
-                                        link.classList.add("active");
-                                    }
-                                }
+                if (!prefersReducedMotion) {
+                    // ANIMAÇÃO DE DIGITAÇÃO
+                    if (window.TypeIt) {
+                        new TypeIt("#headline", {
+                            strings: headlineText,
+                            speed: 50,
+                            waitUntilVisible: true,
+                            cursorChar: "_",
+                            cursorClass: "typeit-cursor"
+                        }).go();
+                    } else {
+                        headlineElement.textContent = headlineText;
+                    }
+
+                    // ANIMAÇÕES COM GSAP & SCROLLTRIGGER
+                    if (window.gsap) {
+                        gsap.registerPlugin(ScrollTrigger);
+                        gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
+                        gsap.utils.toArray('section h2, .glass-effect, #about p, #contact p, #contact a').forEach(elem => {
+                            gsap.from(elem, {
+                                opacity: 0, y: 50, duration: 0.8, ease: 'power3.out',
+                                scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true }
                             });
-                        }
-                    });
+                        });
+
+                        // ANIMAÇÃO DOS CONTADORES
+                        gsap.utils.toArray(".counter-up").forEach(elem => {
+                            const target = { val: 0 };
+                            const endValue = parseInt(elem.dataset.value, 10);
+                            const prefix = elem.dataset.prefix || '';
+                            const suffix = '%';
+                            gsap.to(target, {
+                                val: endValue, duration: 2, ease: "power1.out",
+                                scrollTrigger: { trigger: elem, start: "top 85%", once: true },
+                                onUpdate: () => elem.textContent = prefix + Math.ceil(target.val) + suffix
+                            });
+                        });
+                        
+                        // NAVEGAÇÃO ATIVA COM SCROLL
+                        gsap.utils.toArray("#main-nav a").forEach(link => {
+                            const section = document.querySelector(link.getAttribute("href"));
+                            if (section) {
+                                ScrollTrigger.create({
+                                    trigger: section, start: "top center", end: "bottom center",
+                                    onToggle: self => {
+                                        if (self.isActive) {
+                                            document.querySelectorAll("#main-nav a").forEach(l => l.classList.remove("active"));
+                                            link.classList.add("active");
+                                        }
+                                    }
+                                });
+                            }
+                        });
+                    }
+                } else {
+                    // Se o usuário prefere movimento reduzido, apenas mostra o texto sem animar
+                    headlineElement.textContent = headlineText;
                 }
 
             } catch (error) {
