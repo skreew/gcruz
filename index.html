@@ -3,140 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Alves - Automação e Soluções Digitais</title>
+    <title>Gabriel Alves - Desenvolvedor de Software e Soluções Digitais</title>
     
-    <meta name="description" content="Especialista em automação e soluções digitais. +5 anos de experiência em redução de custos, aumento de eficiência e desenvolvimento web.">
-    <meta property="og:title" content="Gabriel Alves - Automação e Soluções Digitais">
-    <meta property="og:description" content="Automatize rotinas e acelere seu crescimento. Libere sua equipe de tarefas repetitivas com sistemas que trabalham sozinhos.">
-    <meta property="og:image" content="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png">
+    <meta name="description" content="Desenvolvedor de Software especialista em React.js e Flutter, focado em criar soluções que geram resultados de negócio, reduzem custos e aumentam a eficiência.">
+    <meta property="og:title" content="Gabriel Alves - Desenvolvedor de Software e Soluções Digitais">
+    <meta property="og:description" content="Transformo desafios de negócio em aplicações robustas e de alta performance. Veja meus projetos e resultados.">
+    <meta property="og:image" content="https://i.ibb.co/8DPzTV1n/Imagem-do-Whats-App-de-2025-06-23-s-14-27-25-77448b47.jpg"> 
     <meta property="og:url" content="https://skreew.github.io/gcruz/">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
 
+    <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="shortcut icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#000000">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet"></noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet"></noscript>
     <link rel="preconnect" href="https://wa.me">
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
 
     <script src="https://cdn.tailwindcss.com"></script>
     
-    <script src="https://unpkg.com/lucide@latest"></script>
+    <script src="https://unpkg.com/lucide@latest" defer></script>
+    <script src="https://unpkg.com/typeit@8.7.1/dist/index.umd.js" defer></script>
 
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "name": "Gabriel Alves",
-      "jobTitle": "Especialista em Automação e Soluções Digitais",
+      "@type": "Person",
+      "name": "Gabriel Alves da Cruz",
+      "jobTitle": "Desenvolvedor de Software",
       "url": "https://skreew.github.io/gcruz/",
-      "image": "https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png",
-      "sameAs": []
+      "image": "https://i.ibb.co/8DPzTV1n/Imagem-do-Whats-App-de-2025-06-23-s-14-27-25-77448b47.jpg",
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Freelancer"
+      },
+      "alumniOf": {
+        "@type": "CollegeOrUniversity",
+        "name": "Jalasoft"
+      },
+      "knowsAbout": ["React", "Flutter", "Firebase", "JavaScript", "Dart", "Automação", "SEO", "Desenvolvimento Full-Stack"],
+      "sameAs": [
+        "https://www.linkedin.com/in/SEU_PERFIL", 
+        "https://github.com/skreew"
+      ]
     }
     </script>
+
     <style>
-        body {
-            font-family: 'Poppins', sans-serif;
-            background-color: #000000;
-            color: #F5F5F5;
-            overflow-x: hidden;
-            position: relative;
+        :root {
+            --cor-bg: #000000;
+            --cor-texto-principal: #F5F5F5;
+            --cor-texto-secundario: #a3a3a3; /* cinza */
+            --cor-amarelo: #FFD700;
+            --cor-preto-absoluto: #000000;
+            --cor-glass-bg: rgba(10, 10, 10, 0.4);
+            --cor-glass-border: rgba(255, 255, 255, 0.1);
+            --cor-card-hover-shadow: rgba(0,0,0,0.4);
+            --cor-card-border-glow: rgba(255, 215, 0, 0.5);
         }
 
-        :root {
-            --cor-amarelo: #FFD700;
-            --cor-preto: #000000;
-            --cor-branco: #F5F5F5;
-            --cor-cinza-claro: #1a1a1a;
+        body.light-mode {
+            --cor-bg: #f0f0f0;
+            --cor-texto-principal: #1f2937; /* cinza escuro */
+            --cor-texto-secundario: #4b5563;
+            --cor-amarelo: #f59e0b; /* amarelo mais escuro */
+            --cor-preto-absoluto: #000000;
+            --cor-glass-bg: rgba(255, 255, 255, 0.4);
+            --cor-glass-border: rgba(0, 0, 0, 0.1);
+            --cor-card-hover-shadow: rgba(0,0,0,0.1);
+            --cor-card-border-glow: rgba(245, 158, 11, 0.6);
         }
         
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--cor-bg);
+            color: var(--cor-texto-principal);
+            overflow-x: hidden;
+            position: relative;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
         #background-canvas {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
-            z-index: -1;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;
             transition: filter 0.5s ease-out, transform 0.5s ease-out;
         }
 
-        #background-canvas.is-blurred {
-            filter: blur(8px);
-            transform: scale(1.1);
-        }
-        
-        #main-header.scrolled .glass-effect {
-            box-shadow: 0 5px 20px rgba(0,0,0,0.5);
-        }
-
         .glass-effect {
-            background: rgba(10, 10, 10, 0.4);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: background 0.5s ease, box-shadow 0.5s ease;
+            background: var(--cor-glass-bg);
+            backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+            border: 1px solid var(--cor-glass-border);
+            transition: background 0.5s ease, box-shadow 0.5s ease, border 0.3s ease;
         }
 
-        .project-card:hover { transform: translateY(-8px); box-shadow: 0 20px 30px rgba(0,0,0,0.4); }
-        .about-image-container:hover img { transform: scale(1.03); }
+        /* Microinteração nos Cards */
+        .interactive-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .interactive-card:hover { 
+            transform: translateY(-8px); 
+            box-shadow: 0 10px 25px var(--cor-card-hover-shadow);
+            border-color: var(--cor-card-border-glow);
+        }
+        .interactive-card:hover .card-icon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+        .card-icon {
+            transition: transform 0.3s ease;
+        }
 
-        @media (prefers-reduced-motion: no-preference) { .hero-cta { animation: pulse 2s infinite; } }
-        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+        /* Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: var(--cor-preto); }
+        ::-webkit-scrollbar-track { background: var(--cor-bg); }
         ::-webkit-scrollbar-thumb { background-color: var(--cor-amarelo); border-radius: 10px; }
-        .custom-cursor { display: none; }
-        @media (hover: hover) and (pointer: fine) { body { cursor: none; } .custom-cursor { display: block; position: fixed; top: 0; left: 0; width: 24px; height: 24px; border: 2px solid var(--cor-amarelo); border-radius: 50%; pointer-events: none; transform: translate(-50%, -50%); transition: width 0.3s ease, height 0.3s ease, background-color 0.3s ease, transform 0.1s ease-out; z-index: 9999; } .custom-cursor.grow { width: 50px; height: 50px; background-color: rgba(255, 215, 0, 0.2); } }
-        .about-image-container img { transition: transform 0.5s ease; }
+        
+        /* Links */
         .skip-link { position: absolute; left: -9999px; top: auto; width: 1px; height: 1px; overflow: hidden; z-index: -999; }
-        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto); padding: 10px; border-radius: 8px; margin: 10px; }
+        .skip-link:focus, .skip-link:active { position: static; width: auto; height: auto; overflow: visible; z-index: 9999; background: var(--cor-amarelo); color: var(--cor-preto-absoluto); padding: 10px; border-radius: 8px; margin: 10px; }
         .keyboard-nav :focus-visible { outline: 2px solid var(--cor-amarelo); outline-offset: 3px; border-radius: 4px; }
-        nav a.active { color: var(--cor-amarelo); position: relative; }
+        nav a.active { color: var(--cor-amarelo) !important; position: relative; }
         nav a.active::after { content: ''; position: absolute; bottom: -5px; left: 0; width: 100%; height: 2px; background: var(--cor-amarelo); }
-        .lang-btn.active {
-            background-color: var(--cor-amarelo);
-            color: var(--cor-preto);
+
+        /* Animação do Título */
+        .typeit-cursor {
+            color: var(--cor-amarelo);
+            animation: blink 0.5s infinite;
         }
-        @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } #background-canvas { display: none; } }
+        @keyframes blink { 50% { opacity: 0; } }
+        
+        /* Estilos de Impressão */
+        @media print {
+            body { background-color: #fff; color: #000; font-family: 'Times New Roman', serif; }
+            #main-header, #contact, footer, #background-canvas, #theme-toggle { display: none !important; }
+            section { padding-top: 2rem; padding-bottom: 2rem; }
+            .glass-effect { background: #f9f9f9; border: 1px solid #ccc; backdrop-filter: none; box-shadow: none; }
+            a { color: #000; text-decoration: underline; }
+            h1, h2, h3 { color: #000 !important; }
+            p, li { color: #333 !important; }
+        }
     </style>
 </head>
 <body class="antialiased">
 
-    <noscript>
-        <div class="bg-yellow-400 text-black p-4 text-center fixed top-0 w-full z-[9999]">
-            Este site funciona melhor com JavaScript habilitado.
-        </div>
-    </noscript>
-
+    <noscript><div class="bg-yellow-400 text-black p-4 text-center fixed top-0 w-full z-[9999]">Este site funciona melhor com JavaScript habilitado.</div></noscript>
     <a href="#main-content" class="skip-link">Pular para o conteúdo principal</a>
-    <canvas id="background-canvas" class="js-dependent"></canvas>
-    <div class="custom-cursor js-dependent"></div>
+    <canvas id="background-canvas"></canvas>
 
-    <header id="main-header" class="fixed top-0 left-0 w-full p-4 z-50">
-        <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-6">
-            <a href="#" class="text-xl md:text-2xl font-bold text-white">Gabriel Alves<span class="text-yellow-400">.</span></a>
-            <nav id="main-nav" class="hidden md:flex space-x-6 items-center">
-                <a href="#about" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_profile">Perfil</a>
-                <a href="#results" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_results">Resultados</a>
-                <a href="#projects" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_projects">Projetos</a>
-                <a href="#skills" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_skills">Competências</a>
-                <a href="#contact" class="nav-link text-white hover:text-yellow-400 transition-colors duration-300" data-lang-key="nav_contact">Contato</a>
-                 <div class="flex items-center space-x-1 ml-4 bg-black/20 p-1 rounded-full">
-                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="pt">PT</button>
-                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="en">EN</button>
-                     <button class="lang-btn px-2 py-1 text-sm rounded-full" data-lang="es">ES</button>
-                 </div>
+    <header id="main-header" class="fixed top-0 left-0 w-full p-4 md:p-6 z-50">
+        <div class="container mx-auto flex justify-between items-center glass-effect rounded-full py-3 px-6 md:px-8">
+            <a href="#" class="text-xl md:text-2xl font-bold text-inherit whitespace-nowrap">Gabriel Alves<span class="text-yellow-400">.</span></a>
+            <nav id="main-nav" class="hidden md:flex space-x-6 lg:space-x-8 items-center text-sm lg:text-base">
+                <a href="#about" class="nav-link hover:text-yellow-400 transition-colors">Perfil</a>
+                <a href="#skills" class="nav-link hover:text-yellow-400 transition-colors">Competências</a>
+                <a href="#projects" class="nav-link hover:text-yellow-400 transition-colors">Projetos</a>
+                <a href="#results" class="nav-link hover:text-yellow-400 transition-colors">Resultados</a>
+                <a href="#certifications" class="nav-link hover:text-yellow-400 transition-colors">Cursos</a>
+                <a href="#contact" class="nav-link hover:text-yellow-400 transition-colors">Contato</a>
             </nav>
-            <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-white">
-                <i data-lucide="menu" class="w-8 h-8"></i>
-            </button>
+            <div class="flex items-center gap-4">
+                 <button id="theme-toggle" aria-label="Alternar tema" class="text-inherit hover:text-yellow-400 transition-colors">
+                    <i data-lucide="sun" class="w-6 h-6 hidden dark-icon"></i>
+                    <i data-lucide="moon" class="w-6 h-6 hidden light-icon"></i>
+                </button>
+                <button id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false" class="md:hidden z-[101] text-inherit">
+                    <i data-lucide="menu" class="w-8 h-8"></i>
+                </button>
+            </div>
         </div>
     </header>
 
     <div id="mobile-menu" class="fixed inset-0 bg-black/80 backdrop-blur-xl z-[100] flex-col items-center justify-center space-y-8 text-2xl text-center hidden" role="dialog" aria-modal="true">
-        <a href="#about" class="mobile-link text-white" data-lang-key="nav_profile">Perfil</a>
-        <a href="#results" class="mobile-link text-white" data-lang-key="nav_results">Resultados</a>
-        <a href="#projects" class="mobile-link text-white" data-lang-key="nav_projects">Projetos</a>
-        <a href="#skills" class="mobile-link text-white" data-lang-key="nav_skills">Competências</a>
-        <a href="#contact" class="mobile-link text-white" data-lang-key="nav_contact">Contato</a>
+        <a href="#about" class="mobile-link">Perfil</a>
+        <a href="#skills" class="mobile-link">Competências</a>
+        <a href="#projects" class="mobile-link">Projetos</a>
+        <a href="#results" class="mobile-link">Resultados</a>
+        <a href="#certifications" class="mobile-link">Cursos</a>
+        <a href="#contact" class="mobile-link">Contato</a>
     </div>
 
     <main id="main-content">
@@ -145,95 +193,37 @@
                 <div class="max-w-4xl mx-auto glass-effect p-6 md:p-10 rounded-3xl">
                     <div class="flex flex-col md:flex-row items-center gap-8">
                         <div class="md:w-1/3">
-                            <picture>
-                                <source srcset="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" type="image/webp">
-                                <img src="https://i.postimg.cc/JzwnF5jk/foto-3x4-curriculo.png" alt="Gabriel Alves, especialista em soluções digitais" class="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="lazy" decoding="async">
-                            </picture>
+                            <img src="https://i.ibb.co/8DPzTV1n/Imagem-do-Whats-App-de-2025-06-23-s-14-27-25-77448b47.jpg" alt="Foto de Gabriel Alves" class="rounded-full w-40 h-40 md:w-48 md:h-48 object-cover border-4 border-yellow-400 shadow-lg mx-auto" loading="eager">
                         </div>
                         <div class="md:w-2/3 text-center md:text-left">
-                            <h1 class="text-3xl md:text-5xl font-bold text-white" data-lang-key="profile_title">Perfil Profissional</h1>
-                            <ul class="mt-4 md:mt-6 space-y-3 text-base md:text-lg text-gray-300">
-                                <li class="flex items-center justify-center md:justify-start">
-                                    <i data-lucide="briefcase" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400 shrink-0"></i>
-                                    <span data-lang-key="profile_item1">+5 anos em automação e soluções digitais</span>
-                                </li>
-                                <li class="flex items-center justify-center md:justify-start">
-                                    <i data-lucide="target" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400 shrink-0"></i>
-                                    <span data-lang-key="profile_item2">Foco: Redução de custos e aumento de eficiência</span>
-                                </li>
-                                <li class="flex items-center justify-center md:justify-start">
-                                    <i data-lucide="globe" class="w-5 h-5 md:w-6 md:h-6 mr-3 text-yellow-400 shrink-0"></i>
-                                    <span data-lang-key="profile_item3">Atuação Brasil & Bolívia — soluções globais</span>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="mt-8 pt-6 border-t border-gray-700 grid md:grid-cols-2 gap-8 text-center md:text-left">
-                        <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4">
-                                <i data-lucide="graduation-cap" class="w-6 h-6 mr-3 shrink-0"></i>
-                                <span data-lang-key="education_title">Formação</span>
-                            </h3>
-                            <div class="space-y-3 text-gray-300">
-                                <p class="flex items-center justify-center md:justify-start">
-                                    <i data-lucide="award" class="w-5 h-5 mr-3 text-yellow-400/80 shrink-0"></i>
-                                    <span data-lang-key="education_item1">Técnico em Administração — Bolívia</span>
-                                </p>
-                                <p class="flex items-center justify-center md:justify-start">
-                                    <i data-lucide="laptop" class="w-5 h-5 mr-3 text-yellow-400/80 shrink-0"></i>
-                                    <span data-lang-key="education_item2">Tecnólogo em Informática — Jalasoft, Bolívia</span>
-                                </p>
-                            </div>
-                        </div>
-                         <div>
-                            <h3 class="flex items-center justify-center md:justify-start text-xl font-bold text-yellow-400 mb-4">
-                                <i data-lucide="languages" class="w-6 h-6 mr-3 shrink-0"></i>
-                                <span data-lang-key="languages_title">Idiomas</span>
-                            </h3>
-                            <div class="space-y-2 text-gray-300">
-                                <p data-lang-key="lang_pt">🇧🇷 Português — Nativo</p>
-                                <p data-lang-key="lang_es">🇪🇸 Espanhol — Nativo</p>
-                                <p data-lang-key="lang_en">🇺🇸 Inglês — Técnico (B1)</p>
-                            </div>
+                            <h1 id="headline" class="text-3xl md:text-4xl font-bold text-inherit min-h-[120px] md:min-h-[80px]"></h1>
+                            <p class="mt-4 text-base md:text-lg text-gray-400">
+                                Desenvolvedor com sólida experiência na construção de aplicações robustas e de alto desempenho, com forte atuação em <strong class="text-yellow-400 font-semibold">React.js</strong> e <strong class="text-yellow-400 font-semibold">Flutter</strong>. Transformo desafios de negócio em soluções de software criativas, focando em otimizar operações e reduzir custos.
+                            </p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="results" class="py-20 px-4">
+        
+        <section id="skills" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="results_title">Resultados Reais</h2>
-                <div class="grid grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8 text-center">
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="trending-up" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">25</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result1_title">Mais Vendas</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Principais Competências</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="glass-effect p-6 rounded-2xl interactive-card">
+                        <i data-lucide="code-2" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2">Linguagens</h3>
+                        <p class="text-gray-400">JavaScript (ES6+), Dart, Python, HTML5/CSS3.</p>
                     </div>
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="arrow-down-circle" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="-" data-suffix="%">90</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result2_title">Custos Operacionais</p>
+                    <div class="glass-effect p-6 rounded-2xl interactive-card">
+                        <i data-lucide="layout-template" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2">Frontend & Mobile</h3>
+                        <p class="text-gray-400">React.js, Flutter, Tailwind CSS.</p>
                     </div>
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="zap" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">40</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result3_title">Mais Produção</p>
-                    </div>
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="users" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-prefix="+" data-suffix="%">20</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result4_title">Mais Clientes</p>
-                    </div>
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="gauge-circle" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="text-xl md:text-3xl font-extrabold text-yellow-400 leading-tight" data-lang-key="result5_value">Horas para Segundos</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result5_title">Mais Rapidez</p>
-                    </div>
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
-                        <i data-lucide="trending-up" class="w-10 h-10 text-yellow-400 mb-2"></i>
-                        <p class="result-number text-4xl md:text-5xl font-extrabold text-yellow-400" data-suffix="%">9</p>
-                        <p class="mt-2 text-gray-300 text-base md:text-lg uppercase" data-lang-key="result6_title">Mais Conversão</p>
+                    <div class="glass-effect p-6 rounded-2xl interactive-card">
+                        <i data-lucide="database" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2">Backend & Database</h3>
+                        <p class="text-gray-400">Google Firebase, APIs RESTful, Google Apps Script.</p>
                     </div>
                 </div>
             </div>
@@ -241,70 +231,81 @@
 
         <section id="projects" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="projects_title">Principais Áreas de Atuação</h2>
-                <div class="max-w-4xl mx-auto space-y-8">
-                    <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4">
-                            <i data-lucide="bot" class="w-6 h-6 mr-3 shrink-0"></i>
-                            <span data-lang-key="project1_title">Automação de Tarefas</span>
-                        </h3>
-                        <p class="text-gray-300" data-lang-key="project1_desc">Crio robôs e sistemas que realizam tarefas repetitivas automaticamente, liberando sua equipe para focar no que realmente importa.</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Projetos em Destaque</h2>
+                <div class="grid lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                    
+                    <article class="glass-effect p-6 md:p-8 rounded-2xl flex flex-col interactive-card">
+                        <div class="flex-grow">
+                            <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="archive" class="w-6 h-6 mr-3"></i>Sistema de Gestão de Compras</h3>
+                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Desafio:</strong> Centralizar a gestão de fornecedores e cotações, que era feita manualmente em planilhas, causando erros e perda de tempo.</p>
+                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Solução:</strong> Criei uma aplicação web com React.js e Firebase para gerenciar produtos, fornecedores e pedidos em tempo real, com uma ferramenta de comparação de custo-benefício e importação de dados de Excel.</p>
+                            <p class="text-gray-400 mb-4"><strong class="text-gray-300">Impacto:</strong> Otimização do processo de compras, permitindo decisões mais rápidas e econômicas, e eliminando a necessidade de múltiplas planilhas.</p>
+                        </div>
+                        <div class="mt-6 flex gap-4">
+                            <a href="#" class="inline-block bg-yellow-400 text-black font-semibold py-2 px-5 rounded-full text-sm transition-transform hover:scale-105">Ver Projeto</a>
+                            <a href="#" class="inline-block border border-gray-600 text-gray-300 font-semibold py-2 px-5 rounded-full text-sm transition-colors hover:bg-gray-800 hover:text-white">Ver Código</a>
+                        </div>
                     </article>
-                     <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4">
-                            <i data-lucide="shopping-cart" class="w-6 h-6 mr-3 shrink-0"></i>
-                            <span data-lang-key="project2_title">Lojas Virtuais (E-commerce)</span>
-                        </h3>
-                        <p class="text-gray-300" data-lang-key="project2_desc">Desenvolvo lojas online completas, prontas para vender e otimizadas para que seus produtos sejam encontrados facilmente no Google.</p>
+
+                    <article class="glass-effect p-6 md:p-8 rounded-2xl flex flex-col interactive-card">
+                        <div class="flex-grow">
+                            <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4"><i data-lucide="clipboard-list" class="w-6 h-6 mr-3"></i>Censo Agropecuário</h3>
+                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Desafio:</strong> Produtores rurais precisavam de uma forma digital e acessível para gerenciar seus rebanhos, substituindo anotações em papel.</p>
+                            <p class="text-gray-400 mb-2"><strong class="text-gray-300">Solução:</strong> Desenvolvi um aplicativo multiplataforma (Android/Web) com Flutter e Firebase para gestão detalhada de rebanho, com dashboards, filtros e notificações locais para eventos importantes como vacinação.</p>
+                            <p class="text-gray-400 mb-4"><strong class="text-gray-300">Impacto:</strong> Forneceu aos produtores uma ferramenta poderosa para tomada de decisões, melhorando o controle de saúde e o valor de mercado do rebanho.</p>
+                        </div>
+                        <div class="mt-6 flex gap-4">
+                            <a href="#" class="inline-block bg-yellow-400 text-black font-semibold py-2 px-5 rounded-full text-sm transition-transform hover:scale-105">Ver Projeto</a>
+                            <a href="#" class="inline-block border border-gray-600 text-gray-300 font-semibold py-2 px-5 rounded-full text-sm transition-colors hover:bg-gray-800 hover:text-white">Ver Código</a>
+                        </div>
                     </article>
-                    <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4">
-                            <i data-lucide="lightbulb" class="w-6 h-6 mr-3 shrink-0"></i>
-                            <span data-lang-key="project3_title">Consultoria Digital Estratégica</span>
-                        </h3>
-                        <p class="text-gray-300" data-lang-key="project3_desc">Ajudo sua empresa a atrair mais clientes e vender mais através de estratégias de marketing digital e anúncios online eficazes.</p>
-                    </article>
-                    <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4">
-                            <i data-lucide="clapperboard" class="w-6 h-6 mr-3 shrink-0"></i>
-                            <span data-lang-key="project4_title">Produção de Mídia</span>
-                        </h3>
-                        <p class="text-gray-300" data-lang-key="project4_desc">Produzo o conteúdo visual que sua marca precisa para se destacar, como vídeos e imagens de alta qualidade para redes sociais e sites.</p>
-                    </article>
-                    <article class="glass-effect p-6 md:p-8 rounded-2xl">
-                        <h3 class="flex items-center text-xl md:text-2xl font-bold text-yellow-400 mb-4">
-                            <i data-lucide="globe-2" class="w-6 h-6 mr-3 shrink-0"></i>
-                            <span data-lang-key="project5_title">Desenvolvimento de Sites</span>
-                        </h3>
-                        <p class="text-gray-300" data-lang-key="project5_desc">Construo sites modernos e fáceis de usar, que funcionam perfeitamente em celulares, tablets e computadores.</p>
-                    </article>
+
                 </div>
             </div>
         </section>
 
-        <section id="skills" class="py-20 px-4">
+        <section id="results" class="py-20 px-4">
             <div class="container mx-auto">
-                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12" data-lang-key="skills_title">Competências Técnicas</h2>
-                <div class="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-                    <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
-                        <i data-lucide="code-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill1_title">Dev/Automação</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill1_desc">Python, JS, HTML/CSS, GAS</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Resultados Comprovados</h2>
+                <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-8 max-w-6xl mx-auto text-center">
+                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
+                        <p class="counter-up text-5xl md:text-6xl font-extrabold text-yellow-400" data-value="-90"></p>
+                        <p class="mt-2 text-gray-400 text-base uppercase leading-tight">Custo Operacional</p>
                     </div>
-                     <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
-                        <i data-lucide="wrench" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill2_title">Ferramentas</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill2_desc">WordPress, Woo, Trello</p>
+                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
+                        <p class="counter-up text-5xl md:text-6xl font-extrabold text-yellow-400" data-value="25" data-prefix="+"></p>
+                        <p class="mt-2 text-gray-400 text-base uppercase leading-tight">Vendas Online</p>
                     </div>
-                     <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
-                        <i data-lucide="palette" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill3_title">Design e Mídia</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill3_desc">Photoshop, After Effects</p>
+                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
+                        <p class="counter-up text-5xl md:text-6xl font-extrabold text-yellow-400" data-value="40" data-prefix="+"></p>
+                        <p class="mt-2 text-gray-400 text-base uppercase leading-tight">Engajamento Social</p>
                     </div>
-                     <div class="glass-effect p-4 md:p-6 rounded-2xl text-center">
-                        <i data-lucide="bar-chart-2" class="w-8 h-8 md:w-10 md:h-10 text-yellow-400 mb-2 mx-auto"></i>
-                        <h3 class="text-lg md:text-xl font-bold mb-1" data-lang-key="skill4_title">Marketing</h3>
-                        <p class="text-gray-400 text-sm" data-lang-key="skill4_desc">SEO, GA4, E-mail</p>
+                    <div class="glass-effect p-4 md:p-6 rounded-2xl flex flex-col justify-center items-center">
+                        <p class="counter-up text-5xl md:text-6xl font-extrabold text-yellow-400" data-value="20" data-prefix="+"></p>
+                        <p class="mt-2 text-gray-400 text-base uppercase leading-tight">Tráfego Orgânico</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section id="certifications" class="py-20 px-4">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-5xl font-bold text-center mb-12">Formação e Cursos</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                    <div class="glass-effect p-6 rounded-2xl interactive-card flex flex-col">
+                        <i data-lucide="graduation-cap" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2 flex-grow">Tecnólogo em Informática</h3>
+                        <p class="text-gray-400">Jalasoft, Bolívia</p>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl interactive-card flex flex-col">
+                        <i data-lucide="file-badge-2" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2 flex-grow">Solução de Problemas com Código</h3>
+                        <p class="text-gray-400">Google for Developers</p>
+                    </div>
+                    <div class="glass-effect p-6 rounded-2xl interactive-card flex flex-col">
+                        <i data-lucide="banknote" class="w-10 h-10 text-yellow-400 mb-4 card-icon"></i>
+                        <h3 class="text-xl font-bold mb-2 flex-grow">Correspondente Bancário (FBB100)</h3>
+                        <p class="text-gray-400">Febraban</p>
                     </div>
                 </div>
             </div>
@@ -312,12 +313,12 @@
         
         <section id="contact" class="py-20 px-4">
             <div class="container mx-auto text-center">
-                <h2 class="text-3xl md:text-5xl font-bold" data-lang-key="contact_title">Vamos conversar?</h2>
-                <p class="mt-4 text-base md:text-lg text-gray-300 max-w-2xl mx-auto" data-lang-key="contact_subtitle">A primeira conversa é sem compromisso. Conte-me seu desafio.</p>
-                <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20site%20e%20gostaria%20de%20conversar%20sobre%20um%20projeto." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
+                <h2 class="text-3xl md:text-5xl font-bold">Vamos construir algo incrível?</h2>
+                <p class="mt-4 text-base md:text-lg text-gray-400 max-w-2xl mx-auto">Estou disponível para novos projetos e desafios. Entre em contato e vamos conversar sobre como posso ajudar.</p>
+                <a href="https://wa.me/5511981064061?text=Ol%C3%A1%2C%20Gabriel!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noopener" class="mt-12 inline-block bg-yellow-400 text-black font-bold py-4 px-10 rounded-full text-xl transition-transform duration-300 hover:scale-105 hover:shadow-lg hover:shadow-yellow-400/20">
                     <span class="flex items-center justify-center gap-2">
                         <i data-lucide="send"></i>
-                        <span data-lang-key="contact_cta">Falar no WhatsApp</span>
+                        <span>Falar no WhatsApp</span>
                     </span>
                 </a>
             </div>
@@ -325,293 +326,134 @@
     </main>
 
     <footer class="py-10 text-center text-gray-500 px-4">
-        <div class="flex justify-center items-center space-x-6 mb-4">
-            <a href="https://skreew.github.io/gcruz/" class="hover:text-yellow-400 flex items-center gap-2">
-                <i data-lucide="home" class="w-4 h-4 shrink-0"></i>
-                <span data-lang-key="footer_home">Início</span>
+        <div class="flex justify-center space-x-6 mb-6">
+            <a href="[LINK_LINKEDIN]" target="_blank" rel="noopener" aria-label="LinkedIn" class="hover:text-yellow-400 transition-colors">
+                <i data-lucide="linkedin" class="w-6 h-6"></i>
             </a>
-            <a href="pages/privacidade.html" class="hover:text-yellow-400 flex items-center gap-2">
-                <i data-lucide="shield" class="w-4 h-4 shrink-0"></i>
-                <span data-lang-key="footer_privacy">Privacidade</span>
+            <a href="https://github.com/skreew" target="_blank" rel="noopener" aria-label="GitHub" class="hover:text-yellow-400 transition-colors">
+                <i data-lucide="github" class="w-6 h-6"></i>
             </a>
-            <a href="pages/termos.html" class="hover:text-yellow-400 flex items-center gap-2">
-                <i data-lucide="file-text" class="w-4 h-4 shrink-0"></i>
-                <span data-lang-key="footer_terms">Termos</span>
+            <a href="mailto:gabrielalveslu@gmail.com" aria-label="Email" class="hover:text-yellow-400 transition-colors">
+                <i data-lucide="mail" class="w-6 h-6"></i>
             </a>
         </div>
-        <p>&copy; 2025 Gabriel Alves. <span data-lang-key="footer_rights">Todos os direitos reservados.</span></p>
+        <div class="flex justify-center space-x-6 mb-4 text-sm">
+            <a href="pages/privacidade.html" class="hover:text-yellow-400">Política de Privacidade</a>
+            <a href="pages/termos.html" class="hover:text-yellow-400">Termos de Uso</a>
+        </div>
+        <p class="text-sm">&copy; <span id="current-year"></span> Gabriel Alves. Todos os direitos reservados.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
     
     <script>
-        window.addEventListener('error', e => { console.error('Erro capturado:', e.error); });
-
         document.addEventListener('DOMContentLoaded', function() {
             try {
+                // --- SETUP INICIAL ---
                 lucide.createIcons();
-                gsap.config({ force3D: true });
-                ScrollTrigger.config({ limitCallbacks: true, ignoreMobileResize: true });
+                document.getElementById('current-year').textContent = new Date().getFullYear();
                 
-                const translations = {
-                    pt: {
-                        nav_profile: "Perfil", nav_results: "Resultados", nav_projects: "Projetos", nav_skills: "Competências", nav_contact: "Contato",
-                        profile_title: "Perfil Profissional",
-                        profile_item1: "+5 anos em automação e soluções digitais",
-                        profile_item2: "Foco: Redução de custos e aumento de eficiência",
-                        profile_item3: "Atuação Brasil & Bolívia — soluções globais",
-                        education_title: "Formação",
-                        education_item1: "Técnico em Administração — Bolívia",
-                        education_item2: "Tecnólogo em Informática — Jalasoft, Bolívia",
-                        languages_title: "Idiomas",
-                        lang_pt: "🇧🇷 Português — Nativo", lang_es: "🇪🇸 Espanhol — Nativo", lang_en: "🇺🇸 Inglês — Técnico (B1)",
-                        results_title: "Resultados Reais",
-                        result1_title: "MAIS VENDAS",
-                        result2_title: "CUSTOS OPERACIONAIS",
-                        result3_title: "MAIS PRODUÇÃO",
-                        result4_title: "MAIS CLIENTES",
-                        result5_title: "MAIS RAPIDEZ", result5_value: "Horas para Segundos",
-                        result6_title: "MAIS CONVERSÃO",
-                        projects_title: "Principais Áreas de Atuação",
-                        project1_title: "Automação de Tarefas",
-                        project1_desc: "Crio robôs e sistemas que realizam tarefas repetitivas automaticamente, liberando sua equipe para focar no que realmente importa.",
-                        project2_title: "Lojas Virtuais (E-commerce)",
-                        project2_desc: "Desenvolvo lojas online completas, prontas para vender e otimizadas para que seus produtos sejam encontrados facilmente no Google.",
-                        project3_title: "Consultoria Digital Estratégica",
-                        project3_desc: "Ajudo sua empresa a atrair mais clientes e vender mais através de estratégias de marketing digital e anúncios online eficazes.",
-                        project4_title: "Produção de Mídia",
-                        project4_desc: "Produzo o conteúdo visual que sua marca precisa para se destacar, como vídeos e imagens de alta qualidade para redes sociais e sites.",
-                        project5_title: "Desenvolvimento de Sites",
-                        project5_desc: "Construo sites modernos e fáceis de usar, que funcionam perfeitamente em celulares, tablets e computadores.",
-                        skills_title: "Competências Técnicas",
-                        skill1_title: "Dev/Automação", skill1_desc: "Python, JS, HTML/CSS, GAS",
-                        skill2_title: "Ferramentas", skill2_desc: "WordPress, Woo, Trello",
-                        skill3_title: "Design e Mídia", skill3_desc: "Photoshop, After Effects",
-                        skill4_title: "Marketing", skill4_desc: "SEO, GA4, E-mail",
-                        contact_title: "Vamos conversar?",
-                        contact_subtitle: "A primeira conversa é sem compromisso. Conte-me seu desafio.",
-                        contact_cta: "Falar no WhatsApp",
-                        footer_home: "Início", footer_privacy: "Privacidade", footer_terms: "Termos", footer_rights: "Todos os direitos reservados."
-                    },
-                    en: {
-                        nav_profile: "Profile", nav_results: "Results", nav_projects: "Projects", nav_skills: "Skills", nav_contact: "Contact",
-                        profile_title: "Professional Profile",
-                        profile_item1: "+5 years in automation & digital solutions",
-                        profile_item2: "Focus: Cost reduction & efficiency increase",
-                        profile_item3: "Brazil & Bolivia — global solutions",
-                        education_title: "Education",
-                        education_item1: "Technician in Administration — Bolivia",
-                        education_item2: "Technologist in Informatics — Jalasoft, Bolivia",
-                        languages_title: "Languages",
-                        lang_pt: "🇧🇷 Portuguese — Native", lang_es: "🇪🇸 Spanish — Native", lang_en: "🇺🇸 English — Technical (B1)",
-                        results_title: "Real Results",
-                        result1_title: "MORE SALES",
-                        result2_title: "OPERATIONAL COSTS",
-                        result3_title: "MORE PRODUCTION",
-                        result4_title: "MORE CLIENTS",
-                        result5_title: "MORE SPEED", result5_value: "Hours to Seconds",
-                        result6_title: "MORE CONVERSION",
-                        projects_title: "Main Areas of Expertise",
-                        project1_title: "Task Automation",
-                        project1_desc: "I create bots and systems that perform repetitive tasks automatically, freeing up your team to focus on what truly matters.",
-                        project2_title: "E-commerce Stores",
-                        project2_desc: "I develop complete online stores, ready to sell and optimized so your products are easily found on Google.",
-                        project3_title: "Strategic Digital Consulting",
-                        project3_desc: "I help your company attract more customers and sell more through effective digital marketing strategies and online ads.",
-                        project4_title: "Media Production",
-                        project4_desc: "I produce the visual content your brand needs to stand out, like high-quality videos and images for social media and websites.",
-                        project5_title: "Website Development",
-                        project5_desc: "I build modern, easy-to-use websites that work perfectly on cell phones, tablets, and computers.",
-                        skills_title: "Technical Skills",
-                        skill1_title: "Dev/Automation", skill1_desc: "Python, JS, HTML/CSS, GAS",
-                        skill2_title: "Tools", skill2_desc: "WordPress, Woo, Trello",
-                        skill3_title: "Design & Media", skill3_desc: "Photoshop, After Effects",
-                        skill4_title: "Marketing", skill4_desc: "SEO, GA4, E-mail",
-                        contact_title: "Let's talk?",
-                        contact_subtitle: "The first conversation is non-binding. Tell me your challenge.",
-                        contact_cta: "Chat on WhatsApp",
-                        footer_home: "Home", footer_privacy: "Privacy", footer_terms: "Terms", footer_rights: "All rights reserved."
-                    },
-                    es: {
-                        nav_profile: "Perfil", nav_results: "Resultados", nav_projects: "Proyectos", nav_skills: "Competencias", nav_contact: "Contacto",
-                        profile_title: "Perfil Profesional",
-                        profile_item1: "+5 años en automatización y soluciones digitales",
-                        profile_item2: "Foco: Reducción de costos y aumento de eficiencia",
-                        profile_item3: "Actuación Brasil & Bolivia — soluciones globales",
-                        education_title: "Formación",
-                        education_item1: "Técnico en Administración — Bolivia",
-                        education_item2: "Tecnólogo en Informática — Jalasoft, Bolivia",
-                        languages_title: "Idiomas",
-                        lang_pt: "🇧🇷 Portugués — Nativo", lang_es: "🇪🇸 Español — Nativo", lang_en: "🇺🇸 Inglés — Técnico (B1)",
-                        results_title: "Resultados Reales",
-                        result1_title: "MÁS VENTAS",
-                        result2_title: "COSTOS OPERATIVOS",
-                        result3_title: "MÁS PRODUCCIÓN",
-                        result4_title: "MÁS CLIENTES",
-                        result5_title: "MÁS RAPIDEZ", result5_value: "Horas a Segundos",
-                        result6_title: "MÁS CONVERSIÓN",
-                        projects_title: "Principales Áreas de Actuación",
-                        project1_title: "Automatización de Tareas",
-                        project1_desc: "Creo robots y sistemas que realizan tareas repetitivas automáticamente, liberando a tu equipo para centrarse en lo que realmente importa.",
-                        project2_title: "Tiendas Virtuales (E-commerce)",
-                        project2_desc: "Desarrollo tiendas online completas, listas para vender y optimizadas para que tus productos se encuentren fácilmente en Google.",
-                        project3_title: "Consultoría Digital Estratégica",
-                        project3_desc: "Ayudo a tu empresa a atraer más clientes y vender más a través de estrategias de marketing digital y anuncios online eficaces.",
-                        project4_title: "Producción de Medios",
-                        project4_desc: "Produzco el contenido visual que tu marca necesita para destacar, como videos e imágenes de alta calidad para redes sociales y sitios web.",
-                        project5_title: "Desarrollo de Sitios Web",
-                        project5_desc: "Construyo sitios web modernos y fáciles de usar, que funcionan perfectamente en móviles, tabletas y ordenadores.",
-                        skills_title: "Competencias Técnicas",
-                        skill1_title: "Des/Automatización", skill1_desc: "Python, JS, HTML/CSS, GAS",
-                        skill2_title: "Herramientas", skill2_desc: "WordPress, Woo, Trello",
-                        skill3_title: "Diseño y Media", skill3_desc: "Photoshop, After Effects",
-                        skill4_title: "Marketing", skill4_desc: "SEO, GA4, E-mail",
-                        contact_title: "¿Hablamos?",
-                        contact_subtitle: "La primera conversación es sin compromiso. Cuéntame tu desafío.",
-                        contact_cta: "Hablar por WhatsApp",
-                        footer_home: "Inicio", footer_privacy: "Privacidad", footer_terms: "Términos", footer_rights: "Todos los derechos reservados."
-                    }
-                };
-                
-                const langButtons = document.querySelectorAll('.lang-btn');
-                const setLanguage = (lang) => {
-                    if (!translations[lang]) return;
-                    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : lang;
-                    localStorage.setItem('language', lang);
-                    document.querySelectorAll('[data-lang-key]').forEach(el => {
-                        const key = el.dataset.langKey;
-                        if (translations[lang][key]) {
-                            el.textContent = translations[lang][key];
-                        }
-                    });
-                    langButtons.forEach(btn => {
-                        btn.classList.toggle('active', btn.dataset.lang === lang);
-                        btn.classList.toggle('opacity-50', btn.dataset.lang !== lang);
-                    });
-                    lucide.createIcons();
-                };
-                langButtons.forEach(button => button.addEventListener('click', () => setLanguage(button.dataset.lang)));
-                setLanguage(localStorage.getItem('language') || 'pt');
+                // --- LÓGICA DE TEMA (LIGHT/DARK MODE) ---
+                const themeToggle = document.getElementById('theme-toggle');
+                const darkIcon = document.querySelector('.dark-icon');
+                const lightIcon = document.querySelector('.light-icon');
 
-                const initBackground = () => {
-                    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-                    const canvas = document.getElementById('background-canvas');
-                    if (!canvas) return;
-                    const ctx = canvas.getContext('2d');
-                    let width = canvas.width = window.innerWidth;
-                    let height = canvas.height = window.innerHeight;
-                    let lastScrollY = window.scrollY;
-                    const mouse = { x: width / 2, y: height / 2, radius: 150 };
-                    window.addEventListener('mousemove', e => gsap.to(mouse, { x: e.clientX, y: e.clientY, duration: 0.8, ease: 'power2.out' }));
-                    window.addEventListener('click', () => gsap.fromTo(mouse, {radius: 300}, {radius: 150, duration: 0.5, ease: 'power3.out'}));
-                    window.addEventListener('resize', () => { width = canvas.width = window.innerWidth; height = canvas.height = window.innerHeight; });
-                    const particles = [];
-                    const particleCount = window.innerWidth < 768 ? 60 : 100;
-                    class Particle {
-                        constructor() { this.x = Math.random() * width; this.y = Math.random() * height; this.vx = (Math.random() - 0.5) * 0.3; this.vy = (Math.random() - 0.5) * 0.3; this.radius = 1 + Math.random() * 1.5; this.color = `rgba(255, 215, 0, ${0.1 + Math.random() * 0.2})`; }
-                        update(scrollDelta) {
-                            const dx = this.x - mouse.x; const dy = this.y - mouse.y; const dist = Math.hypot(dx, dy);
-                            if (dist < mouse.radius) { const angle = Math.atan2(dy, dx); const force = (mouse.radius - dist) / mouse.radius; this.vx += Math.cos(angle) * force * 0.3; this.vy += Math.sin(angle) * force * 0.3; }
-                            this.vx *= 0.98; this.vy *= 0.98; this.x += this.vx; this.y += this.vy; this.y += scrollDelta * 0.1;
-                            if (this.x > width + 5) this.x = -5; else if (this.x < -5) this.x = width + 5;
-                            if (this.y > height + 5) this.y = -5; else if (this.y < -5) this.y = height + 5;
-                        }
-                        draw() { ctx.beginPath(); ctx.fillStyle = this.color; ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2); ctx.fill(); }
+                const applyTheme = (theme) => {
+                    if (theme === 'dark') {
+                        document.body.classList.remove('light-mode');
+                        darkIcon.classList.remove('hidden');
+                        lightIcon.classList.add('hidden');
+                    } else {
+                        document.body.classList.add('light-mode');
+                        darkIcon.classList.add('hidden');
+                        lightIcon.classList.remove('hidden');
                     }
-                    for(let i = 0; i < particleCount; i++) particles.push(new Particle());
-                    function handleConnections() {
-                        for(let i = 0; i < particles.length; i++) {
-                            for(let j = i; j < particles.length; j++) {
-                                const dist = Math.hypot(particles[i].x - particles[j].x, particles[i].y - particles[j].y);
-                                if (dist < 120) { const opacity = 1 - (dist / 120); ctx.beginPath(); ctx.strokeStyle = `rgba(255, 215, 0, ${opacity * 0.3})`; ctx.lineWidth = 0.5; ctx.moveTo(particles[i].x, particles[i].y); ctx.lineTo(particles[j].x, particles[j].y); ctx.stroke(); }
-                            }
-                        }
-                    }
-                    function animate() { const currentScrollY = window.scrollY; const scrollDelta = currentScrollY - lastScrollY; ctx.clearRect(0, 0, width, height); particles.forEach(p => { p.update(scrollDelta); p.draw(); }); handleConnections(); lastScrollY = currentScrollY; requestAnimationFrame(animate); }
-                    animate();
-                };
-                initBackground();
-                
-                const hamburgerBtn = document.getElementById('hamburger-btn');
-                const mobileMenu = document.getElementById('mobile-menu');
-                
-                const toggleMenu = () => {
-                    const isMenuOpen = !mobileMenu.classList.contains('hidden');
-                    mobileMenu.classList.toggle('hidden');
-                    mobileMenu.classList.toggle('flex');
-                    document.body.classList.toggle('overflow-hidden', !isMenuOpen);
-                    hamburgerBtn.setAttribute('aria-expanded', String(!isMenuOpen));
-                    hamburgerBtn.innerHTML = !isMenuOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
-                    lucide.createIcons();
-                    if (isMenuOpen) {
-                        hamburgerBtn.focus();
-                    }
+                     lucide.createIcons({
+                        nodes: [themeToggle]
+                     });
                 };
 
-                hamburgerBtn.addEventListener('click', (e) => {
-                    e.stopPropagation();
-                    toggleMenu();
+                const userPreference = localStorage.getItem('theme');
+                const systemPreference = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                const currentTheme = userPreference || systemPreference;
+                applyTheme(currentTheme);
+
+                themeToggle.addEventListener('click', () => {
+                    const newTheme = document.body.classList.contains('light-mode') ? 'dark' : 'light';
+                    localStorage.setItem('theme', newTheme);
+                    applyTheme(newTheme);
                 });
 
-                document.querySelectorAll('.mobile-link').forEach(link => {
-                    link.addEventListener('click', () => {
-                        if (!mobileMenu.classList.contains('hidden')) {
-                            toggleMenu();
-                        }
-                    });
-                });
-
-                document.addEventListener('click', (e) => {
-                    const isMenuOpen = !mobileMenu.classList.contains('hidden');
-                    if (isMenuOpen && !mobileMenu.contains(e.target) && e.target !== hamburgerBtn && !hamburgerBtn.contains(e.target)) {
-                        toggleMenu();
-                    }
-                });
-
-                document.addEventListener('keydown', (e) => {
-                    if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
-                        toggleMenu();
-                    }
-                });
-                
-                if (window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-                    const cursor = document.querySelector('.custom-cursor');
-                    window.addEventListener('mousemove', e => gsap.to(cursor, { x: e.clientX, y: e.clientY, duration: 0.2, ease: 'power2.out' }));
-                    document.querySelectorAll('a, button, .tech-logo').forEach(el => { el.addEventListener('mouseenter', () => cursor.classList.add('grow')); el.addEventListener('mouseleave', () => cursor.classList.remove('grow')); });
+                // --- ANIMAÇÃO DE DIGITAÇÃO ---
+                if (window.TypeIt) {
+                    new TypeIt("#headline", {
+                        strings: "Desenvolvedor de Software | Foco em Resultados de Negócio",
+                        speed: 50,
+                        waitUntilVisible: true,
+                        cursorChar: "_",
+                        cursorClass: "typeit-cursor"
+                    }).go();
                 }
 
-                gsap.registerPlugin(ScrollTrigger);
-                gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
-                
-                gsap.utils.toArray('section h2, .glass-effect > *:not(.result-number), #about div, #contact p, #contact a, #contact button').forEach(elem => {
-                    gsap.from(elem, { opacity: 0, y: 50, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true, fastScrollEnd: true } });
-                });
-                
-                gsap.utils.toArray(".result-number").forEach(elem => {
-                    const targetNumber = parseInt(elem.textContent, 10);
-                    const prefix = elem.dataset.prefix || '';
-                    const suffix = elem.dataset.suffix || '';
-                    let counter = { val: 0 };
-                    gsap.to(counter, {
-                        val: targetNumber,
-                        duration: 2,
-                        ease: "power1.out",
-                        scrollTrigger: { trigger: elem, start: "top 85%", once: true },
-                        onUpdate: () => elem.textContent = prefix + Math.ceil(counter.val) + suffix
-                    });
-                });
-                
-                gsap.utils.toArray("#main-nav a").forEach(link => {
-                    const section = document.querySelector(link.getAttribute("href"));
-                    ScrollTrigger.create({ trigger: section, start: "top center", end: "bottom center", onToggle: self => self.isActive && document.querySelectorAll("#main-nav a").forEach(l => l.classList.toggle("active", l === link)) });
-                });
+                // --- MENU MOBILE ---
+                const hamburgerBtn = document.getElementById('hamburger-btn');
+                const mobileMenu = document.getElementById('mobile-menu');
+                const toggleMenu = (isOpen) => {
+                    const isNowOpen = typeof isOpen === 'boolean' ? isOpen : mobileMenu.classList.contains('hidden');
+                    mobileMenu.classList.toggle('hidden', !isNowOpen);
+                    mobileMenu.classList.toggle('flex', isNowOpen);
+                    hamburgerBtn.setAttribute('aria-expanded', String(isNowOpen));
+                    hamburgerBtn.innerHTML = isNowOpen ? `<i data-lucide="x" class="w-8 h-8"></i>` : `<i data-lucide="menu" class="w-8 h-8"></i>`;
+                    lucide.createIcons();
+                    if (!isNowOpen) hamburgerBtn.focus();
+                };
+                hamburgerBtn.addEventListener('click', (e) => { e.stopPropagation(); toggleMenu(); });
+                document.querySelectorAll('.mobile-link').forEach(link => link.addEventListener('click', () => toggleMenu(false)));
 
-                 ScrollTrigger.create({ trigger: '#contact', start: 'top bottom', end: 'bottom top', onToggle: self => document.getElementById('background-canvas').classList.toggle('is-blurred', self.isActive) });
+                // --- ANIMAÇÕES COM GSAP & SCROLLTRIGGER ---
+                if (window.gsap) {
+                    gsap.registerPlugin(ScrollTrigger);
+                    gsap.from("#main-header", { y: -100, opacity: 0, duration: 1, ease: 'power3.out', delay: 0.5 });
+                    gsap.utils.toArray('section h2, .glass-effect, #about p, #contact p, #contact a').forEach(elem => {
+                        gsap.from(elem, {
+                            opacity: 0, y: 50, duration: 0.8, ease: 'power3.out',
+                            scrollTrigger: { trigger: elem, start: 'top 85%', toggleActions: 'play none none none', once: true }
+                        });
+                    });
+
+                    // --- ANIMAÇÃO DOS CONTADORES ---
+                    gsap.utils.toArray(".counter-up").forEach(elem => {
+                        const target = { val: 0 };
+                        const endValue = parseInt(elem.dataset.value, 10);
+                        const prefix = elem.dataset.prefix || '';
+                        const suffix = '%';
+                        gsap.to(target, {
+                            val: endValue, duration: 2, ease: "power1.out",
+                            scrollTrigger: { trigger: elem, start: "top 85%", once: true },
+                            onUpdate: () => elem.textContent = prefix + Math.ceil(target.val) + suffix
+                        });
+                    });
+                    
+                    // --- NAVEGAÇÃO ATIVA COM SCROLL ---
+                    gsap.utils.toArray("#main-nav a").forEach(link => {
+                        const section = document.querySelector(link.getAttribute("href"));
+                        if (section) {
+                            ScrollTrigger.create({
+                                trigger: section, start: "top center", end: "bottom center",
+                                onToggle: self => {
+                                    if (self.isActive) {
+                                        document.querySelectorAll("#main-nav a").forEach(l => l.classList.remove("active"));
+                                        link.classList.add("active");
+                                    }
+                                }
+                            });
+                        }
+                    });
+                }
 
             } catch (error) {
-                console.error("Erro ao inicializar o site:", error);
-                document.body.classList.add('js-error');
+                console.error("Erro ao inicializar o script do site:", error);
             }
         });
     </script>
